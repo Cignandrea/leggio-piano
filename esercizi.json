@@ -1049,7 +1049,7 @@
    "titolo": "Il passaggio del pollice in la e in mi",
    "rif": "Lezione 5 · §5.2",
    "testo": "Solo le tre note intorno al passaggio, lentissime, senza metronomo. Destra in la: si, do♯, re con 2-3-1, il pollice passa sotto il medio che è sul tasto nero. Destra in mi: fa♯, sol♯, la con 2-3-1. Sinistra in la: re, mi, fa♯ con 2-1-3, il medio scavalca il pollice e va sul tasto nero. Sinistra in mi: la, si, do♯ con 2-1-3. Avanti e indietro, finché esce giusto tre volte di fila.",
-   "occhio": "Nel passaggio il polso sale un poco e la mano accompagna di lato: così il pollice ha spazio. Non ruotare. La sinistra è la mano da curare di più.",
+   "occhio": "Nel passaggio la mano sale un poco, appena accennato: così il pollice ha spazio. Il polso non ruota. La sinistra è la più rigida: è la mano da curare di più.",
    "fasi": [
     {
      "rip": 3,
@@ -1076,7 +1076,7 @@
    "id": "scale-cinque",
    "titolo": "Cinque scale col metronomo, mani separate",
    "rif": "Lezione 5 · §5.2, §5.3",
-   "testo": "Do, sol, re, la, mi. Per ognuna: di' le alterazioni, poi la destra e poi la sinistra, salendo e scendendo. Dita uguali per tutte: destra 1-2-3 | 1-2-3-4-5, sinistra 5-4-3-2-1 | 3-2-1. Parti a 60. Quando esce pulita passa a 70, poi a 80. Se a 80 inciampi torni a 60, non a 70. Se a 60 non esce, ferma il metronomo e rifalla lenta, guardando il passaggio del pollice.",
+   "testo": "Do, sol, re, la, mi. Per ognuna: di' le alterazioni, poi la destra e poi la sinistra, salendo e scendendo. Dita uguali per tutte: destra 1-2-3 | 1-2-3-4-5, sinistra 5-4-3-2-1 | 3-2-1. Parti a 60. Quando esce pulita passa a 70, poi a 80. Se a 70 o a 80 inciampi torni a 60, non al gradino sotto. Se a 60 non esce non rallentare il metronomo: fermalo e rifalla lenta, guardando il passaggio del pollice.",
    "occhio": "Blocco o confusione nelle dita: stai andando troppo veloce. Due passi indietro, poi su di uno alla volta. Non tutte le scale arrivano a 80 insieme: va bene così.",
    "avviso": "Alterazioni: do nessuna · sol fa♯ · re fa♯ do♯ · la fa♯ do♯ sol♯ · mi fa♯ sol♯ do♯ re♯. Una nota per clic e un'ottava sono una nostra scelta: a lezione non è stato detto (è tra i punti da chiarire).",
    "bpm": 60,
@@ -1115,7 +1115,7 @@
    "id": "scale-cinque-insieme",
    "titolo": "Cinque scale, mani insieme",
    "rif": "Lezione 5 · §5.3, §4.9",
-   "testo": "Le stesse cinque scale a mani unite, in moto parallelo: è così che vanno fatte vedere alla prossima lezione. I passaggi cadono in punti diversi: la destra passa il pollice dopo la terza nota, la sinistra scavalca col medio dopo la quinta. Stessa regola del metronomo: 60, poi 70, poi 80; se a 80 inciampi torni a 60.",
+   "testo": "Le stesse cinque scale a mani unite, in moto parallelo: è così che vanno fatte vedere alla prossima lezione. I passaggi cadono in punti diversi: la destra passa il pollice dopo la terza nota, la sinistra scavalca col medio dopo la quinta. Stessa regola del metronomo: 60, poi 70, poi 80; se inciampi torni a 60.",
    "occhio": "A mani unite si parte più lenti che a mani separate. Se una mano si perde, torna un giro a mani separate su quella scala.",
    "bpm": 60,
    "passi": [

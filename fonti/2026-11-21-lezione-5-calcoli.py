@@ -40,3 +40,8 @@ for t in T:
     k=key.Key(t); v=roman.RomanNumeral('V',k); print("  ",t,": V =",sig(v),"contiene la sensibile", it(v.third), "→", it(k.tonic))
 print("\n== La maggiore: accordi sui gradi (per il brano in la)")
 k=key.Key('A'); print("  ", " ".join(sig(roman.RomanNumeral(g,k)) for g in ['I','ii','iii','IV','V','vi'])+" G#dim")
+print("\n== Scorciatoia della tabella: il VI sta un tono sopra il V, il IV un tono sotto (scala maggiore)")
+for t in ['C','G','D','A','E']:
+    k=key.Key(t); v=k.pitchFromDegree(5); print("  ",t,": V =",it(v),"| VI =",it(k.pitchFromDegree(6)),interval.Interval(v,k.pitchFromDegree(6)).name,"sopra | IV =",it(k.pitchFromDegree(4)),interval.Interval(k.pitchFromDegree(4),v).name,"sotto")
+print("\n== Fine della scala: all'ottava il mignolo (5) se si chiude; se prosegue passa il pollice (1) sulla tonica")
+print("   destra, due ottave: 1 2 3 1 2 3 4 | 1 2 3 1 2 3 4 5 (stessa diteggiatura per do, sol, re, la, mi: fonte A1)")

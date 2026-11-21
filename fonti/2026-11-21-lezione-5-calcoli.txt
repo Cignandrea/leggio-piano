@@ -63,3 +63,13 @@ music21 10.5.2
 
 == La maggiore: accordi sui gradi (per il brano in la)
    A Bm C#m D E F#m G#dim
+
+== Scorciatoia della tabella: il VI sta un tono sopra il V, il IV un tono sotto (scala maggiore)
+   C : V = sol | VI = la M2 sopra | IV = fa M2 sotto
+   G : V = re | VI = mi M2 sopra | IV = do M2 sotto
+   D : V = la | VI = si M2 sopra | IV = sol M2 sotto
+   A : V = mi | VI = fa♯ M2 sopra | IV = re M2 sotto
+   E : V = si | VI = do♯ M2 sopra | IV = la M2 sotto
+
+== Fine della scala: all'ottava il mignolo (5) se si chiude; se prosegue passa il pollice (1) sulla tonica
+   destra, due ottave: 1 2 3 1 2 3 4 | 1 2 3 1 2 3 4 5 (stessa diteggiatura per do, sol, re, la, mi: fonte A1)
