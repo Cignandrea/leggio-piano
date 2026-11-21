@@ -324,7 +324,7 @@ let PLAN = DEFAULT_PLAN;
 /* Due case possibili: come artifact su claude.ai (piano e diario nel database) o come app installata
    (GitHub Pages: piano da piano.json, diario sul telefono, «Copia per Claude» per portarlo in chat). */
 const ON_CLAUDE = !!(window.claude && typeof window.claude.use === "function");
-const APP_VERSION = "2.0.1";
+const APP_VERSION = "2.1.0";
 const LS_PLAN = "leggio-piano-cache", LS_DIARY = "leggio-diario", LS_COPIED = "leggio-copiato-fino";
 const vociPlan = d => d ? (d.schema >= 3 ? d.sessione : d.blocchi) : null;
 const validPlan = d => { const v = vociPlan(d); return !!(d && d.schema >= 2 && Array.isArray(v) && v.length); };

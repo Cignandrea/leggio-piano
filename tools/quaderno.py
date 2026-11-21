@@ -10,8 +10,12 @@ Uso:
   LEGGIO_CHIAVE=... python3 tools/quaderno.py controlla
   LEGGIO_CHIAVE=... python3 tools/quaderno.py cartelle /tmp/q [id]   (come le cartelle di ArtifactData, per la skill)
   LEGGIO_CHIAVE=... python3 tools/quaderno.py applica <out/>         (applica out/writes.json della skill e ricifra)
+
+Dallo schema 3 (quaderno come manuale) il quaderno si cifra solo se supera i controlli di `problemi_schema3`:
+ogni paragrafo ha il suo posto nell'ordine per argomento (manuale.parti), ha almeno una verifica, e il testo è in
+voce da manuale. Se un controllo non passa, il quaderno pubblicato resta quello di prima.
 """
-import base64, json, os, pathlib, sys
+import base64, json, os, pathlib, re, sys
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
@@ -50,9 +54,88 @@ def decifra():
     return json.loads(pt.decode("utf-8"))
 
 
+# ---------- schema 3: il quaderno è un manuale
+METODI = ("calcolo", "fonte", "registrazione")
+BLOCCHI = ("testo", "figura", "esempio", "oltre")
+# Voce da manuale: nel testo non entrano le persone, la cronaca della lezione, le sigle di incertezza, il tempo relativo.
+# Stanno fuori da questo controllo: verifiche, compiti, fonte e note del capitolo, domande.
+VOCE = [(re.compile(rx, re.I), nome) for rx, nome in [
+    (r"\bmaestr[oi]\b|\bjacopo\b|\bandrea\b", "persone"),
+    (r"\blezion[ei]\b", "«lezione» (nel testo si dice «capitolo»)"),
+    (r"\[(?:S|A|V|\?)\]", "sigle [S] [A] [V] [?]"),
+    (r"da chiedere|da chiarire|da confermare|non è chiaro|non si capisce", "dubbi lasciati nel testo"),
+    (r"la volta scorsa|l'altra volta|la prossima volta|per ora\b|più avanti vedremo", "tempo relativo"),
+    (r"registrazion[ei]|trascrizion[ei]|whatsapp|\bappunti\b|\bvocal[ei]\b", "cronaca delle fonti (va nelle verifiche)"),
+]]
+
+
+def testi_di_voce(lez):
+    """(dove, testo) per tutto ciò che deve avere voce da manuale."""
+    yield "titolo", lez.get("titolo") or ""
+    yield "cornice", lez.get("cornice") or ""
+    for r in lez.get("riassunto") or []:
+        yield f"scheda «{r.get('titolo')}»", f"{r.get('titolo') or ''}\n{r.get('md') or ''}"
+    for s in lez.get("sezioni") or []:
+        yield f"§{s.get('num')} titolo", s.get("titolo") or ""
+        for b in s.get("blocchi") or []:
+            pezzi = [b.get("md") or "", b.get("titolo") or "", b.get("didascalia") or ""]
+            yield f"§{s.get('num')} {b.get('tipo')}", "\n".join(x for x in pezzi if x)
+
+
+def problemi_schema3(d):
+    """Controlli di costruzione dello schema 3. Lista vuota = il quaderno si può cifrare."""
+    p = []
+    slug = {a.get("_id") for a in d.get("argomenti") or []}
+    dom = {q.get("_id") for q in d.get("domande") or []}
+    nums = []
+    for lez in d.get("lezioni") or []:
+        n = lez.get("numero")
+        for dove, testo in testi_di_voce(lez):
+            for rx, nome in VOCE:
+                m = rx.search(testo)
+                if m: p.append(f"cap. {n}, {dove}: voce non da manuale ({nome}): «…{testo[max(0, m.start() - 30):m.end() + 30]}…»")
+        for q in lez.get("domande") or []:
+            if q not in dom: p.append(f"cap. {n}: domanda {q} non esiste")
+        for s in lez.get("sezioni") or []:
+            num = str(s.get("num"))
+            nums.append(num)
+            if not num.startswith(f"{n}."): p.append(f"§{num} non è del capitolo {n}")
+            for a in s.get("argomenti") or []:
+                if a not in slug: p.append(f"§{num}: argomento sconosciuto {a}")
+            for b in s.get("blocchi") or []:
+                if b.get("tipo") not in BLOCCHI: p.append(f"§{num}: blocco «{b.get('tipo')}» non ammesso (ammessi: {', '.join(BLOCCHI)})")
+            ver = s.get("verifiche") or []
+            if not ver: p.append(f"§{num}: nessuna verifica (ogni paragrafo ne ha almeno una)")
+            for v in ver:
+                if v.get("metodo") not in METODI or not (v.get("md") or "").strip():
+                    p.append(f"§{num}: verifica senza metodo valido ({', '.join(METODI)}) o senza testo")
+    doppi = sorted({x for x in nums if nums.count(x) > 1})
+    if doppi: p.append(f"paragrafi con lo stesso numero: {doppi}")
+    man = d.get("manuale") or {}
+    posti = [str(x) for parte in man.get("parti") or [] for x in parte.get("sezioni") or []]
+    if not man.get("parti"): p.append("manca manuale.parti (l'ordine per argomento)")
+    for parte in man.get("parti") or []:
+        if not (parte.get("titolo") or "").strip(): p.append("una parte del manuale non ha titolo")
+    fuori = [x for x in nums if x not in posti]
+    if fuori: p.append(f"paragrafi senza posto nell'ordine per argomento: {fuori}")
+    orfani = [x for x in posti if x not in nums]
+    if orfani: p.append(f"l'ordine per argomento cita paragrafi che non esistono: {orfani}")
+    ripetuti = sorted({x for x in posti if posti.count(x) > 1})
+    if ripetuti: p.append(f"paragrafi messi due volte nell'ordine per argomento: {ripetuti}")
+    return p
+
+
+def schema(d):
+    try: return int((d.get("stato") or {}).get("schema") or 0)
+    except (TypeError, ValueError): return 0
+
+
 def cifra(dati):
     for k in ("lezioni", "argomenti", "domande"):
         if not isinstance(dati.get(k), list): sys.exit(f"manca la lista {k}")
+    if schema(dati) >= 3:
+        pr = problemi_schema3(dati)
+        if pr: sys.exit("fermo: il quaderno non supera i controlli dello schema 3; quello pubblicato resta com'era.\n- " + "\n- ".join(pr))
     pt = json.dumps(dati, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
     iv = os.urandom(12)
     ct = AESGCM(chiave()).encrypt(iv, pt, None)
@@ -73,7 +156,7 @@ def esporta_cartelle(dest, solo=None):
             if solo and did != solo: continue
             (dest / coll / f"{did}.json").write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
     (dest / "meta").mkdir(parents=True, exist_ok=True)
-    for k in ("stato", "percorso"):
+    for k in ("stato", "percorso", "manuale"):
         if d.get(k) is not None:
             (dest / "meta" / f"{k}.json").write_text(json.dumps(d[k], ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -125,7 +208,11 @@ def main():
         print("cifrato e riletto:", CIFRATO.name)
     elif cmd == "controlla":
         d = decifra()
-        print({k: len(d[k]) for k in ("lezioni", "argomenti", "domande")}, "· prossima lezione:", (d.get("stato") or {}).get("prossima_lezione"))
+        print({k: len(d[k]) for k in ("lezioni", "argomenti", "domande")}, "· schema", schema(d), "· prossima lezione:", (d.get("stato") or {}).get("prossima_lezione"))
+        if schema(d) >= 3:
+            pr = problemi_schema3(d)
+            print("controlli dello schema 3:", "tutti superati" if not pr else "\n- " + "\n- ".join(pr))
+            if pr: sys.exit(1)
     else:
         print(__doc__)
 

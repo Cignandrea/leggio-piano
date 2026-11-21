@@ -1,0 +1,176 @@
+music21 10.5.2
+
+== SCALE MAGGIORI, passi in semitoni, alterazioni, quarta nota
+do maggiore: do re mi fa sol la si do | passi [2, 2, 1, 2, 2, 2, 1] | armatura +0: nessuna | 4ª nota fa | 7ª si | relativa minore la minore
+sol maggiore: sol la si do re mi fa♯ sol | passi [2, 2, 1, 2, 2, 2, 1] | armatura +1: fa♯ | 4ª nota do | 7ª fa♯ | relativa minore mi minore
+re maggiore: re mi fa♯ sol la si do♯ re | passi [2, 2, 1, 2, 2, 2, 1] | armatura +2: fa♯ do♯ | 4ª nota sol | 7ª do♯ | relativa minore si minore
+la maggiore: la si do♯ re mi fa♯ sol♯ la | passi [2, 2, 1, 2, 2, 2, 1] | armatura +3: fa♯ do♯ sol♯ | 4ª nota re | 7ª sol♯ | relativa minore fa♯ minore
+mi maggiore: mi fa♯ sol♯ la si do♯ re♯ mi | passi [2, 2, 1, 2, 2, 2, 1] | armatura +4: fa♯ do♯ sol♯ re♯ | 4ª nota la | 7ª re♯ | relativa minore do♯ minore
+si maggiore: si do♯ re♯ mi fa♯ sol♯ la♯ si | passi [2, 2, 1, 2, 2, 2, 1] | armatura +5: fa♯ do♯ sol♯ re♯ la♯ | 4ª nota mi | 7ª la♯ | relativa minore sol♯ minore
+fa♯ maggiore: fa♯ sol♯ la♯ si do♯ re♯ mi♯ fa♯ | passi [2, 2, 1, 2, 2, 2, 1] | armatura +6: fa♯ do♯ sol♯ re♯ la♯ mi♯ | 4ª nota si | 7ª mi♯ | relativa minore re♯ minore
+sol♭ maggiore: sol♭ la♭ si♭ do♭ re♭ mi♭ fa sol♭ | passi [2, 2, 1, 2, 2, 2, 1] | armatura -6: si♭ mi♭ la♭ re♭ sol♭ do♭ | 4ª nota do♭ | 7ª fa | relativa minore mi♭ minore
+fa maggiore: fa sol la si♭ do re mi fa | passi [2, 2, 1, 2, 2, 2, 1] | armatura -1: si♭ | 4ª nota si♭ | 7ª mi | relativa minore re minore
+si♭ maggiore: si♭ do re mi♭ fa sol la si♭ | passi [2, 2, 1, 2, 2, 2, 1] | armatura -2: si♭ mi♭ | 4ª nota mi♭ | 7ª la | relativa minore sol minore
+
+== SCALE MINORI
+la minore naturale: la si do re mi fa sol la | passi [2, 1, 2, 2, 1, 2, 2] | armonica: la si do re mi fa sol♯ la | armatura +0
+mi minore naturale: mi fa♯ sol la si do re mi | passi [2, 1, 2, 2, 1, 2, 2] | armonica: mi fa♯ sol la si do re♯ mi | armatura +1
+do minore naturale: do re mi♭ fa sol la♭ si♭ do | passi [2, 1, 2, 2, 1, 2, 2] | armonica: do re mi♭ fa sol la♭ si do | armatura -3
+sol minore naturale: sol la si♭ do re mi♭ fa sol | passi [2, 1, 2, 2, 1, 2, 2] | armonica: sol la si♭ do re mi♭ fa♯ sol | armatura -2
+
+== TRIADI SUI GRADI (do, re, sol maggiore; mi minore naturale e armonica)
+do maggiore: I=do mi sol (major) · ii=re fa la (minor) · iii=mi sol si (minor) · IV=fa la do (major) · V=sol si re (major) · vi=la do mi (minor) · viio=si re fa (diminished)
+   settime: I7=do mi sol si [major seventh chord] · ii7=re fa la do [minor seventh chord] · iii7=mi sol si re [minor seventh chord] · IV7=fa la do mi [major seventh chord] · V7=sol si re fa [dominant seventh chord] · vi7=la do mi sol [minor seventh chord] · viiø7=si re fa la [half-diminished seventh chord]
+re maggiore: I=re fa♯ la (major) · ii=mi sol si (minor) · iii=fa♯ la do♯ (minor) · IV=sol si re (major) · V=la do♯ mi (major) · vi=si re fa♯ (minor) · viio=do♯ mi sol (diminished)
+   settime: I7=re fa♯ la do♯ [major seventh chord] · ii7=mi sol si re [minor seventh chord] · iii7=fa♯ la do♯ mi [minor seventh chord] · IV7=sol si re fa♯ [major seventh chord] · V7=la do♯ mi sol [dominant seventh chord] · vi7=si re fa♯ la [minor seventh chord] · viiø7=do♯ mi sol si [half-diminished seventh chord]
+sol maggiore: I=sol si re (major) · ii=la do mi (minor) · iii=si re fa♯ (minor) · IV=do mi sol (major) · V=re fa♯ la (major) · vi=mi sol si (minor) · viio=fa♯ la do (diminished)
+   settime: I7=sol si re fa♯ [major seventh chord] · ii7=la do mi sol [minor seventh chord] · iii7=si re fa♯ la [minor seventh chord] · IV7=do mi sol si [major seventh chord] · V7=re fa♯ la do [dominant seventh chord] · vi7=mi sol si re [minor seventh chord] · viiø7=fa♯ la do mi [half-diminished seventh chord]
+mi minore naturale: i=mi sol si (minor) · iio=fa♯ la do (diminished) · III=sol si re (major) · iv=la do mi (minor) · v=si re fa♯ (minor) · VI=do mi sol (major) · VII=re fa♯ la (major)
+mi minore, V e V7 con sensibile: si re♯ fa♯ | si re♯ fa♯ la
+
+== ACCORDI: nome, fondamentale, rivolto
+do-mi-sol: do mi sol → major triad; fondamentale do; basso do; rivolto 0; pitchedCommonName C-major triad
+mi-sol-do: mi sol do → major triad; fondamentale do; basso mi; rivolto 1; pitchedCommonName C-major triad
+sol-do-mi: sol do mi → major triad; fondamentale do; basso sol; rivolto 2; pitchedCommonName C-major triad
+do-mi♭-sol: do mi♭ sol → minor triad; fondamentale do; basso do; rivolto 0; pitchedCommonName C-minor triad
+do-mi♭-sol♭: do mi♭ sol♭ → diminished triad; fondamentale do; basso do; rivolto 0; pitchedCommonName C-diminished triad
+do-mi-sol♯: do mi sol♯ → augmented triad; fondamentale do; basso do; rivolto 0; pitchedCommonName C-augmented triad
+do-mi-la: do mi la → minor triad; fondamentale la; basso do; rivolto 1; pitchedCommonName A-minor triad
+do-mi-sol-la: do mi sol la → minor seventh chord; fondamentale la; basso do; rivolto 1; pitchedCommonName A-minor seventh chord
+do-fa-la: do fa la → major triad; fondamentale fa; basso do; rivolto 2; pitchedCommonName F-major triad
+do-fa-la♭: do fa la♭ → minor triad; fondamentale fa; basso do; rivolto 2; pitchedCommonName F-minor triad
+do-re-sol sus2: do re sol → quartal trichord; fondamentale do; basso do; rivolto 0; pitchedCommonName C-quartal trichord
+do-fa-sol sus4: do fa sol → quartal trichord; fondamentale fa; basso do; rivolto 2; pitchedCommonName F-quartal trichord
+do-sol: do sol → Perfect Fifth; fondamentale do; basso do; rivolto 0; pitchedCommonName Perfect Fifth above C
+sol-si-re-fa: sol si re fa → dominant seventh chord; fondamentale sol; basso sol; rivolto 0; pitchedCommonName G-dominant seventh chord
+do-mi-sol-si♭: do mi sol si♭ → dominant seventh chord; fondamentale do; basso do; rivolto 0; pitchedCommonName C-dominant seventh chord
+do-mi-sol-si: do mi sol si → major seventh chord; fondamentale do; basso do; rivolto 0; pitchedCommonName C-major seventh chord
+si-re-fa: si re fa → diminished triad; fondamentale si; basso si; rivolto 0; pitchedCommonName B-diminished triad
+si-re-fa-la: si re fa la → half-diminished seventh chord; fondamentale si; basso si; rivolto 0; pitchedCommonName B-half-diminished seventh chord
+si-re♯-fa♯-la: si re♯ fa♯ la → dominant seventh chord; fondamentale si; basso si; rivolto 0; pitchedCommonName B-dominant seventh chord
+do♯-mi-sol: do♯ mi sol → diminished triad; fondamentale do♯; basso do♯; rivolto 0; pitchedCommonName C#-diminished triad
+la-do♯-mi-sol: la do♯ mi sol → dominant seventh chord; fondamentale la; basso la; rivolto 0; pitchedCommonName A-dominant seventh chord
+mi-sol-si: mi sol si → minor triad; fondamentale mi; basso mi; rivolto 0; pitchedCommonName E-minor triad
+do-mi-sol♭: do mi sol♭ → incomplete half-diminished seventh chord; fondamentale do; basso do; rivolto 0; pitchedCommonName C-incomplete half-diminished seventh chord
+do-mi♭-sol♯: do mi♭ sol♯ → enharmonic equivalent to major triad; fondamentale do; basso do; rivolto 0; pitchedCommonName enharmonic equivalent to major triad above C
+do-mi♭-la♭: do mi♭ la♭ → major triad; fondamentale la♭; basso do; rivolto 1; pitchedCommonName Ab-major triad
+
+== SIGLE → note
+C: do mi sol
+Cm: do mi♭ sol
+Cdim: do mi♭ sol♭
+Caug: do mi sol♯
+Csus2: do re sol
+Csus4: do fa sol
+C5: do sol
+C6: do mi sol la
+C7: do mi sol si♭
+Cmaj7: do mi sol si
+G7: sol si re fa
+A7: la do♯ mi sol
+B7: si re♯ fa♯ la
+Em: mi sol si
+Am: la do mi
+Dm: re fa la
+F: fa la do
+Fm: fa la♭ do
+C/E: mi sol do
+C/G: sol do mi
+F/C: do fa la
+A5: la mi
+D5: re la
+E5: mi si
+Am7: la do mi sol
+
+== INTERVALLI
+do→sol: Perfect Fifth, 7 semitoni
+sol→do: Perfect Fourth, 5 semitoni
+fa→si: Augmented Fourth, 6 semitoni
+si→fa: Diminished Fifth, 6 semitoni
+do→mi: Major Third, 4 semitoni
+do→mi♭: Minor Third, 3 semitoni
+do→sol♭: Diminished Fifth, 6 semitoni
+do→sol♯: Augmented Fifth, 8 semitoni
+si→do: Minor Second, 1 semitoni
+si♭→do: Major Second, 2 semitoni
+sol→do: Perfect Fourth, 5 semitoni
+sol→mi: Major Sixth, 9 semitoni
+sol→do: Perfect Eleventh, 17 semitoni
+sol→mi: Major Thirteenth, 21 semitoni
+fa→mi: Minor Second, -1 semitoni
+mi→re: Major Second, -2 semitoni
+re→do: Major Second, -2 semitoni
+do→re: Major Second, 2 semitoni
+do→fa: Perfect Fourth, 5 semitoni
+do→la: Major Sixth, 9 semitoni
+do→si: Major Seventh, 11 semitoni
+do→si♭: Minor Seventh, 10 semitoni
+mi♯→fa: Diminished Second, 0 semitoni
+do♭→si: Diminished Second, 0 semitoni
+quinte giuste sopra le 12 note: do→sol · re♭→la♭ · re→la · mi♭→si♭ · mi→si · fa→do · fa♯→do♯ · sol→re · la♭→mi♭ · la→mi · si♭→fa · si→fa♯
+
+== RISOLUZIONE DEL TRITONO in do: fa-si → mi-do ; si-fa → do-mi
+fa-si (Augmented Fourth) → mi-do (Minor Sixth); moti: -1, +1
+si-fa (Diminished Fifth) → do-mi (Major Third); moti: +1, -1
+
+== TONALITÀ MAGGIORI CHE CONTENGONO mi minore (mi-sol-si) e ruolo
+  do maggiore: grado 3
+  sol maggiore: grado 6
+  re maggiore: grado 2
+
+== NOTE IN COMUNE tra triadi di do maggiore
+  I–iii: 2 (mi sol)
+  I–vi: 2 (do mi)
+  ii–IV: 2 (la fa)
+  V–viio: 2 (si re)
+  iii–V: 2 (si sol)
+  IV–vi: 2 (la do)
+  I–IV: 1 (do)
+  I–V: 1 (sol)
+  ii–vi: 1 (la)
+tritono di la7 e di do♯°: do♯-sol in entrambi: True True
+sol7 contiene si-re-fa: True
+
+== ACCORDI PRESI IN PRESTITO
+fa minore in do minore: grado 4 | iv di do minore = fa la♭ do | la♭ in do maggiore? False
+do minore: iv di sol minore = do mi♭ sol | mi♭ in sol maggiore? False | in mi minore nat.? False
+re♯ in sol maggiore? False
+
+== DITEGGIATURA: tasti neri delle scale e nota del pollice (4ª) e del passaggio in discesa (3ª)
+  do: 3ª mi, 4ª fa, 5ª sol, 6ª la; neri: nessuno
+  sol: 3ª si, 4ª do, 5ª re, 6ª mi; neri: fa♯
+  re: 3ª fa♯, 4ª sol, 5ª la, 6ª si; neri: fa♯ do♯
+  la: 3ª do♯, 4ª re, 5ª mi, 6ª fa♯; neri: do♯ fa♯ sol♯
+  mi: 3ª sol♯, 4ª la, 5ª si, 6ª do♯; neri: fa♯ sol♯ do♯ re♯
+
+== DURATE: secondi per figura
+  60 BPM: semiminima 1 s, minima 2 s, semibreve 4 s
+  90 BPM: semiminima 0.667 s, minima 1.33 s, semibreve 2.67 s
+  120 BPM: semiminima 0.5 s, minima 1 s, semibreve 2 s
+
+== ACUSTICA
+comma pitagorico 531441/524288 = 1.01364 = 23.46 c; comma sintonico 81/80 = 21.51 c
+  ottava 2: puro 1200.0 c, equabile 1200, differenza +0.0
+  quinta 3/2: puro 702.0 c, equabile 700, differenza -2.0
+  quarta 4/3: puro 498.0 c, equabile 500, differenza +2.0
+  terza magg. 5/4: puro 386.3 c, equabile 400, differenza +13.7
+  terza min. 6/5: puro 315.6 c, equabile 300, differenza -15.6
+  sesta magg. 5/3: puro 884.4 c, equabile 900, differenza +15.6
+  sesta min. 8/5: puro 813.7 c, equabile 800, differenza -13.7
+  catena pitagorica salendo: ['0.0', '702.0', '203.9', '905.9', '407.8', '1109.8', '611.7'] scendendo: ['0.0', '498.0', '996.1', '294.1', '792.2', '90.2', '588.3']
+  fa♯ 729/512 611.73 c; sol♭ 1024/729 588.27 c; mi♯ 521.51 c; fa 498.04 c; differenza mi♯−fa 23.46
+  terza pitagorica 81/64 = 407.8 c
+  mesotonico: quinta 696.58 c, lupo 737.64 c, terza larga 427.4 c; mi♯ mesotonico − fa: -41.1 c
+  semitono equabile 1.059463; do4 261.63 Hz, mi4 329.63, sol4 392.00; battimenti quinta |3·do−2·sol| = 0.89 Hz; terza |5·do−4·mi| = 10.38 Hz; √2 = 1.4142
+  armonici di do2 (65.4 Hz): [(1, 'C2', 0), (2, 'C3', 0), (3, 'G3', 2), (4, 'C4', 0), (5, 'E4', -14), (6, 'G4', 2), (7, 'B-4', -31), (8, 'C5', 0)]
+  Fibonacci: [('2/1', 2.0, 1200.0), ('3/2', 1.5, 702.0), ('5/3', 1.667, 884.4), ('8/5', 1.6, 813.7), ('13/8', 1.625, 840.5), ('21/13', 1.615, 830.3), ('34/21', 1.619, 834.2)] phi 1.618 833.1 1/phi 0.618
+  quinte che quasi chiudono il cerchio: [(5, -90.2), (7, 113.7), (12, 23.5), (41, -19.8), (53, 3.6)]
+  catena di quinte dal fa:  fa do sol re la mi si fa♯ do♯ sol♯ re♯ la♯
+  55/88 = 0.625  55/89 = 0.618
+
+== AGGIUNTE (revisione)
+  mesotonico, terze maggiori: pure 8 · larghe 4
+  armonico 13 del do2: G#5 +40.5 c
+  scala di do maggiore, coppie di note a 6 semitoni: [('fa', 'si')]
+  chiave di violino: righi mi4 sol4 si4 re5 fa5 · spazi fa4 la4 do5 mi5 · rigo centrale si4
+  chiave di basso: righi sol2 si2 re3 fa3 la3 · spazi la2 do3 mi3 sol3 · rigo centrale re3

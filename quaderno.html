@@ -96,7 +96,7 @@ main{padding-top:1.5rem;display:grid;gap:2.25rem}
 .scheda table{font-size:.85rem}
 
 /* sezioni */
-.sezione{display:grid;gap:.9rem;scroll-margin-top:7rem}
+.sezione{display:grid;gap:.9rem;scroll-margin-top:13.5rem}
 .sezione h3{margin:0;font-size:var(--s2);line-height:1.25;font-weight:700;display:grid;grid-template-columns:auto 1fr;gap:.7rem;align-items:baseline;text-wrap:balance}
 .sezione h3 .n{color:var(--red);font-variant-numeric:tabular-nums lining-nums;font-weight:600}
 .md{display:grid;gap:.75rem;min-width:0}
@@ -204,6 +204,22 @@ svg.kb .step{fill:var(--ink-2);font-size:10.5px;font-weight:600}
 .tabs a[aria-current="page"]{background:var(--sheet);color:var(--ink)}
 .tabs a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 nav.views button{flex:none}
+/* Ordine del quaderno: per lezione (come è stato studiato) o per argomento (come un manuale) */
+.ordine{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:center;font-family:var(--font-ui);font-size:var(--s-1);color:var(--ink-2)}
+.ordine .seg{display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:3px;border-radius:10px;background:var(--rule)}
+.ordine button{min-height:36px;border:0;border-radius:8px;background:none;font:600 .875rem/1 var(--font-ui);color:var(--ink-2);cursor:pointer}
+.ordine button[aria-pressed="true"]{background:var(--sheet);color:var(--red)}
+/* Fonti e verifiche di un paragrafo: chiuse, in fondo */
+details.verifiche{font-family:var(--font-ui);font-size:.9rem;line-height:1.45;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:.45rem;min-width:0}
+details.verifiche summary{cursor:pointer;font-weight:600;color:var(--ok);min-height:32px;display:flex;align-items:center;gap:.4rem}
+details.verifiche ul{list-style:none;margin:.3rem 0 0;padding:0;display:grid;gap:.55rem}
+details.verifiche li{display:grid;grid-template-columns:5.6rem 1fr;gap:.5rem;min-width:0}
+details.verifiche .metodo{font-variant:small-caps;letter-spacing:.05em;font-weight:600;color:var(--ink)}
+details.verifiche .md{gap:.3rem;overflow-wrap:anywhere;min-width:0}
+details.verifiche a{color:var(--blue)}
+.dove{font-family:var(--font-ui);font-size:var(--s-1);color:var(--ink-2);margin:-.5rem 0 0}
+.md button.ref{font-size:inherit;font-family:inherit}
+ol.toc .intro{font-family:var(--font-ui);font-size:var(--s-1);color:var(--ink-2);margin:.1rem 0 .3rem}
 /* Chiave del quaderno */
 .loading input.chiave{font:500 1rem/1.2 var(--font-ui);padding:.75rem .9rem;border:1px solid var(--rule);border-radius:10px;background:var(--sheet);color:var(--ink);width:100%;box-sizing:border-box}
 .loading button.apri{justify-self:start;font:600 .95rem/1 var(--font-ui);padding:.8rem 1.1rem;border-radius:10px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
@@ -217,6 +233,13 @@ nav.views button{flex:none}
     <div class="brand">
       <h1>Quaderno di piano</h1>
       <span class="stamp" id="stamp"></span>
+    </div>
+    <div class="ordine" id="ordine" hidden>
+      <span id="ordine-lab">Ordine</span>
+      <div class="seg" role="group" aria-labelledby="ordine-lab">
+        <button type="button" data-ordine="lezioni">Per lezione</button>
+        <button type="button" data-ordine="argomenti">Per argomento</button>
+      </div>
     </div>
     <nav class="views" id="nav" aria-label="Sezioni del quaderno"></nav>
   </header>
@@ -234,10 +257,12 @@ nav.views button{flex:none}
 (() => {
   "use strict";
   const S = {
-    view: "sommario", lezioni: [], argomenti: [], domande: [], stato: null, percorso: null,
+    view: "sommario", lezioni: [], argomenti: [], domande: [], stato: null, percorso: null, manuale: null, ordine: "lezioni",
     loaded: { lezioni: false, argomenti: false, domande: false },
     db: null, dbState: "loading", canWrite: null, error: null, pending: new Set(), pendingScroll: null
   };
+  const METODO = { calcolo: "calcolo", fonte: "fonte", registrazione: "registrazione" };
+  const ROMANI = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
   const ESITO = {
     verificato: { segno: "✓", nome: "verificato" },
     precisazione: { segno: "≈", nome: "precisazione" },
@@ -286,7 +311,27 @@ nav.views button{flex:none}
     const el = h("div", { class: "md" + (cls ? " " + cls : "") });
     el.innerHTML = mdHTML(text);
     el.querySelectorAll("table").forEach(t => { const w = h("div", { class: "tab" }); t.replaceWith(w); w.append(t); });
+    el.querySelectorAll("a[href]").forEach(a => { a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener noreferrer"); });
+    rimandi(el);
     return el;
+  }
+  // «§2.6» nel testo diventa un rimando che porta al paragrafo, nell'ordine in cui si sta leggendo
+  function rimandi(el) {
+    const tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const nodi = [];
+    for (let n = tw.nextNode(); n; n = tw.nextNode()) if (/§\s?\d+\.\d+/.test(n.nodeValue) && !n.parentElement.closest("a,button,code")) nodi.push(n);
+    for (const n of nodi) {
+      const fr = document.createDocumentFragment();
+      let i = 0; const txt = n.nodeValue, re = /§\s?(\d+\.\d+)/g;
+      for (let m = re.exec(txt); m; m = re.exec(txt)) {
+        const w = secByNum(m[1]);
+        if (!w) continue;
+        fr.append(txt.slice(i, m.index), h("button", { class: "ref", type: "button", onclick: () => goSec(w.l, w.s), text: "§" + m[1] }));
+        i = m.index + m[0].length;
+      }
+      fr.append(txt.slice(i));
+      n.replaceWith(fr);
+    }
   }
 
   // ---------- dati derivati
@@ -296,10 +341,32 @@ nav.views button{flex:none}
   const argById = id => S.argomenti.find(a => a._id === id);
   const domById = id => S.domande.find(q => q._id === id);
   const allLoaded = () => S.loaded.lezioni && S.loaded.argomenti && S.loaded.domande;
+  function secByNum(num) {
+    for (const l of lessons()) for (const s of arr(l.sezioni)) if (str(s.num) === str(num)) return { l, s };
+    return null;
+  }
+  // L'ordine per argomento: le parti del manuale, ognuna con i suoi paragrafi (presi dai capitoli, senza copiarli)
+  const parti = () => arr(S.manuale && S.manuale.parti).map((p, i) => ({ n: i + 1, titolo: str(p.titolo), intro: str(p.intro), sez: arr(p.sezioni).map(secByNum).filter(Boolean) }))
+    .filter(p => p.sez.length);
+  const haManuale = () => parti().length > 0;
+  const perArgomento = () => S.ordine === "argomenti" && haManuale();
+  const parteDi = num => parti().find(p => p.sez.some(w => str(w.s.num) === str(num)));
+  // Figure ed esempi hanno un numero solo, quello del capitolo in cui sono nati: resta lo stesso nei due ordini
+  function numeri() {
+    const m = new Map();
+    for (const l of lessons()) {
+      let fig = 0, es = 0;
+      for (const s of arr(l.sezioni)) for (const b of arr(s.blocchi)) {
+        if (!b || typeof b !== "object") continue;
+        if (b.tipo === "figura") m.set(b, `${l._n}.${++fig}`); else if (b.tipo === "esempio") m.set(b, `${l._n}.${++es}`);
+      }
+    }
+    return m;
+  }
   function sectionOf(q) {
     for (const l of lessons()) for (const s of arr(l.sezioni)) for (const b of arr(s.blocchi))
       if (b && b.tipo === "nota" && b.domanda === q._id) return { l, s };
-    return null;
+    return q && q.sezione ? secByNum(q.sezione) : null;
   }
   function refsFor(slug) {
     const out = [];
@@ -308,7 +375,20 @@ nav.views button{flex:none}
   }
 
   // ---------- navigazione
-  const VIEW_RE = /^(sommario|indice|cap-\d+)$/;
+  const VIEW_RE = /^(sommario|indice|cap-\d+|parte-\d+)$/;
+  const LS_ORD = "leggio-ordine";
+  try { if (localStorage.getItem(LS_ORD) === "argomenti") S.ordine = "argomenti"; } catch (e) { /* resta per lezione */ }
+  function ordina(o) {
+    if (o === S.ordine) return;
+    // si resta sul paragrafo che si stava leggendo, nell'altro ordine
+    const soglia = document.querySelector("header.top").getBoundingClientRect().bottom + 32;
+    const visto = [...document.querySelectorAll("section.sezione")].find(x => x.getBoundingClientRect().bottom > soglia);
+    const num = /^(cap|parte)-/.test(S.view) && visto ? visto.id.replace(/^s-/, "").replace(/-/g, ".") : null;
+    S.ordine = o;
+    try { localStorage.setItem(LS_ORD, o); } catch (e) { /* vale per questa apertura */ }
+    const w = num ? secByNum(num) : null;
+    if (w) goSec(w.l, w.s); else go(S.view === "indice" ? "indice" : "sommario");
+  }
   function go(view, sectionNum) {
     S.view = view; S.pendingScroll = sectionNum || null;
     try { history.replaceState(null, "", "#" + view); } catch (e) { /* not available in this view */ }
@@ -319,19 +399,27 @@ nav.views button{flex:none}
       S.pendingScroll = null;
     });
   }
-  const goSec = (l, s) => go("cap-" + l._n, s ? str(s.num) : null);
+  function goSec(l, s) {
+    const p = s && perArgomento() ? parteDi(s.num) : null;
+    go(p ? "parte-" + p.n : "cap-" + l._n, s ? str(s.num) : null);
+  }
 
   function renderNav() {
     const nav = document.getElementById("nav");
     const ls = lessons();
     const btn = (view, label, cls) => h("button", { type: "button", class: cls || null, "aria-current": S.view === view ? "page" : null, onclick: () => go(view), text: label });
+    const voci = perArgomento() ? parti().map(p => btn("parte-" + p.n, "Parte " + (ROMANI[p.n - 1] || p.n), "num")) : ls.map(l => btn("cap-" + l._n, "Cap. " + l._n, "num"));
     nav.replaceChildren(
       btn("sommario", "Sommario"),
       h("span", { class: "sep", "aria-hidden": "true", text: "|" }),
-      ...ls.map(l => btn("cap-" + l._n, "Cap. " + l._n, "num")),
-      ls.length ? h("span", { class: "sep", "aria-hidden": "true", text: "|" }) : null,
+      ...voci,
+      voci.length ? h("span", { class: "sep", "aria-hidden": "true", text: "|" }) : null,
       btn("indice", "Indice analitico"));
+    const ord = document.getElementById("ordine");
+    ord.hidden = !(S.dbState === "ready" && haManuale());
+    ord.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.ordine === (perArgomento() ? "argomenti" : "lezioni"))));
   }
+  document.getElementById("ordine").addEventListener("click", e => { const b = e.target.closest("button[data-ordine]"); if (b) ordina(b.dataset.ordine); });
 
   // ---------- figure
   const PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
@@ -401,31 +489,42 @@ nav.views button{flex:none}
     if (first) first.prepend(h("span", { class: "tipo", text: e.nome }));
     else body.prepend(h("p", {}, h("span", { class: "tipo", text: e.nome })));
     corpo.append(body);
-    if (q && str(q.stato) === "risolta" && str(q.risposta)) corpo.append(h("p", { class: "risposta" }, h("strong", { text: "Risposta del maestro: " }), str(q.risposta)));
-    else if (q) corpo.append(h("p", { class: "meta", text: "Nell'elenco delle domande per il maestro." }));
+    if (q && str(q.stato) === "risolta" && str(q.risposta)) corpo.append(h("p", { class: "risposta" }, h("strong", { text: "Risposta: " }), str(q.risposta)));
+    else if (q) corpo.append(h("p", { class: "meta", text: "Nell'elenco dei punti da chiarire." }));
     if (b.fonte) corpo.append(h("p", { class: "fonte", text: "Fonte: " + str(b.fonte) }));
     return h("div", { class: "nota " + (ESITO[str(b.esito)] ? str(b.esito) : "precisazione") }, h("span", { class: "segno", "aria-hidden": "true", text: e.segno }), corpo);
   }
-  function blocks(l, sez, counters) {
+  function verifiche(sez) {
+    const vs = arr(sez.verifiche).filter(v => v && str(v.md));
+    if (!vs.length) return null;
+    return h("details", { class: "verifiche" },
+      h("summary", { text: "✓ Fonti e verifiche · " + vs.length }),
+      h("ul", {}, vs.map(v => h("li", {}, h("span", { class: "metodo", text: METODO[str(v.metodo)] || "verifica" }), md(v.md)))));
+  }
+  function sezione(l, sez, num, conDove) {
+    return h("section", { class: "sezione", id: "s-" + str(sez.num).replace(/\./g, "-") },
+      h("h3", {}, h("span", { class: "n", text: str(sez.num) }), h("span", { text: str(sez.titolo) })),
+      conDove ? h("p", { class: "dove", text: "Dal capitolo " + l._n + " · " + dShort(l.data) }) : null,
+      ...blocks(l, sez, num), verifiche(sez));
+  }
+  function blocks(l, sez, num) {
     return arr(sez.blocchi).map(b => {
       if (!b || typeof b !== "object") return null;
       const t = str(b.tipo);
       if (t === "testo") return md(b.md);
       if (t === "nota") return nota(b);
       if (t === "figura") {
-        counters.fig++;
         const f = b.figura || {};
         const inner = str(f.tipo) === "tastiera" ? keyboard(f) : str(f.tipo) === "abc" ? abcBox(f.abc) : null;
         return h("figure", {}, inner ? h("div", { class: "fig" }, inner) : null,
-          h("figcaption", {}, h("b", { text: `Figura ${l._n}.${counters.fig} — ` }), str(b.didascalia)));
+          h("figcaption", {}, h("b", { text: `Figura ${num.get(b) || ""} — ` }), str(b.didascalia)));
       }
       if (t === "esempio") {
-        counters.es++;
         return h("div", { class: "esempio" },
-          h("p", { class: "titolo" }, `Esempio ${l._n}.${counters.es} — `, h("em", { text: str(b.titolo) })),
+          h("p", { class: "titolo" }, `Esempio ${num.get(b) || ""} — `, h("em", { text: str(b.titolo) })),
           md(b.md), b.abc ? h("figure", {}, h("div", { class: "fig" }, abcBox(b.abc))) : null);
       }
-      if (t === "oltre") return h("div", { class: "oltre" }, h("span", { class: "label", text: "Oltre la lezione" }), md(b.md),
+      if (t === "oltre") return h("div", { class: "oltre" }, h("span", { class: "label", text: "Approfondimento" }), md(b.md),
         b.abc ? h("figure", {}, h("div", { class: "fig" }, abcBox(b.abc))) : null);
       return b.md ? md(b.md) : null;
     });
@@ -493,7 +592,7 @@ nav.views button{flex:none}
     const out = [];
     const pref = S.percorso;
     out.push(h("section", { class: "chapter-head" },
-      h("div", { class: "running" }, h("span", { text: "Sommario" }), h("span", { text: ls.length === 1 ? "1 capitolo" : ls.length + " capitoli" })),
+      h("div", { class: "running" }, h("span", { text: "Sommario" }), h("span", { text: perArgomento() ? parti().length + " parti" : ls.length === 1 ? "1 capitolo" : ls.length + " capitoli" })),
       h("h2", { text: pref && pref.titolo ? str(pref.titolo) : "Prefazione" }),
       pref && pref.md ? md(pref.md, "cornice") : h("p", { text: "Ogni capitolo è una lezione: cornice, riassunto e appunti completi." })));
     if (!ls.length) {
@@ -512,8 +611,18 @@ nav.views button{flex:none}
         h("p", { class: "meta", text: "Compiti dal capitolo " + last._n + " · " + dShort(last.data) }),
         todoList(last)),
       h("div", { class: "blocco" },
-        h("h3", { text: "Da chiedere al maestro" }),
+        h("h3", { text: "Da chiarire a lezione" }),
         open.length ? h("ul", { class: "domande" }, open.map(domandaItem)) : h("p", { class: "meta", text: "Niente in sospeso." }))));
+    if (perArgomento()) {
+      out.push(h("section", { class: "blocco" },
+        h("h3", { text: "Parti, in ordine di argomento" }),
+        h("ol", { class: "toc" }, parti().map(p => h("li", { class: "cap" },
+          h("button", { class: "cap-row", type: "button", onclick: () => go("parte-" + p.n) },
+            h("span", { class: "n", text: ROMANI[p.n - 1] || String(p.n) }), h("span", { class: "t", text: p.titolo }), h("span", { class: "d", text: p.sez.length + " paragrafi" })),
+          h("ol", {}, p.sez.map(w => h("li", {},
+            h("button", { type: "button", onclick: () => goSec(w.l, w.s) }, h("span", { class: "n", text: str(w.s.num) }), h("span", { text: str(w.s.titolo) })))))))))); 
+      return out;
+    }
     out.push(h("section", { class: "blocco" },
       h("h3", { text: "Capitoli" }),
       h("ol", { class: "toc" }, ls.map(l => h("li", { class: "cap" },
@@ -528,7 +637,7 @@ nav.views button{flex:none}
     const ls = lessons();
     const l = byNum(n);
     if (!l) return [h("div", { class: "loading" }, h("strong", { text: "Questo capitolo non c'è" }), h("button", { class: "ref", type: "button", onclick: () => go("sommario"), text: "Torna al sommario" }))];
-    const counters = { fig: 0, es: 0 };
+    const num = numeri();
     const out = [];
     out.push(h("section", { class: "chapter-head" },
       h("div", { class: "running" }, h("span", { text: "Capitolo " + l._n }), h("span", { text: dLong(l.data) })),
@@ -538,23 +647,37 @@ nav.views button{flex:none}
       h("span", { class: "label", text: "Riassunto" }),
       h("div", { class: "schede" }, arr(l.riassunto).map(r => { const sc = h("div", { class: "scheda" }, h("h4", { text: str(r.titolo) })); sc.append(...[...md(r.md).childNodes]); return sc; }))));
     if (arr(l.sezioni).length) {
-      for (const sez of arr(l.sezioni)) out.push(h("section", { class: "sezione", id: "s-" + str(sez.num).replace(/\./g, "-") },
-        h("h3", {}, h("span", { class: "n", text: str(sez.num) }), h("span", { text: str(sez.titolo) })),
-        ...blocks(l, sez, counters)));
+      for (const sez of arr(l.sezioni)) out.push(sezione(l, sez, num, false));
     } else if (arr(l.sintesi).length) {
       out.push(h("section", { class: "sezione" }, h("h3", {}, h("span", { text: "In breve" })),
         h("div", { class: "md" }, h("ul", {}, arr(l.sintesi).map(x => h("li", { text: str(x) }))))));
     }
-    const qs = arr(l.domande).map(domById).filter(Boolean);
+    const qs = arr(l.domande).map(domById).filter(q => q && str(q.stato) !== "risolta");
     out.push(h("section", { class: "box" },
       h("div", { class: "blocco" }, h("h3", { text: "Compiti" }), todoList(l)),
-      qs.length ? h("div", { class: "blocco" }, h("h3", { text: "Domande per il maestro" }), h("ul", { class: "domande" }, qs.map(domandaItem))) : null,
+      qs.length ? h("div", { class: "blocco" }, h("h3", { text: "Da chiarire a lezione" }), h("ul", { class: "domande" }, qs.map(domandaItem))) : null,
       l.note ? h("p", { class: "meta", text: str(l.note) }) : null));
-    if (l.fonte) out.push(h("p", { class: "fonte-cap", text: "Fonte: " + str(l.fonte) }));
+    if (l.fonte) out.push(h("p", { class: "fonte-cap", text: "Da dove viene il capitolo: " + str(l.fonte) }));
     const prev = byNum(l._n - 1), next = byNum(l._n + 1);
     if (prev || next) out.push(h("nav", { class: "pager", "aria-label": "Altri capitoli" },
       prev ? h("button", { type: "button", onclick: () => go("cap-" + prev._n), text: "← Cap. " + prev._n + " · " + str(prev.titolo) }) : null,
       next ? h("button", { type: "button", onclick: () => go("cap-" + next._n), text: "Cap. " + next._n + " · " + str(next.titolo) + " →" }) : null));
+    return out;
+  }
+
+  function viewParte(n) {
+    const ps = parti(), p = ps.find(x => x.n === n);
+    if (!p) return [h("div", { class: "loading" }, h("strong", { text: "Questa parte non c'è" }), h("button", { class: "ref", type: "button", onclick: () => go("sommario"), text: "Torna al sommario" }))];
+    const num = numeri();
+    const out = [h("section", { class: "chapter-head" },
+      h("div", { class: "running" }, h("span", { text: "Parte " + (ROMANI[p.n - 1] || p.n) }), h("span", { text: p.sez.length + " paragrafi" })),
+      h("h2", { text: p.titolo }),
+      p.intro ? h("div", { class: "cornice" }, h("span", { class: "label", text: "In questa parte" }), md(p.intro)) : null)];
+    for (const w of p.sez) out.push(sezione(w.l, w.s, num, true));
+    const prev = ps.find(x => x.n === n - 1), next = ps.find(x => x.n === n + 1);
+    if (prev || next) out.push(h("nav", { class: "pager", "aria-label": "Altre parti" },
+      prev ? h("button", { type: "button", onclick: () => go("parte-" + prev.n), text: "← Parte " + (ROMANI[prev.n - 1] || prev.n) + " · " + prev.titolo }) : null,
+      next ? h("button", { type: "button", onclick: () => go("parte-" + next.n), text: "Parte " + (ROMANI[next.n - 1] || next.n) + " · " + next.titolo + " →" }) : null));
     return out;
   }
 
@@ -585,8 +708,8 @@ nav.views button{flex:none}
     const main = document.getElementById("main");
     const n = notice();
     if (n) { main.replaceChildren(n); return; }
-    const m = /^cap-(\d+)$/.exec(S.view);
-    const nodes = S.view === "indice" ? viewIndice() : m ? viewCapitolo(Number(m[1])) : viewSommario();
+    const m = /^cap-(\d+)$/.exec(S.view), mp = /^parte-(\d+)$/.exec(S.view);
+    const nodes = S.view === "indice" ? viewIndice() : mp ? viewParte(Number(mp[1])) : m ? viewCapitolo(Number(m[1])) : viewSommario();
     main.replaceChildren(...nodes);
     const st = document.getElementById("stamp");
     st.textContent = S.stato && S.stato.aggiornato ? "Aggiornato " + dShort(S.stato.aggiornato) : "";
@@ -634,7 +757,7 @@ nav.views button{flex:none}
       let d;
       try { d = await apriCon(k, f); } catch (e) { continue; }
       S.lezioni = arr(d.lezioni); S.argomenti = arr(d.argomenti); S.domande = arr(d.domande);
-      S.stato = d.stato || null; S.percorso = d.percorso || null;
+      S.stato = d.stato || null; S.percorso = d.percorso || null; S.manuale = d.manuale || null;
       S.loaded = { lezioni: true, argomenti: true, domande: true }; S.error = null; S.dbState = "ready";
       S.chiave = k; inProva(""); try { localStorage.setItem(LS_K, k); } catch (e) { /* vale per questa apertura */ }
       render(); return;

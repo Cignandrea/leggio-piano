@@ -27,6 +27,9 @@ def check(c, msg):
     global ok
     print(("OK  " if c else "ERR ") + msg); ok &= bool(c)
 
+sys.path.insert(0, str(REPO / "tools"))
+import quaderno as QT
+QUADERNO = QT.decifra() if CHIAVE else {"lezioni": []}
 PIANO = json.loads((REPO / "piano.json").read_text(encoding="utf-8"))
 LIB = json.loads((REPO / "esercizi.json").read_text(encoding="utf-8"))
 NB, NL, VER = len(PIANO["sessione"]), len(LIB["esercizi"]), PIANO["versione"]
@@ -134,6 +137,37 @@ try:
             pg.screenshot(path=str(shots / "4-capitolo4.png"))
             pg.locator("nav.views button", has_text="Indice analitico").click(); pg.wait_for_timeout(600)
             check(pg.locator(".voce").count() >= 30, "indice analitico")
+            # 6b. I due ordini: per lezione (capitoli) e per argomento (parti del manuale)
+            pg.locator("nav.views button", has_text="Cap. 2").click(); pg.wait_for_timeout(1200)
+            nsez = pg.locator("section.sezione").count()
+            check(pg.locator("details.verifiche").count() == nsez and nsez >= 7, f"capitolo 2: {nsez} paragrafi, ognuno con «Fonti e verifiche»")
+            testo_cap = pg.locator("main").inner_text().lower()
+            check(not any(x in testo_cap.split("compiti")[0] for x in ("il maestro", "da chiedere", "[s]", "[?]")), "capitolo 2: voce da manuale nel testo")
+            fig = pg.locator("#s-2-5 figcaption b").first.inner_text()
+            pg.evaluate("document.getElementById('s-2-5').scrollIntoView({block:'start'})"); pg.wait_for_timeout(300)
+            check(pg.locator("#ordine").is_visible(), "interruttore «Per lezione | Per argomento» visibile")
+            pg.locator("#ordine button", has_text="Per argomento").click(); pg.wait_for_timeout(1500)
+            check("#parte-" in pg.url and pg.locator("#s-2-5").count() == 1, "cambio d'ordine: si resta sul paragrafo che si leggeva")
+            check(pg.locator("#s-2-5 figcaption b").first.inner_text() == fig, "le figure tengono lo stesso numero nei due ordini")
+            check(pg.locator("nav.views button", has_text="Parte I").count() >= 1 and pg.locator("nav.views button", has_text="Cap. 1").count() == 0, "per argomento: la barra mostra le parti")
+            pg.locator("nav.views button", has_text="Sommario").click(); pg.wait_for_timeout(600)
+            nparti = pg.locator(".toc > li.cap").count()
+            ntot = pg.locator(".toc > li.cap ol > li").count()
+            check(nparti >= 5 and ntot == sum(len(l["sezioni"]) for l in QUADERNO["lezioni"]), f"sommario per argomento: {nparti} parti, {ntot} paragrafi (tutti)")
+            pg.screenshot(path=str(shots / "5-sommario-argomenti.png"), full_page=True)
+            pg.locator(".toc > li.cap button.cap-row").first.click(); pg.wait_for_timeout(1200)
+            check(pg.locator(".dove").count() == pg.locator("section.sezione").count() > 0, "ogni paragrafo di una parte dice da quale capitolo viene")
+            rif = pg.locator(".md button.ref").first
+            if rif.count():
+                dest = "s-" + rif.inner_text().replace("§", "").replace(".", "-"); rif.click(); pg.wait_for_timeout(1200)
+                check(pg.locator("#" + dest).count() == 1, "un rimando § porta al suo paragrafo")
+            pg.locator("details.verifiche summary").first.click(); pg.wait_for_timeout(300)
+            check(pg.locator("details.verifiche[open] li").count() >= 1, "«Fonti e verifiche» si apre")
+            pg.screenshot(path=str(shots / "5b-parte.png"))
+            pg.reload(); pg.wait_for_timeout(1500)
+            check(pg.locator("#ordine button[aria-pressed='true']").inner_text() == "Per argomento", "l'ordine scelto resta alla riapertura")
+            pg.locator("#ordine button", has_text="Per lezione").click(); pg.wait_for_timeout(1000)
+            check(pg.locator("nav.views button", has_text="Cap. 1").count() == 1, "ritorno all'ordine per lezione")
             pg.reload(); pg.wait_for_timeout(1500)
             check(pg.locator("nav.views button").count() >= 6, "riaperto: la chiave è rimasta sul telefono")
             ctx.set_offline(True); pg.reload(); pg.wait_for_timeout(2000)
@@ -203,6 +237,17 @@ try:
         check(righe.count() > 0 and not vuote, f"app 1.0.1 con i dati nuovi: {righe.count()} righe, nessuna vuota")
         c5.close()
         b.close()
+    # Le spie dello schema 3 devono saper diventare rosse: quaderno buono = zero problemi, quaderno guastato apposta = problema
+    if CHIAVE:
+        import copy
+        check(QT.schema(QUADERNO) >= 3 and QT.problemi_schema3(QUADERNO) == [], "quaderno pubblicato: schema 3, controlli superati")
+        def guasto(f):
+            d = copy.deepcopy(QUADERNO); f(d); return QT.problemi_schema3(d)
+        s0 = lambda d: d["lezioni"][-1]["sezioni"][0]
+        check(any("voce" in x for x in guasto(lambda d: s0(d)["blocchi"].insert(0, {"tipo": "testo", "md": "Il maestro dice di rallentare."}))), "spia: «il maestro dice» nel testo viene fermato")
+        check(any("verifica" in x for x in guasto(lambda d: s0(d).update(verifiche=[]))), "spia: paragrafo senza verifiche viene fermato")
+        check(any("senza posto" in x for x in guasto(lambda d: d["manuale"]["parti"][0]["sezioni"].pop(0))), "spia: paragrafo fuori dall'ordine per argomento viene fermato")
+        check(any("non ammesso" in x for x in guasto(lambda d: s0(d)["blocchi"].append({"tipo": "nota", "esito": "da_chiedere", "md": "x"}))), "spia: nota «da chiedere» viene fermata")
     r = subprocess.run([sys.executable, str(REPO / "tools" / "quaderno.py"), "cartelle", str(REPO)], capture_output=True, text=True, env=dict(os.environ))
     check(r.returncode != 0 and not (REPO / "lezioni").exists(), "il quaderno in chiaro non si può scrivere nel repository")
 finally:

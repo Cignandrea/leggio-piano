@@ -2,7 +2,7 @@
 // Rete prima per le pagine e i dati (piano, esercizi, quaderno cifrato), così le novità arrivano alla riapertura;
 // cache prima per icone, librerie e manifest.
 // L'origine cignandrea.github.io è condivisa con le altre app dell'account: si toccano solo le cache «leggio-».
-const VERSION = '2.0.1';
+const VERSION = '2.1.0';
 const CACHE = `leggio-${VERSION}`;
 const ASSETS = ['./', './index.html', './quaderno.html', './piano.json', './esercizi.json', './quaderno.cifrato.json', './manifest.webmanifest',
   './vendor/marked.min.js', './vendor/purify.min.js', './vendor/abcjs-basic-min.js',
