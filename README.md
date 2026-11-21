@@ -17,7 +17,7 @@ Si installa sul telefono da Chrome (⋮ → «Installa app») e si apre senza ba
   - `applica <out/>`: applica le scritture di `out/writes.json` e ricifra.
   Il testo in chiaro e la chiave non entrano mai nel repository.
   - Dallo schema 3 il quaderno si cifra solo se supera i controlli di costruzione (`problemi_schema3`): voce da manuale nel testo, almeno una verifica per paragrafo, ogni paragrafo con un posto nell'ordine per argomento. Se un controllo non passa, resta pubblicato il quaderno di prima.
-  - Un capitolo nuovo si scrive con `tools/capitolo.py` (`salva(lezione, parti=…)`), da uno script tenuto fuori dal repository.
+  - Un capitolo nuovo si scrive con `tools/capitolo.py` (`salva(lezione, dopo={"5.1": "4.7"}, …)`: ogni paragrafo va dopo quello a cui segue nell'ordine per argomento), da uno script tenuto fuori dal repository.
 - **Le fonti** dei paragrafi sono nei dossier di ricerca in `fonti/` (una voce per affermazione: esito, fonti lette, limiti).
 - **L'app** è `index.html` + `quaderno.html`. Ogni modifica si collauda prima di pubblicarla: `LEGGIO_CHIAVE=... python3 tests/collaudo.py` (Chrome a 390 px, tema chiaro e scuro, sessione simulata, libreria, diario, quaderno con chiave giusta e sbagliata, uso senza rete).
 - Ogni volta che cambia l'app si alza la versione in due punti uguali: `APP_VERSION` in `index.html` e `VERSION` in `sw.js`.

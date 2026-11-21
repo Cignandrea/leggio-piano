@@ -181,6 +181,8 @@ p{margin:0}
 .shift{font-size:var(--t-m);font-weight:600;line-height:1.35;padding:10px 12px;border-radius:var(--r-1);background:var(--wash);color:var(--ink-2);min-height:44px}
 .shift.on{background:var(--ebony);color:var(--ebony-ink)}
 .tempo{display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid var(--rule)}
+.tempo.free{border-top:0;padding-top:0;gap:14px}
+.tempo.free .beats{flex:none;margin-left:14px}
 .stepper{display:flex;align-items:center;gap:4px}
 .bpm{font:700 20px/1 var(--f-body);font-variant-numeric:tabular-nums;min-width:4.6em;text-align:center}
 .bpm small{font-size:var(--t-s);font-weight:600;color:var(--ink-2)}
@@ -324,7 +326,7 @@ let PLAN = DEFAULT_PLAN;
 /* Due case possibili: come artifact su claude.ai (piano e diario nel database) o come app installata
    (GitHub Pages: piano da piano.json, diario sul telefono, «Copia per Claude» per portarlo in chat). */
 const ON_CLAUDE = !!(window.claude && typeof window.claude.use === "function");
-const APP_VERSION = "2.1.0";
+const APP_VERSION = "2.2.0";
 const LS_PLAN = "leggio-piano-cache", LS_DIARY = "leggio-diario", LS_COPIED = "leggio-copiato-fino";
 const vociPlan = d => d ? (d.schema >= 3 ? d.sessione : d.blocchi) : null;
 const validPlan = d => { const v = vociPlan(d); return !!(d && d.schema >= 2 && Array.isArray(v) && v.length); };
@@ -426,6 +428,8 @@ function figSpecOf(b, varId){
 const isFig = b => !!figSpecOf(b);
 const isGiro = b => !!(b && b.widget && b.widget.tipo === "giro" && b.giri && b.giri.length);
 const hasBeat = b => isFig(b) || isGiro(b);
+/* Blocco di solo testo con «bpm»: metronomo libero, senza conteggio dei giri (scale e simili). */
+const isMetro = b => !!(b && b.bpm && !hasBeat(b) && !(b.widget && b.widget.tipo));
 function giroOf(b){ const ph = fasiOf(b)[phaseNow(b)]; return b.giri.find(g => g.id === ph.giro) || b.giri[0]; }
 const GIRC = new WeakMap();
 /* Finestra di tasti fissa per tutto il giro, uguale per le due mani (stessa scala). */
@@ -563,7 +567,7 @@ function prova(){ const a = audio(); if (!a) return; const t = a.currentTime + 0
 let wl = null;
 async function wake(){ try { if ("wakeLock" in navigator && !wl){ wl = await navigator.wakeLock.request("screen"); wl.addEventListener("release", () => { wl = null; }); } } catch(e){} }
 document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "hidden"){ if (R.running){ pause(); announce("In pausa"); } saveNow(); }
+  if (document.visibilityState === "hidden"){ if (R.running){ pause(); announce("In pausa"); } if (R.metro && R.metro.free) freeMetro(false); saveNow(); }
 });
 
 /* ---------- Tastiera disegnata in proporzione (bianco 23,5 × 150 mm, nero 13,7 × 95 mm circa) ---------- */
@@ -666,6 +670,27 @@ function giroStart(countIn){
       next += beat;
     }
   }, 25);
+}
+function freeMetro(on){
+  const b = curBlock(); metroStop(); pill(null);
+  if (on && b && isMetro(b)){
+    const a = audio(); if (!a) return;
+    let next = a.currentTime + 0.12, n = 0; const me = {free:true}; R.metro = me;
+    me.timer = setInterval(() => {
+      if (next < a.currentTime - 0.3) next = a.currentTime + 0.05;
+      while (next < a.currentTime + 0.15){ click(next, n % 4 === 0); const k = n % 4; setTimeout(() => { if (R.metro === me) document.querySelectorAll("#mbeats i").forEach((x, j) => x.classList.toggle("on", j === k)); }, Math.max(0, (next - a.currentTime) * 1000)); n++; next += 60 / bpmOf(b); }
+    }, 25);
+    wake();
+  }
+  const btn = $("#mplay"); if (btn){ const go = !!(R.metro && R.metro.free); btn.textContent = go ? "❚❚ Ferma il metronomo" : "▶ Metronomo"; btn.setAttribute("aria-pressed", String(go)); if (!go) document.querySelectorAll("#mbeats i").forEach(x => x.classList.remove("on")); }
+}
+function metroHTML(b){
+  const P = Array.isArray(b.passi) ? b.passi : [], v = bpmOf(b);
+  return `<div class="tempo free">
+      <div class="row between"><div class="stepper"><button class="btn sq44" data-act="bpm" data-d="-5" aria-label="Più lento">−</button><span class="bpm"><span id="bpmv">${v}</span> <small>BPM</small></span><button class="btn sq44" data-act="bpm" data-d="5" aria-label="Più veloce">+</button></div>
+        ${P.length ? `<div class="seg" id="passi" role="group" aria-label="Velocità da raggiungere">${P.map(x => `<button data-act="bpmset" data-v="${+x}" aria-pressed="${+x === v}">${+x}</button>`).join("")}</div>` : ""}</div>
+      <div class="row between"><button class="btn ebony grow" data-act="metro" id="mplay" aria-pressed="false">▶ Metronomo</button><span class="beats" id="mbeats" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+    </div>`;
 }
 function pill(text, cls, ms){
   const ov = $("#ov"), t = $("#ovt"); if (!ov || !t) return;
@@ -913,6 +938,7 @@ function renderStage(){
   } else if (isGiro(b)){ el.innerHTML = giroHTML(b) + pillHTML; renderGiro(); }
   else if (b.widget && b.widget.tipo === "gradi"){ el.innerHTML = gradiHTML(b) + pillHTML; }
   else if (b.widget && b.widget.tipo === "sus"){ el.innerHTML = susHTML() + pillHTML; }
+  else if (isMetro(b)){ el.innerHTML = metroHTML(b) + pillHTML; }
   else el.innerHTML = `<p class="muted">Segui le indicazioni qui sotto.</p>` + pillHTML;
 }
 const DITO = ["", "pollice", "indice", "medio", "anulare", "mignolo"];
@@ -1076,7 +1102,7 @@ async function salva(){
   if (!S.sessionId) S.sessionId = S.day + "-" + ora();
   const done = blocks().filter(b => S.done[b.id]), bpm = {}, durata = {}, quiz = {}, ripetizioni = {};
   blocks().forEach(b => {
-    if (hasBeat(b)){ bpm[b.id] = bpmOf(b); if (S.vsel[sk(b)]) durata[b.id] = S.vsel[sk(b)]; }
+    if (hasBeat(b)){ bpm[b.id] = bpmOf(b); if (S.vsel[sk(b)]) durata[b.id] = S.vsel[sk(b)]; } else if (isMetro(b)) bpm[b.id] = bpmOf(b);
     const r = S.rep[b.id]; if (r && r.some(x => x > 0)) ripetizioni[b.id] = fasiOf(b).map((f, i) => `${f.nome || "giro"}: ${r[i] || 0}/${targetOf(b, f)}`);
     if (isQuiz(b)){ const e = S.qerr[b.id] || []; const errs = e.map((x, i) => x ? `${ROM[i]}×${x}` : "").filter(Boolean); if (countOf(b, 0) || errs.length) quiz[b.id] = {giri: countOf(b, 0), errori: errs}; }
   });
@@ -1161,7 +1187,9 @@ document.addEventListener("click", ev => {
     case "phase": { const i = +t.dataset.i, f = fasiOf(b)[i]; if (countOf(b, i) >= targetOf(b, f)) repsOf(b)[i] = 0; S.ph[b.id] = i; R.ended = false; save();
       if (R.phase !== i){ R.phase = i; onPhaseChange(false); } renderBar(); updCounter(); break; }
     case "grp": { const F = curFig(); const was = !!R.metro; metroStop(); S.group[b.id] = (groupOf(b, F) + (+t.dataset.d) + F.groups.length) % F.groups.length; save(); if (was) metroStart(0); else renderKb(); break; }
-    case "bpm": S.bpm[sk(b)] = Math.max(30, Math.min(176, bpmOf(b) + (+t.dataset.d))); { const v = $("#bpmv"); if (v) v.textContent = S.bpm[sk(b)]; } save(); break;
+    case "bpm": S.bpm[sk(b)] = Math.max(30, Math.min(176, bpmOf(b) + (+t.dataset.d))); { const v = $("#bpmv"); if (v) v.textContent = S.bpm[sk(b)]; document.querySelectorAll("#passi button").forEach(x => x.setAttribute("aria-pressed", String(+x.dataset.v === S.bpm[sk(b)]))); } save(); break;
+    case "bpmset": S.bpm[sk(b)] = Math.max(30, Math.min(176, +t.dataset.v || 60)); { const v = $("#bpmv"); if (v) v.textContent = S.bpm[sk(b)]; document.querySelectorAll("#passi button").forEach(x => x.setAttribute("aria-pressed", String(x === t))); } save(); break;
+    case "metro": freeMetro(!(R.metro && R.metro.free)); break;
     case "valore": S.vsel[sk(b)] = +t.dataset.v; t.parentNode.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === t))); save(); break;
     case "snd": { const k = t.dataset.k; S.snd[k] = !S.snd[k]; document.querySelectorAll(`[data-act="snd"][data-k="${k}"]`).forEach(x => x.setAttribute("aria-pressed", String(S.snd[k]))); save(); break; }
     case "prova": prova(); break;

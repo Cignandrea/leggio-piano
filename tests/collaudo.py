@@ -75,8 +75,9 @@ try:
         pg.locator('.tabs [data-act="tab"][data-v="oggi"]').click(); pg.wait_for_timeout(400)
         check(f"0 di {NB} fatti" in pg.locator(".app").inner_text(), "la sessione di oggi non è cambiata")
 
-        # 4. Basso a tre note e discesa (blocco 6)
-        pg.locator('[data-act="open"][data-i="5"]').click(); pg.wait_for_timeout(500)
+        # 4. Basso a tre note e discesa (dalla libreria: non dipende dalla sessione del giorno)
+        pg.locator('[data-act="tab"][data-v="esercizi"]').click(); pg.wait_for_timeout(400)
+        pg.locator('[data-act="lib"][data-id="basso"]').click(); pg.wait_for_timeout(500)
         check(pg.locator("#kb-l .mk circle").count() == 3, "basso a tre note")
         pg.locator('[data-act="phase"][data-i="1"]').click(); pg.wait_for_timeout(300)
         for _ in range(24): pg.locator('[data-act="bpm"][data-d="5"]').click()
@@ -89,7 +90,27 @@ try:
         check(seen, "discesa: sul mi solo il basso, la destra tiene")
         pg.locator('[data-act="play"]').click()
         for _ in range(24): pg.locator('[data-act="bpm"][data-d="-5"]').click()
-        pg.locator('[data-act="home"]').click(); pg.wait_for_timeout(300)
+        pg.locator('[data-act="libclose"]').click(); pg.wait_for_timeout(300)
+        # 4b. Scale col metronomo: blocco di testo con «bpm» e passi 60-70-80
+        pg.locator('[data-act="lib"][data-id="scale-cinque"]').click(); pg.wait_for_timeout(500)
+        check(pg.locator("#mplay").count() == 1 and pg.locator("#passi button").count() == 3, "scale: metronomo e passi 60-70-80")
+        pg.locator('#passi button[data-v="80"]').click(); pg.wait_for_timeout(200)
+        check(pg.locator("#bpmv").inner_text() == "80" and pg.locator('#passi button[aria-pressed="true"]').inner_text() == "80", "scale: il passo scelto diventa la velocità")
+        pg.locator("#mplay").click(); pg.wait_for_timeout(1800)
+        check(pg.locator("#mplay").get_attribute("aria-pressed") == "true" and pg.locator("#mbeats i.on").count() == 1, "scale: il metronomo parte e segna il battito")
+        pg.locator("#mplay").click(); pg.wait_for_timeout(900)
+        check(pg.locator("#mplay").get_attribute("aria-pressed") == "false" and pg.locator("#mbeats i.on").count() == 0, "scale: il metronomo si ferma")
+        pg.locator('#passi button[data-v="60"]').click()
+        pg.screenshot(path=str(shots / "2b-scale.png"), full_page=True)
+        pg.locator('[data-act="libclose"]').click(); pg.wait_for_timeout(300)
+        # 4c. Giro in una tonalità con i diesis: in la il sesto grado è fa♯ minore
+        pg.locator('[data-act="lib"][data-id="giri-pop-5"]').click(); pg.wait_for_timeout(500)
+        pg.locator('[data-act="phase"][data-i="3"]').click(); pg.wait_for_timeout(400)
+        chips = pg.locator("#chips").inner_text()
+        check("F♯m" in chips or "F#m" in chips, "giro pop in la: c'è fa♯ minore")
+        pg.screenshot(path=str(shots / "2c-giro-la.png"), full_page=True)
+        pg.locator('[data-act="libclose"]').click(); pg.wait_for_timeout(300)
+        pg.locator('.tabs [data-act="tab"][data-v="oggi"]').click(); pg.wait_for_timeout(300)
         pg.evaluate("localStorage.removeItem('leggio-v2')"); pg.reload(); pg.wait_for_timeout(1200)
 
         # 5. Sessione intera, diario e «Copia per Claude»
@@ -103,7 +124,7 @@ try:
             pg.locator('[data-act="next"]').click(); pg.wait_for_timeout(300)
             if pg.locator('[data-act="salva"]').count(): break
         check(len(titles) == NB, f"percorsi {len(titles)} blocchi")
-        pg.locator('[data-act="rate"][data-id="perno"][data-v="bene"]').click()
+        pg.locator(f'[data-act="rate"][data-id="{PIANO["valuta"][0]["id"]}"][data-v="bene"]').click()
         pg.fill("#nota", "Prova del collaudo")
         pg.locator('[data-act="salva"]').click(); pg.wait_for_timeout(500)
         check(pg.locator("#dstat").inner_text().startswith("Salvato sul telefono alle"), "salvato sul telefono")
@@ -112,7 +133,10 @@ try:
         pg.locator("#perclaude").click(); pg.wait_for_timeout(800)
         check(pg.evaluate("navigator.clipboard.readText()").startswith("Leggio del piano, 1 sessione da registrare:"), "testo copiato per Claude")
         fine = pg.locator(".app").inner_text()
-        check("Let It Be" in fine and "Quattro accordi" not in fine, "Fine: solo i brani")
+        lib = {e["id"]: e for e in LIB["esercizi"]}
+        giri = [g for s in PIANO["sessione"] for g in (lib.get(s if isinstance(s, str) else s.get("da"), s if isinstance(s, dict) else {}).get("giri") or [])]
+        brani, esercizi = [g["titolo"] for g in giri if not g.get("esercizio")], [g["titolo"] for g in giri if g.get("esercizio")]
+        check(bool(brani) and all(x in fine for x in brani) and not any(x in fine for x in esercizi), f"Fine: solo i brani ({len(brani)}), non i giri-esercizio ({len(esercizi)})")
         pg.locator('[data-act="home"]').click(); pg.wait_for_timeout(300)
 
         # 6. Quaderno cifrato
@@ -134,6 +158,9 @@ try:
             check(pg.locator("section.sezione").count() == 11, "capitolo 4: 11 paragrafi")
             check(pg.locator(".abc svg").count() >= 1 and pg.locator("svg.kb").count() >= 1, "notazione e tastiere disegnate")
             check(pg.locator(".scheda").count() >= 4, "riassunto a schede")
+            pg.locator("nav.views button", has_text="Cap. 5").click(); pg.wait_for_timeout(1500)
+            check(pg.locator("section.sezione").count() == 5 and pg.locator(".abc svg").count() >= 1 and pg.locator("svg.kb").count() >= 1 and pg.locator("table").count() >= 2, "capitolo 5: 5 paragrafi, armature disegnate, tastiera, tabelle")
+            pg.screenshot(path=str(shots / "4b-capitolo5.png"), full_page=True)
             pg.screenshot(path=str(shots / "4-capitolo4.png"))
             pg.locator("nav.views button", has_text="Indice analitico").click(); pg.wait_for_timeout(600)
             check(pg.locator(".voce").count() >= 30, "indice analitico")

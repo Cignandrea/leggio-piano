@@ -1026,6 +1026,388 @@
    "area": "Brani",
    "lezione": null,
    "data": "2026-11-14"
+  },
+  {
+   "id": "armature-rigo",
+   "titolo": "Dall'armatura alla tonalità",
+   "rif": "Lezione 5 · §5.1",
+   "testo": "Senza guardare la tastiera. Immagina la chiave di violino con i diesis accanto e di', per ognuna: quali diesis sono, nell'ordine, e che tonalità maggiore è. Uno, sul quinto rigo. Due: quinto rigo e terzo spazio. Tre: si aggiunge quello sopra il quinto rigo. Quattro: si aggiunge quello sul quarto rigo. Poi al contrario: di' una tonalità (mi, re, la, sol) e quanti diesis ha.",
+   "occhio": "La regola: la tonica sta un semitono sopra l'ultimo diesis. Se sbagli, rifallo dalla regola, non a memoria.",
+   "avviso": "Soluzioni: fa♯ → sol · fa♯ do♯ → re · fa♯ do♯ sol♯ → la · fa♯ do♯ sol♯ re♯ → mi. Nessun diesis: do.",
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Leggi e di'"
+    }
+   ],
+   "area": "Scale",
+   "lezione": 5,
+   "data": "2026-11-21"
+  },
+  {
+   "id": "passaggio-neri",
+   "titolo": "Il passaggio del pollice in la e in mi",
+   "rif": "Lezione 5 · §5.2",
+   "testo": "Solo le tre note intorno al passaggio, lentissime, senza metronomo. Destra in la: si, do♯, re con 2-3-1, il pollice passa sotto il medio che è sul tasto nero. Destra in mi: fa♯, sol♯, la con 2-3-1. Sinistra in la: re, mi, fa♯ con 2-1-3, il medio scavalca il pollice e va sul tasto nero. Sinistra in mi: la, si, do♯ con 2-1-3. Avanti e indietro, finché esce giusto tre volte di fila.",
+   "occhio": "Nel passaggio il polso sale un poco e la mano accompagna di lato: così il pollice ha spazio. Non ruotare. La sinistra è la mano da curare di più.",
+   "fasi": [
+    {
+     "rip": 3,
+     "nome": "Destra, la"
+    },
+    {
+     "rip": 3,
+     "nome": "Destra, mi"
+    },
+    {
+     "rip": 3,
+     "nome": "Sinistra, la"
+    },
+    {
+     "rip": 3,
+     "nome": "Sinistra, mi"
+    }
+   ],
+   "area": "Scale",
+   "lezione": 5,
+   "data": "2026-11-21"
+  },
+  {
+   "id": "scale-cinque",
+   "titolo": "Cinque scale col metronomo, mani separate",
+   "rif": "Lezione 5 · §5.2, §5.3",
+   "testo": "Do, sol, re, la, mi. Per ognuna: di' le alterazioni, poi la destra e poi la sinistra, salendo e scendendo. Dita uguali per tutte: destra 1-2-3 | 1-2-3-4-5, sinistra 5-4-3-2-1 | 3-2-1. Parti a 60. Quando esce pulita passa a 70, poi a 80. Se a 80 inciampi torni a 60, non a 70. Se a 60 non esce, ferma il metronomo e rifalla lenta, guardando il passaggio del pollice.",
+   "occhio": "Blocco o confusione nelle dita: stai andando troppo veloce. Due passi indietro, poi su di uno alla volta. Non tutte le scale arrivano a 80 insieme: va bene così.",
+   "avviso": "Alterazioni: do nessuna · sol fa♯ · re fa♯ do♯ · la fa♯ do♯ sol♯ · mi fa♯ sol♯ do♯ re♯. Una nota per clic e un'ottava sono una nostra scelta: a lezione non è stato detto (è tra i punti da chiarire).",
+   "bpm": 60,
+   "passi": [
+    60,
+    70,
+    80
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "Do"
+    },
+    {
+     "rip": 2,
+     "nome": "Sol"
+    },
+    {
+     "rip": 2,
+     "nome": "Re"
+    },
+    {
+     "rip": 2,
+     "nome": "La"
+    },
+    {
+     "rip": 2,
+     "nome": "Mi"
+    }
+   ],
+   "area": "Scale",
+   "lezione": 5,
+   "data": "2026-11-21"
+  },
+  {
+   "id": "scale-cinque-insieme",
+   "titolo": "Cinque scale, mani insieme",
+   "rif": "Lezione 5 · §5.3, §4.9",
+   "testo": "Le stesse cinque scale a mani unite, in moto parallelo: è così che vanno fatte vedere alla prossima lezione. I passaggi cadono in punti diversi: la destra passa il pollice dopo la terza nota, la sinistra scavalca col medio dopo la quinta. Stessa regola del metronomo: 60, poi 70, poi 80; se a 80 inciampi torni a 60.",
+   "occhio": "A mani unite si parte più lenti che a mani separate. Se una mano si perde, torna un giro a mani separate su quella scala.",
+   "bpm": 60,
+   "passi": [
+    60,
+    70,
+    80
+   ],
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Do"
+    },
+    {
+     "rip": 1,
+     "nome": "Sol"
+    },
+    {
+     "rip": 1,
+     "nome": "Re"
+    },
+    {
+     "rip": 1,
+     "nome": "La"
+    },
+    {
+     "rip": 1,
+     "nome": "Mi"
+    }
+   ],
+   "area": "Scale",
+   "lezione": 5,
+   "data": "2026-11-21"
+  },
+  {
+   "id": "giri-pop-5",
+   "titolo": "Giro pop nelle cinque tonalità",
+   "rif": "Lezione 5 · §5.4",
+   "testo": "I–V–VI–IV in do, sol, re, la, mi. Destra: l'accordo, fermo per la battuta. Sinistra: fondamentale, quinta e ottava, come nel giro di do. Prima di ogni accordo di' il grado e il tipo: «sesto grado, minore».",
+   "occhio": "Il sesto grado è sempre minore. In la è fa♯ minore, non fa minore: nel dubbio ripeti la scala e conta i gradi.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "pop-C",
+     "titolo": "Giro pop in do",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "Am",
+      "F"
+     ]
+    },
+    {
+     "id": "pop-G",
+     "titolo": "Giro pop in sol",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "G",
+     "accordi": [
+      "G",
+      "D",
+      "Em",
+      "C"
+     ]
+    },
+    {
+     "id": "pop-D",
+     "titolo": "Giro pop in re",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "D",
+     "accordi": [
+      "D",
+      "A",
+      "Bm",
+      "G"
+     ]
+    },
+    {
+     "id": "pop-A",
+     "titolo": "Giro pop in la",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "A",
+     "accordi": [
+      "A",
+      "E",
+      "F#m",
+      "D"
+     ]
+    },
+    {
+     "id": "pop-E",
+     "titolo": "Giro pop in mi",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "E",
+     "accordi": [
+      "E",
+      "B",
+      "C#m",
+      "A"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "In do",
+     "giro": "pop-C"
+    },
+    {
+     "rip": 2,
+     "nome": "In sol",
+     "giro": "pop-G"
+    },
+    {
+     "rip": 2,
+     "nome": "In re",
+     "giro": "pop-D"
+    },
+    {
+     "rip": 2,
+     "nome": "In la",
+     "giro": "pop-A"
+    },
+    {
+     "rip": 2,
+     "nome": "In mi",
+     "giro": "pop-E"
+    }
+   ],
+   "area": "Basso e giri",
+   "lezione": 5,
+   "data": "2026-11-21"
+  },
+  {
+   "id": "giri-armonico-5",
+   "titolo": "Giro armonico nelle cinque tonalità",
+   "rif": "Lezione 5 · §5.4, §5.5",
+   "testo": "I–VI–II–V in do, sol, re, la, mi: è il giro di do portato nelle altre tonalità. Stesso lavoro: accordo a destra, fondamentale-quinta-ottava a sinistra, e il grado detto ad alta voce.",
+   "occhio": "Secondo e sesto grado sono sempre minori. Ascolta l'ultimo accordo, il quinto grado: è lui che riporta al primo. È il turnaround.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "arm-C",
+     "titolo": "Giro armonico in do",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "Am",
+      "Dm",
+      "G"
+     ]
+    },
+    {
+     "id": "arm-G",
+     "titolo": "Giro armonico in sol",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "G",
+     "accordi": [
+      "G",
+      "Em",
+      "Am",
+      "D"
+     ]
+    },
+    {
+     "id": "arm-D",
+     "titolo": "Giro armonico in re",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "D",
+     "accordi": [
+      "D",
+      "Bm",
+      "Em",
+      "A"
+     ]
+    },
+    {
+     "id": "arm-A",
+     "titolo": "Giro armonico in la",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "A",
+     "accordi": [
+      "A",
+      "F#m",
+      "Bm",
+      "E"
+     ]
+    },
+    {
+     "id": "arm-E",
+     "titolo": "Giro armonico in mi",
+     "artista": "Dalla tabella della lezione 5",
+     "esercizio": true,
+     "ton": "E",
+     "accordi": [
+      "E",
+      "C#m",
+      "F#m",
+      "B"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "In do",
+     "giro": "arm-C"
+    },
+    {
+     "rip": 2,
+     "nome": "In sol",
+     "giro": "arm-G"
+    },
+    {
+     "rip": 2,
+     "nome": "In re",
+     "giro": "arm-D"
+    },
+    {
+     "rip": 2,
+     "nome": "In la",
+     "giro": "arm-A"
+    },
+    {
+     "rip": 2,
+     "nome": "In mi",
+     "giro": "arm-E"
+    }
+   ],
+   "area": "Basso e giri",
+   "lezione": 5,
+   "data": "2026-11-21"
+  },
+  {
+   "id": "amore-la",
+   "titolo": "Verso il brano: lo stesso giro in la",
+   "rif": "Per la prossima lezione · §5.4",
+   "testo": "«La canzone dell'amore perduto» sarà il primo brano, in la maggiore. Qui c'è la stessa successione che avevi provato in do, portata in la: basso con mignolo, quinta e pollice all'ottava, una battuta per accordo. Riconosci il giro armonico: la, fa♯ minore, si minore, mi.",
+   "occhio": "Tre diesis: fa♯, do♯, sol♯. Sul mi7 il basso resta mi-si-mi.",
+   "avviso": "È la scheda amatoriale già usata in do, trasportata in la: serve a prendere confidenza con la tonalità. Gli accordi e le sezioni vere si vedono a lezione.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "amore-la",
+     "titolo": "La canzone dell'amore perduto (in la)",
+     "artista": "Fabrizio De André",
+     "livello": 2,
+     "ton": "A",
+     "accordi": [
+      "A",
+      "F#m",
+      "Bm",
+      "E7",
+      "D",
+      "E7",
+      "A",
+      "E7",
+      "F#m",
+      "Bm",
+      "E7"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "In la",
+     "giro": "amore-la"
+    }
+   ],
+   "area": "Brani",
+   "lezione": 5,
+   "data": "2026-11-21"
   }
  ]
 }

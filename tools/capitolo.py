@@ -3,7 +3,7 @@
 Uso, da uno script tenuto FUORI dal repository:
     import sys; sys.path.insert(0, "<repo>/tools"); from capitolo import *
     lezione = {...}                       # vedi claude/Quaderno-schema.md nel Project
-    salva(lezione, parti={"III": ["5.1", "5.2"], "V": ["5.3"]}, argomenti_nuovi={...}, domande={...}, stato={...})
+    salva(lezione, dopo={"5.1": "4.7", "5.2": "5.1"}, argomenti_nuovi={...}, domande={...}, stato={...})
 
 `salva` decifra il quaderno, sostituisce o aggiunge il capitolo, mette ogni paragrafo nuovo nella sua parte
 dell'ordine per argomento, controlla tutto (problemi_schema3 dello strumento, più gli ABC con music21) e ricifra.
@@ -71,9 +71,12 @@ def problemi_abc(lez):
     return p
 
 
-def salva(lezione, parti, argomenti_nuovi=None, argomenti_aggiorna=None, domande=None, domande_risolte=None, stato=None, percorso=None, prova=False):
-    """lezione: dict con «id» (AAAA-MM-GG-piano). parti: {"III": ["5.1", …]} dove mettere i paragrafi nuovi
-    (in coda alla parte; una parte nuova si passa come {"VII": {"titolo": …, "intro": …, "sezioni": […]}}).
+def salva(lezione, parti=None, dopo=None, argomenti_nuovi=None, argomenti_aggiorna=None, domande=None, domande_risolte=None, stato=None, percorso=None, prova=False):
+    """lezione: dict con «id» (AAAA-MM-GG-piano).
+    Posto dei paragrafi nuovi nell'ordine per argomento, in uno dei due modi (si possono usare insieme):
+    - dopo={"5.1": "4.7", "5.2": "5.1"}: il paragrafo va subito dopo quello indicato, nella sua parte. È il modo normale:
+      ogni paragrafo va dove si legge in sequenza logica;
+    - parti={"III": ["5.1", …]}: in coda alla parte; una parte nuova si passa come {"VII": {"titolo": …, "intro": …, "sezioni": […]}}.
     prova=True controlla e non scrive."""
     d = Q.decifra()
     lez = dict(lezione); lid = lez.pop("id"); lez["_id"] = lid
@@ -105,6 +108,12 @@ def salva(lezione, parti, argomenti_nuovi=None, argomenti_aggiorna=None, domande
         else:
             gia = {str(x) for p in man["parti"] for x in p["sezioni"]}
             man["parti"][i]["sezioni"] += [x for x in cosa if str(x) not in gia]
+    for num, prima in (dopo or {}).items():
+        for parte in man["parti"]:
+            parte["sezioni"] = [x for x in parte["sezioni"] if str(x) != str(num)]
+        casa = next((parte for parte in man["parti"] if str(prima) in [str(x) for x in parte["sezioni"]]), None)
+        if casa is None: sys.exit(f"dopo: il paragrafo {prima} non è nell'ordine per argomento (serve per mettere {num})")
+        casa["sezioni"].insert([str(x) for x in casa["sezioni"]].index(str(prima)) + 1, str(num))
     man["aggiornato"] = datetime.date.today().isoformat()
     if stato: d["stato"] = {**(d.get("stato") or {}), **stato, "schema": 3}
     if percorso: d["percorso"] = {**(d.get("percorso") or {}), **percorso}

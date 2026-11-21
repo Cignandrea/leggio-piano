@@ -1,0 +1,65 @@
+music21 10.5.2
+
+== Armature e posto dei diesis sul rigo in chiave di violino (ordine fa do sol re; ottave fa5 do5 sol5 re5)
+   fa♯ → 5º rigo
+   do♯ → 3º spazio
+   sol♯ → spazio sopra il 5º rigo
+   re♯ → 4º rigo
+  do maggiore: 0 diesis: nessuno; tonica un semitono sopra l'ultimo diesis: -
+  sol maggiore: 1 diesis: fa♯; tonica un semitono sopra l'ultimo diesis: sol
+  re maggiore: 2 diesis: fa♯ do♯; tonica un semitono sopra l'ultimo diesis: re
+  la maggiore: 3 diesis: fa♯ do♯ sol♯; tonica un semitono sopra l'ultimo diesis: la
+  mi maggiore: 4 diesis: fa♯ do♯ sol♯ re♯; tonica un semitono sopra l'ultimo diesis: mi
+
+== Scale di la e di mi maggiore: note, tasti neri, dita
+  do: do re mi fa sol la si do
+     destra : do=1 re=2 mi=3 fa=1 sol=2 la=3 si=4 do=5 | dito prima del pollice (3ª nota): mi bianco | su due ottave il 4 è su si bianco
+     sinistra: do=5 re=4 mi=3 fa=2 sol=1 la=3 si=2 do=1 | il medio scavalca su (6ª nota): la bianco
+  sol: sol la si do re mi fa♯ sol
+     destra : sol=1 la=2 si=3 do=1 re=2 mi=3 fa♯•=4 sol=5 | dito prima del pollice (3ª nota): si bianco | su due ottave il 4 è su fa♯ nero
+     sinistra: sol=5 la=4 si=3 do=2 re=1 mi=3 fa♯•=2 sol=1 | il medio scavalca su (6ª nota): mi bianco
+  re: re mi fa♯ sol la si do♯ re
+     destra : re=1 mi=2 fa♯•=3 sol=1 la=2 si=3 do♯•=4 re=5 | dito prima del pollice (3ª nota): fa♯ nero | su due ottave il 4 è su do♯ nero
+     sinistra: re=5 mi=4 fa♯•=3 sol=2 la=1 si=3 do♯•=2 re=1 | il medio scavalca su (6ª nota): si bianco
+  la: la si do♯ re mi fa♯ sol♯ la
+     destra : la=1 si=2 do♯•=3 re=1 mi=2 fa♯•=3 sol♯•=4 la=5 | dito prima del pollice (3ª nota): do♯ nero | su due ottave il 4 è su sol♯ nero
+     sinistra: la=5 si=4 do♯•=3 re=2 mi=1 fa♯•=3 sol♯•=2 la=1 | il medio scavalca su (6ª nota): fa♯ nero
+  mi: mi fa♯ sol♯ la si do♯ re♯ mi
+     destra : mi=1 fa♯•=2 sol♯•=3 la=1 si=2 do♯•=3 re♯•=4 mi=5 | dito prima del pollice (3ª nota): sol♯ nero | su due ottave il 4 è su re♯ nero
+     sinistra: mi=5 fa♯•=4 sol♯•=3 la=2 si=1 do♯•=3 re♯•=2 mi=1 | il medio scavalca su (6ª nota): do♯ nero
+  quinta di la: mi | mi maggiore ha in più: re♯
+
+== Giro pop I–V–VI–IV e giro armonico I–VI–II–V nelle cinque tonalità
+  giro pop in C: C G Am F
+  giro pop in G: G D Em C
+  giro pop in D: D A Bm G
+  giro pop in A: A E F#m D
+  giro pop in E: E B C#m A
+  giro armonico in C: C Am Dm G
+  giro armonico in G: G Em Am D
+  giro armonico in D: D Bm Em A
+  giro armonico in A: A F#m Bm E
+  giro armonico in E: E C#m F#m B
+
+== Tipi sui gradi in ogni tonalità: II e VI minori, I IV V maggiori
+   C {'I': 'major', 'ii': 'minor', 'IV': 'major', 'V': 'major', 'vi': 'minor'}
+   G {'I': 'major', 'ii': 'minor', 'IV': 'major', 'V': 'major', 'vi': 'minor'}
+   D {'I': 'major', 'ii': 'minor', 'IV': 'major', 'V': 'major', 'vi': 'minor'}
+   A {'I': 'major', 'ii': 'minor', 'IV': 'major', 'V': 'major', 'vi': 'minor'}
+   E {'I': 'major', 'ii': 'minor', 'IV': 'major', 'V': 'major', 'vi': 'minor'}
+
+== Schema della tabella: il V di una tonalità è il I della successiva; il IV di una è il I della precedente
+   V di C = G; I di G = G; IV di G = C; II di G = Am = VI di C = Am
+   V di G = D; I di D = D; IV di D = G; II di D = Em = VI di G = Em
+   V di D = A; I di A = A; IV di A = D; II di A = Bm = VI di D = Bm
+   V di A = E; I di E = E; IV di E = A; II di E = F#m = VI di A = F#m
+
+== V–I: la dominante riporta alla tonica (sensibile un semitono sotto la tonica)
+   C : V = G contiene la sensibile si → do
+   G : V = D contiene la sensibile fa♯ → sol
+   D : V = A contiene la sensibile do♯ → re
+   A : V = E contiene la sensibile sol♯ → la
+   E : V = B contiene la sensibile re♯ → mi
+
+== La maggiore: accordi sui gradi (per il brano in la)
+   A Bm C#m D E F#m G#dim

@@ -1,23 +1,24 @@
 {
  "schema": 3,
- "versione": "lezione-4-c",
- "lezione": "Verso la lezione 5",
- "quando": "oggi, sabato 21 nov",
- "fonte": "Compiti della lezione 4 (15 nov): ginnastica, scala di sol, basso con la discesa, Let It Be, quinte. La lezione 5 sarà sulle scale.",
+ "versione": "lezione-5-a",
+ "lezione": "Dopo la lezione 5",
+ "quando": "da sabato 21 nov",
+ "fonte": "Compiti della lezione 5 (21 nov): cinque scale col metronomo da 60 a 80, a mani separate e poi unite; i due giri nelle cinque tonalità; la tabella da riscrivere. Prossima lezione: scale a due mani e il primo brano, in la maggiore.",
  "valuta": [
   {
    "id": "perno",
    "nome": "Terzo esercizio (perno)"
   },
   {
-   "id": "scala-sol",
-   "nome": "Scala di sol"
+   "id": "scale-cinque-insieme",
+   "nome": "Cinque scale a mani unite"
   }
  ],
- "messaggio": "Oggi a lezione: chiedi di vedere il terzo esercizio e se «inizia a farne due» voleva dire due scale o due ottave.",
+ "messaggio": "Alla prossima lezione: fai vedere le scale a due mani e porta la tabella dei giri riscritta.",
  "sessione": [
   {
    "da": "perno",
+   "rif": "Riscaldamento · §4.1",
    "fasi": [
     {
      "rip": 2,
@@ -27,79 +28,39 @@
     },
     {
      "rip": 2,
-     "nome": "Destra, mignolo",
-     "mano": "r",
-     "variante": "mignolo"
-    },
-    {
-     "rip": 2,
      "nome": "Sinistra",
      "mano": "l",
-     "variante": "pollice"
-    },
-    {
-     "rip": 2,
-     "nome": "A specchio",
-     "mano": "rl",
      "variante": "pollice"
     }
    ]
   },
+  "armature-rigo",
+  "passaggio-neri",
+  "scale-cinque",
+  "giri-pop-5",
+  "scale-cinque-insieme",
+  "giri-armonico-5",
+  "amore-la",
   {
-   "da": "hanon",
-   "fasi": [
-    {
-     "rip": 2,
-     "nome": "Destra",
-     "mano": "r"
-    },
-    {
-     "rip": 2,
-     "nome": "Sinistra",
-     "mano": "l"
-    }
-   ],
-   "rif": "Ripasso · §3.8"
-  },
-  {
-   "da": "medio",
+   "id": "tabella",
+   "titolo": "Lontano dal piano: riscrivi la tabella",
+   "rif": "Lezione 5 · §5.4",
+   "testo": "Su un foglio pulito: cinque righe (do, sol, re, la, mi) e due tabelle, giro pop I–V–VI–IV e giro armonico I–VI–II–V, con le sigle. Scrivila senza guardare quella della lezione, poi confrontala con il §5.4 del quaderno.",
+   "occhio": "Cerca le regolarità: il V di una riga è il I della riga dopo; il II di una riga è il VI di quella prima.",
+   "avviso": "Si fa una volta sola: quando l'hai riscritta, questo blocco puoi saltarlo.",
    "fasi": [
     {
      "rip": 1,
-     "nome": "Destra, dritto",
-     "mano": "r",
-     "variante": "dritto"
-    },
-    {
-     "rip": 1,
-     "nome": "Destra, contrario",
-     "mano": "r",
-     "variante": "contrario"
-    },
-    {
-     "rip": 1,
-     "nome": "Sinistra, contrario",
-     "mano": "l",
-     "variante": "contrario"
+     "nome": "Riscrivi"
     }
-   ],
-   "rif": "Ripasso · §3.9"
+   ]
   },
-  "armature",
-  "scala-sol",
-  "basso",
-  "scala-sol-insieme",
-  "letitbe",
-  "quinte",
-  "basso-extra",
-  "amore",
   {
    "id": "domande",
-   "titolo": "Prima di andare: le domande",
-   "rif": "Dal quaderno, aperte al 21/11",
-   "testo": "1. Scale: «inizia a farne due» voleva dire due scale o due ottave? E oltre l'ottava con che dita prosegue la sinistra? 2. Il terzo esercizio, quello del perno: ricostruito dalla registrazione, me lo fai vedere? E la sinistra a specchio in che ottava? 3. «Freddie»: il do minore è uno scambio modale? Il si7 nasce dal re alzato a re♯? 4. Partenza dal medio: le figure ricostruite sono giuste, e com'è la sinistra dritta? 5. «13456»: quali altre declinazioni? 6. La variante più mossa del basso (min 30:17): è il basso ribattuto su ogni battito? E nella discesa fa-mi-re-do, quanto dura ogni nota?",
-   "occhio": "Fai suonare a lui il terzo esercizio e registralo: è il modo più rapido per chiudere la domanda 2.",
-   "avviso": "Le altre domande aperte sono nel quaderno: come si segna una nota più forte, BPM di Beethoven e Chopin, rivolti su tutte le note.",
+   "titolo": "Da chiarire a lezione",
+   "rif": "Dal quaderno, punti aperti al 21/11",
+   "testo": "1. Le cinque scale a casa: a un'ottava o a due? 2. Mano sinistra nelle scale: che forma tenere, e cosa cambia rispetto ad adesso? Chiedi un video. 3. Il terzo esercizio, quello del perno: è giusto come l'abbiamo ricostruito? E la sinistra a specchio in che ottava? 4. Partenza dal medio: le figure ricostruite sono giuste, e com'è la sinistra dritta? 5. «13456»: quali altre varianti intendeva?",
+   "occhio": "Il maestro ha detto che per i dubbi manda i video degli esercizi: per le domande 2, 3 e 4 basta chiederglieli.",
    "fasi": [
     {
      "rip": 1,
