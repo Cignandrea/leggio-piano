@@ -1,2 +1,10 @@
 tests/shots/
 __pycache__/
+# il quaderno in chiaro e la chiave non entrano mai nel repository
+lezioni/
+argomenti/
+domande/
+meta/
+*chiave*
+quaderno-dati*.json
+quaderno.json

@@ -1,0 +1,1031 @@
+{
+ "schema": 1,
+ "aggiornato": "2026-11-21",
+ "aree": [
+  "Ginnastica delle dita",
+  "Scale",
+  "Basso e giri",
+  "Teoria alla tastiera",
+  "Brani"
+ ],
+ "esercizi": [
+  {
+   "id": "cinque",
+   "titolo": "Cinque dita",
+   "rif": "Lezione 2 · §2.1",
+   "testo": "Prima ogni nota dura 2/4, poi 1/4. Una mano, l'altra, poi insieme: moto parallelo, poi contrario. Ogni fase sono 3 giri di fila.",
+   "occhio": "Dita morbide, note uguali per durata e intensità. Nel contrario si parte dai pollici, come nel PDF.",
+   "bpm": 60,
+   "varianti": [
+    {
+     "id": "parallelo",
+     "nome": "Parallelo",
+     "figura": {
+      "seq": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       3,
+       2,
+       1
+      ],
+      "gruppi": 1,
+      "valori": [
+       2,
+       1
+      ],
+      "mani": {
+       "r": {
+        "base": "C4",
+        "tasti": [
+         0,
+         1,
+         2,
+         3,
+         4
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       },
+       "l": {
+        "base": "C3",
+        "tasti": [
+         0,
+         1,
+         2,
+         3,
+         4
+        ],
+        "dita": [
+         5,
+         4,
+         3,
+         2,
+         1
+        ]
+       }
+      }
+     }
+    },
+    {
+     "id": "contrario",
+     "nome": "Contrario",
+     "figura": {
+      "seq": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       3,
+       2,
+       1
+      ],
+      "gruppi": 1,
+      "valori": [
+       2,
+       1
+      ],
+      "mani": {
+       "r": {
+        "base": "C4",
+        "tasti": [
+         0,
+         1,
+         2,
+         3,
+         4
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       },
+       "l": {
+        "base": "C3",
+        "tasti": [
+         4,
+         3,
+         2,
+         1,
+         0
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       }
+      }
+     }
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 3,
+     "nome": "Destra",
+     "mano": "r",
+     "variante": "parallelo"
+    },
+    {
+     "rip": 3,
+     "nome": "Sinistra",
+     "mano": "l",
+     "variante": "parallelo"
+    },
+    {
+     "rip": 3,
+     "nome": "Insieme, parallelo",
+     "mano": "rl",
+     "variante": "parallelo"
+    },
+    {
+     "rip": 3,
+     "nome": "Insieme, contrario",
+     "mano": "rl",
+     "variante": "contrario"
+    }
+   ],
+   "area": "Ginnastica delle dita",
+   "lezione": 2,
+   "data": "2026-10-24"
+  },
+  {
+   "id": "hanon",
+   "titolo": "«13456»",
+   "rif": "Lezione 3 · §3.8",
+   "testo": "Il secondo dito salta un tasto, poi un dito per tasto. Il gruppo sale di un tasto alla volta; all'ottava il giro finisce e durante il conteggio riporti giù la mano.",
+   "occhio": "La mano va a onda, senza scatti e senza girare il polso. Non pensare a quale tasto: pensa a come sta la mano.",
+   "bpm": 60,
+   "figura": {
+    "seq": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     3,
+     2,
+     1
+    ],
+    "gruppi": 8,
+    "passo": 1,
+    "mani": {
+     "r": {
+      "base": "C4",
+      "tasti": [
+       0,
+       2,
+       3,
+       4,
+       5
+      ],
+      "dita": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     },
+     "l": {
+      "base": "C3",
+      "tasti": [
+       0,
+       2,
+       3,
+       4,
+       5
+      ],
+      "dita": [
+       5,
+       4,
+       3,
+       2,
+       1
+      ],
+      "incerto": "dita come nell'Hanon, da confermare"
+     }
+    }
+   },
+   "fasi": [
+    {
+     "rip": 3,
+     "nome": "Destra",
+     "mano": "r"
+    },
+    {
+     "rip": 3,
+     "nome": "Sinistra",
+     "mano": "l"
+    },
+    {
+     "rip": 3,
+     "nome": "Insieme",
+     "mano": "rl"
+    }
+   ],
+   "area": "Ginnastica delle dita",
+   "lezione": 3,
+   "data": "2026-11-06"
+  },
+  {
+   "id": "medio",
+   "titolo": "Partenza dal medio",
+   "rif": "Lezione 3 · §3.9",
+   "testo": "Sempre dal terzo dito, un'ottava, lentissimo. All'ottava il giro finisce: durante il conteggio riporti la mano all'inizio.",
+   "occhio": "Nessuna scorciatoia con il medio: il maestro ha detto che «non è assolutamente un dettaglio», si perde il lavoro delle dita deboli.",
+   "avviso": "Figure ricostruite dai vocali della lezione 3: da confermare con il maestro.",
+   "bpm": 50,
+   "varianti": [
+    {
+     "id": "dritto",
+     "nome": "Dritto",
+     "figura": {
+      "seq": [
+       2,
+       3,
+       4,
+       3,
+       2,
+       0,
+       1
+      ],
+      "gruppi": 8,
+      "passo": 1,
+      "mani": {
+       "r": {
+        "base": "F4",
+        "tasti": [
+         -2,
+         -1,
+         0,
+         1,
+         2
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       }
+      }
+     }
+    },
+    {
+     "id": "contrario",
+     "nome": "Al contrario",
+     "figura": {
+      "seq": [
+       2,
+       1,
+       0,
+       1,
+       2,
+       4,
+       3
+      ],
+      "gruppi": 8,
+      "passo": -1,
+      "mani": {
+       "r": {
+        "base": "C5",
+        "tasti": [
+         -2,
+         -1,
+         0,
+         1,
+         2
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       },
+       "l": {
+        "base": "C4",
+        "tasti": [
+         -2,
+         -1,
+         0,
+         1,
+         2
+        ],
+        "dita": [
+         5,
+         4,
+         3,
+         2,
+         1
+        ],
+        "incerto": "stesse note un'ottava sotto, da confermare"
+       }
+      }
+     }
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 3,
+     "nome": "Destra, dritto",
+     "mano": "r",
+     "variante": "dritto"
+    },
+    {
+     "rip": 3,
+     "nome": "Destra, contrario",
+     "mano": "r",
+     "variante": "contrario"
+    },
+    {
+     "rip": 3,
+     "nome": "Sinistra, contrario",
+     "mano": "l",
+     "variante": "contrario"
+    }
+   ],
+   "area": "Ginnastica delle dita",
+   "lezione": 3,
+   "data": "2026-11-06"
+  },
+  {
+   "id": "perno",
+   "titolo": "Terzo esercizio: il dito perno",
+   "rif": "Lezione 4 · §4.1",
+   "testo": "Il pollice torna sul do dopo ogni nota, fino al sol e ritorno; poi lo stesso dall'alto, con il mignolo fermo sul do. Andata e ritorno sempre completi. Poi a specchio: la destra fa la figura, la sinistra il contrario, tutte e due dal pollice sul do.",
+   "occhio": "Senti mani, polso e spalle, non i tasti. Non renderlo melodico: è un esercizio meccanico, ogni dito fa il suo tasto.",
+   "avviso": "Figura ricostruita dalla registrazione, e per la sinistra anche l'ottava: da confermare con il maestro, meglio con un video.",
+   "bpm": 50,
+   "varianti": [
+    {
+     "id": "pollice",
+     "nome": "Perno sul pollice",
+     "figura": {
+      "seq": [
+       0,
+       1,
+       0,
+       2,
+       0,
+       3,
+       0,
+       4,
+       0,
+       3,
+       0,
+       2,
+       0,
+       1,
+       0
+      ],
+      "gruppi": 1,
+      "mani": {
+       "r": {
+        "base": "C4",
+        "tasti": [
+         0,
+         1,
+         2,
+         3,
+         4
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       },
+       "l": {
+        "base": "F2",
+        "tasti": [
+         0,
+         1,
+         2,
+         3,
+         4
+        ],
+        "dita": [
+         5,
+         4,
+         3,
+         2,
+         1
+        ],
+        "seq": [
+         4,
+         3,
+         4,
+         2,
+         4,
+         1,
+         4,
+         0,
+         4,
+         1,
+         4,
+         2,
+         4,
+         3,
+         4
+        ],
+        "incerto": "a specchio, ottava da confermare"
+       }
+      }
+     }
+    },
+    {
+     "id": "mignolo",
+     "nome": "Perno sul mignolo",
+     "figura": {
+      "seq": [
+       4,
+       3,
+       4,
+       2,
+       4,
+       1,
+       4,
+       0,
+       4,
+       1,
+       4,
+       2,
+       4,
+       3,
+       4
+      ],
+      "gruppi": 1,
+      "mani": {
+       "r": {
+        "base": "F4",
+        "tasti": [
+         0,
+         1,
+         2,
+         3,
+         4
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       }
+      }
+     }
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 3,
+     "nome": "Destra, pollice",
+     "mano": "r",
+     "variante": "pollice"
+    },
+    {
+     "rip": 3,
+     "nome": "Destra, mignolo",
+     "mano": "r",
+     "variante": "mignolo"
+    },
+    {
+     "rip": 3,
+     "nome": "Sinistra",
+     "mano": "l",
+     "variante": "pollice"
+    },
+    {
+     "rip": 3,
+     "nome": "A specchio",
+     "mano": "rl",
+     "variante": "pollice"
+    }
+   ],
+   "area": "Ginnastica delle dita",
+   "lezione": 4,
+   "data": "2026-11-15"
+  },
+  {
+   "id": "armature",
+   "titolo": "Le alterazioni delle cinque scale",
+   "rif": "Lezione 4 · §4.7",
+   "testo": "Oggi il maestro a ogni scala ti chiederà le alterazioni. Le scale sono cinque: do, sol, re, la, mi. Per ognuna di' ad alta voce i diesis, poi trovali sulla tastiera, e solo dopo controlla qui sotto. La regola: a ogni passo di quinta si aggiunge un diesis, quello un semitono sotto la tonica, e i vecchi restano.",
+   "occhio": "Sbagli quello di la o di mi? Rifallo dalla regola, non a memoria: tonica, semitono sotto, più quelli di prima.",
+   "avviso": "Soluzioni: do nessuno · sol fa♯ · re fa♯ do♯ · la fa♯ do♯ sol♯ · mi fa♯ do♯ sol♯ re♯.",
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Dillo e trovali"
+    }
+   ],
+   "area": "Scale",
+   "lezione": 4,
+   "data": "2026-11-15"
+  },
+  {
+   "id": "scala-sol",
+   "titolo": "Scala di sol, mani separate",
+   "rif": "Lezione 4 · §4.9",
+   "testo": "Prima di suonare di' l'alterazione: un diesis, il fa♯. Destra salendo 1-2-3 | 1-2-3-4-5: dopo il medio sul si il pollice passa sotto sul do. Scendendo 5-4-3-2-1 | 3-2-1. Sinistra salendo 5-4-3-2-1 | 3-2-1: dopo il pollice sul re il medio passa sopra sul mi; scendendo 1-2-3 | 1-2-3-4-5. Lentissima, senza metronomo. Un'ottava, salendo e scendendo. In fondo, se «inizia a farne due» voleva dire due scale: la scala di do, stessa diteggiatura, nessun tasto nero (destra: il pollice passa sul fa; sinistra: il medio passa sopra sul la).",
+   "occhio": "Polso fermo: a lezione girava. Mano morbida e vicina ai tasti, il pollice passa sotto senza arco. Se il passaggio inciampa, isola le tre note intorno (destra la-si-do, sinistra do-re-mi) finché escono giuste tre volte di fila.",
+   "avviso": "«Inizia a farne due»: due scale o due ottave? È tra le domande per il maestro. Intanto un'ottava.",
+   "fasi": [
+    {
+     "rip": 3,
+     "nome": "Destra"
+    },
+    {
+     "rip": 3,
+     "nome": "Sinistra"
+    },
+    {
+     "rip": 1,
+     "nome": "Do, facoltativa"
+    }
+   ],
+   "area": "Scale",
+   "lezione": 4,
+   "data": "2026-11-15"
+  },
+  {
+   "id": "scala-sol-insieme",
+   "titolo": "Scala di sol, mani insieme",
+   "rif": "Lezione 4 · §4.9",
+   "testo": "Le due mani insieme, in moto parallelo: partono dal sol e salgono insieme, un'ottava, poi tornano. I passaggi delle due mani cadono in punti diversi: la destra passa sul do, la sinistra sul mi.",
+   "occhio": "Il maestro ha avvisato che insieme è molto più difficile: ancora più lenta che a mani separate. Se una mano si perde, torna un giro a mani separate.",
+   "fasi": [
+    {
+     "rip": 3,
+     "nome": "Insieme, parallelo"
+    }
+   ],
+   "area": "Scale",
+   "lezione": 4,
+   "data": "2026-11-15"
+  },
+  {
+   "id": "basso",
+   "titolo": "Il basso sotto i quattro accordi",
+   "rif": "Lezione 4 · §4.2–4.4",
+   "testo": "Destra: l'accordo, fermo per la battuta. Sinistra: fondamentale col mignolo, quinta, ottava col pollice, tutte insieme. Una battuta per accordo, niente pedale. Le fasi si alternano: un giro liscio, uno con la discesa.",
+   "occhio": "Nella discesa la sinistra cammina da sola: sul fa due battiti, poi mi e re, una nota per battito e senza quinta, mentre la destra tiene il fa; sul do arrivi con l'accordo di do. È la nota di passaggio che porta all'accordo dopo.",
+   "avviso": "Le durate della discesa non si sentono nella registrazione: due battiti sul fa e uno su mi e re sono una nostra proposta.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "quattro",
+     "titolo": "Quattro accordi I–V–VI–IV",
+     "artista": "Esercizio del maestro",
+     "esercizio": true,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "Am",
+      "F"
+     ]
+    },
+    {
+     "id": "discesa",
+     "titolo": "Con la discesa fa-mi-re-do",
+     "artista": "Esercizio del maestro",
+     "esercizio": true,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "Am",
+      "F:2",
+      "F/E:1",
+      "F/D:1",
+      "C"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Liscio",
+     "giro": "quattro"
+    },
+    {
+     "rip": 1,
+     "nome": "Discesa",
+     "giro": "discesa"
+    },
+    {
+     "rip": 1,
+     "nome": "Liscio",
+     "giro": "quattro"
+    },
+    {
+     "rip": 1,
+     "nome": "Discesa",
+     "giro": "discesa"
+    }
+   ],
+   "area": "Basso e giri",
+   "lezione": 4,
+   "data": "2026-11-15"
+  },
+  {
+   "id": "basso-extra",
+   "titolo": "Se ti va: giro di do e basso in quarti",
+   "rif": "Lezione 4 · §4.5, min 30:17",
+   "testo": "Due facoltativi. Il giro di do, I–VI–II–V, con lo stesso basso: cantaci sopra. Poi i quattro accordi con il basso ribattuto su ogni battito: la variante più mossa che il maestro ha accennato per quando ti annoi.",
+   "occhio": "Il basso in quarti non corre: stesso tempo, solo più colpi. La destra resta ferma per tutta la battuta.",
+   "avviso": "La variante in quarti è una nostra ricostruzione dalla registrazione, dove si sente solo «do do do do»: è tra le domande per il maestro.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "girodo",
+     "titolo": "Giro di do I–VI–II–V",
+     "artista": "Esercizio del maestro",
+     "esercizio": true,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "Am",
+      "Dm",
+      "G"
+     ]
+    },
+    {
+     "id": "quarti",
+     "titolo": "Quattro accordi, basso in quarti",
+     "artista": "Ricostruzione dalla lezione 4",
+     "esercizio": true,
+     "quarti": true,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "Am",
+      "F"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "Giro di do",
+     "giro": "girodo"
+    },
+    {
+     "rip": 1,
+     "nome": "In quarti",
+     "giro": "quarti"
+    }
+   ],
+   "area": "Basso e giri",
+   "lezione": 4,
+   "data": "2026-11-15"
+  },
+  {
+   "id": "quinte",
+   "titolo": "Le quinte sul cerchio",
+   "rif": "Lezione 4 · §4.2, §4.7",
+   "testo": "Sinistra: fondamentale, quinta e ottava di ogni accordo. La quinta che suoni diventa la fondamentale dell'accordo dopo, come ha fatto il maestro a lezione. Prima del quarto battito, quando compare il prossimo, dillo ad alta voce.",
+   "occhio": "Dopo fa♯ il cerchio cambia nome: do♯ si scrive re♭, stesso tasto (§4.8). La destra è facoltativa: se i tasti neri ti rallentano, lasciala ferma. I numeri romani qui non servono.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "cerchio",
+     "titolo": "Il circolo delle quinte",
+     "artista": "Le dodici quinte, compito del maestro",
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "D",
+      "A",
+      "E",
+      "B",
+      "F#",
+      "Db",
+      "Ab",
+      "Eb",
+      "Bb",
+      "F"
+     ],
+     "esercizio": true
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "Il cerchio",
+     "giro": "cerchio"
+    }
+   ],
+   "area": "Basso e giri",
+   "lezione": 4,
+   "data": "2026-11-15"
+  },
+  {
+   "id": "gradi-do",
+   "titolo": "Gradi di do",
+   "rif": "Lezione 3 · §3.7",
+   "testo": "Il quiz ti dà un grado. Di' ad alta voce nota, nome e tipo di accordo, suonalo, poi tocca Mostra. Un giro sono i 7 gradi: quelli sbagliati tornano in fondo.",
+   "occhio": "Niente quaderno davanti: a lezione il maestro dirà «vai al terzo grado» e devi saperlo.",
+   "widget": {
+    "tipo": "gradi",
+    "ton": "C"
+   },
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Giro dei 7 gradi"
+    }
+   ],
+   "area": "Teoria alla tastiera",
+   "lezione": 3,
+   "data": "2026-11-06"
+  },
+  {
+   "id": "gradi-re",
+   "titolo": "Gradi in re",
+   "rif": "Lezione 3 · §3.7",
+   "testo": "Stessa struttura in re maggiore. Tocca Mostra solo dopo averlo detto e suonato.",
+   "occhio": "Il do♯ è diminuito, il la è la dominante, il sol è maggiore.",
+   "widget": {
+    "tipo": "gradi",
+    "ton": "D"
+   },
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Giro dei 7 gradi"
+    }
+   ],
+   "area": "Teoria alla tastiera",
+   "lezione": 3,
+   "data": "2026-11-06"
+  },
+  {
+   "id": "sus",
+   "titolo": "Accordi sospesi",
+   "rif": "Lezione 3 · §3.6",
+   "testo": "Tocca un giro e ascolta: nel sus4 il fa sta sospeso e scende sul mi; nel sus2 il re sale sul mi. Poi suonali tu sulla tastiera, prima il sospeso e poi l'accordo di do.",
+   "occhio": "La tensione si sente sulla nota che si muove: fermati un attimo sul sospeso prima di risolvere.",
+   "widget": {
+    "tipo": "sus"
+   },
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Ascolta e suona"
+    }
+   ],
+   "area": "Teoria alla tastiera",
+   "lezione": 3,
+   "data": "2026-11-06"
+  },
+  {
+   "id": "letitbe",
+   "titolo": "Let It Be sul giro",
+   "rif": "Lezione 4 · §4.3–4.4",
+   "testo": "Il maestro ha preso Let It Be come esempio dei quattro accordi e della discesa. Qui ci sono la strofa e il ritornello, con il basso del blocco 6 e la discesa fa-mi-re-do alla fine di ogni metà. Una battuta per accordo, non il ritmo del disco. Cantaci sopra.",
+   "occhio": "La strofa è I–V–VI–IV, poi I–V–IV–I; il ritornello parte dal la minore, VI–V–IV–I. Le discese sono due, una per metà.",
+   "avviso": "Accordi da Pianote: strofa C–G–Am–F, C–G–F–C; ritornello Am–G–F–C, C–G–F–C, con la discesa fa-mi-re-do. Nel disco sulla discesa cambia anche la destra; qui la destra tiene il fa, come nella versione semplice del maestro.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "letitbe",
+     "titolo": "Let It Be",
+     "artista": "The Beatles",
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "Am",
+      "F",
+      "C",
+      "G",
+      "F:2",
+      "F/E:1",
+      "F/D:1",
+      "C",
+      "Am",
+      "G",
+      "F",
+      "C",
+      "C",
+      "G",
+      "F:2",
+      "F/E:1",
+      "F/D:1",
+      "C"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "Strofa e ritornello",
+     "giro": "letitbe"
+    }
+   ],
+   "area": "Brani",
+   "lezione": 4,
+   "data": "2026-11-15"
+  },
+  {
+   "id": "amore",
+   "titolo": "Cosa nuova: il basso in un brano",
+   "rif": "Dai cinque brani scelti per il maestro",
+   "testo": "Lo stesso basso del blocco 6 sotto «La canzone dell'amore perduto»: mignolo, quinta, pollice all'ottava, una battuta per accordo. Se ti va, cantaci sopra.",
+   "occhio": "Tutti gli accordi stanno nella scala di do: sono i gradi del §3.7. Sul sol7 il basso resta sol-re-sol.",
+   "avviso": "Accordi da una scheda amatoriale: bastano per esercitare il basso, non per suonare il pezzo come nel disco.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "amore",
+     "titolo": "La canzone dell'amore perduto",
+     "artista": "Fabrizio De André",
+     "livello": 2,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "Am",
+      "Dm",
+      "G7",
+      "F",
+      "G7",
+      "C",
+      "G7",
+      "Am",
+      "Dm",
+      "G7"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "L'amore perduto",
+     "giro": "amore"
+    }
+   ],
+   "area": "Brani",
+   "lezione": null,
+   "data": "2026-11-15"
+  },
+  {
+   "id": "brani",
+   "titolo": "Giri dai brani candidati (14 nov)",
+   "rif": "Dalla rosa del 14 novembre: la scelta è ancora aperta",
+   "testo": "Un giro di accordi per ogni brano scelto. Destra: l'accordo con 1-3-5. Sinistra: la nota del basso. Un accordo ogni 4 battiti, non il ritmo del disco. 2 giri per brano; poi segna se ti piace suonarlo.",
+   "occhio": "I numeri romani sono i gradi del §3.7: «L'amore perduto» e «True Colours» stanno tutti nella scala. Gli accordi bordati sono fuori dalla scala.",
+   "avviso": "Accordi presi da schede amatoriali (7 e 14 novembre): bastano per sentire la difficoltà, non per suonare il pezzo come nel disco. True Colours: la scheda è in sol con il capotasto al terzo tasto, il disco suona in si♭. E ti vengo a cercare: qui c'è il ritornello, in fa.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "amore",
+     "titolo": "La canzone dell'amore perduto",
+     "artista": "Fabrizio De André",
+     "livello": 2,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "Am",
+      "Dm",
+      "G7",
+      "F",
+      "G7",
+      "C",
+      "G7",
+      "Am",
+      "Dm",
+      "G7"
+     ],
+     "esercizio": false
+    },
+    {
+     "id": "colours",
+     "titolo": "True Colours",
+     "artista": "Tom Odell",
+     "livello": 3,
+     "ton": "G",
+     "accordi": [
+      "G",
+      "C",
+      "G",
+      "D",
+      "C",
+      "G",
+      "D",
+      "C",
+      "G",
+      "Am",
+      "Em",
+      "C",
+      "G",
+      "D"
+     ],
+     "esercizio": false
+    },
+    {
+     "id": "ecvc",
+     "titolo": "E ti vengo a cercare",
+     "artista": "Franco Battiato",
+     "livello": 4,
+     "ton": "F",
+     "accordi": [
+      "F",
+      "C",
+      "E",
+      "Dm",
+      "C",
+      "F",
+      "C",
+      "Dm",
+      "C",
+      "Bb",
+      "Dm"
+     ],
+     "esercizio": false
+    },
+    {
+     "id": "mars",
+     "titolo": "Life on Mars?",
+     "artista": "David Bowie",
+     "livello": 6,
+     "ton": "F",
+     "accordi": [
+      "F",
+      "Am/E",
+      "Adim/Eb",
+      "D",
+      "Gm"
+     ],
+     "esercizio": false
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "L'amore perduto",
+     "giro": "amore"
+    },
+    {
+     "rip": 2,
+     "nome": "True Colours",
+     "giro": "colours"
+    },
+    {
+     "rip": 2,
+     "nome": "E ti vengo a cercare",
+     "giro": "ecvc"
+    },
+    {
+     "rip": 2,
+     "nome": "Life on Mars?",
+     "giro": "mars"
+    }
+   ],
+   "area": "Brani",
+   "lezione": null,
+   "data": "2026-11-14"
+  }
+ ]
+}
