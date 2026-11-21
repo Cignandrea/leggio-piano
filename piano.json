@@ -1,0 +1,579 @@
+{
+ "schema": 2,
+ "versione": "lezione-4-b",
+ "lezione": "Verso la lezione 5",
+ "quando": "oggi, sabato 21 nov",
+ "fonte": "Compiti della lezione 4 (15 nov): ginnastica, scala di sol, basso, quinte. La lezione 5 sarà sulle scale.",
+ "blocchi": [
+  {
+   "id": "perno",
+   "titolo": "Terzo esercizio: il dito perno",
+   "rif": "Lezione 4 · §4.1",
+   "testo": "Il pollice torna sul do dopo ogni nota, fino al sol e ritorno; poi lo stesso dall'alto, con il mignolo fermo sul do. Andata e ritorno sempre completi. Poi a specchio: la destra fa la figura, la sinistra il contrario, tutte e due dal pollice sul do.",
+   "occhio": "Senti mani, polso e spalle, non i tasti. Non renderlo melodico: è un esercizio meccanico, ogni dito fa il suo tasto.",
+   "avviso": "Figura ricostruita dalla registrazione, e per la sinistra anche l'ottava: da confermare con il maestro, meglio con un video.",
+   "bpm": 50,
+   "varianti": [
+    {
+     "id": "pollice",
+     "nome": "Perno sul pollice",
+     "figura": {
+      "seq": [
+       0,
+       1,
+       0,
+       2,
+       0,
+       3,
+       0,
+       4,
+       0,
+       3,
+       0,
+       2,
+       0,
+       1,
+       0
+      ],
+      "gruppi": 1,
+      "mani": {
+       "r": {
+        "base": "C4",
+        "tasti": [
+         0,
+         1,
+         2,
+         3,
+         4
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       },
+       "l": {
+        "base": "F2",
+        "tasti": [
+         0,
+         1,
+         2,
+         3,
+         4
+        ],
+        "dita": [
+         5,
+         4,
+         3,
+         2,
+         1
+        ],
+        "seq": [
+         4,
+         3,
+         4,
+         2,
+         4,
+         1,
+         4,
+         0,
+         4,
+         1,
+         4,
+         2,
+         4,
+         3,
+         4
+        ],
+        "incerto": "a specchio, ottava da confermare"
+       }
+      }
+     }
+    },
+    {
+     "id": "mignolo",
+     "nome": "Perno sul mignolo",
+     "figura": {
+      "seq": [
+       4,
+       3,
+       4,
+       2,
+       4,
+       1,
+       4,
+       0,
+       4,
+       1,
+       4,
+       2,
+       4,
+       3,
+       4
+      ],
+      "gruppi": 1,
+      "mani": {
+       "r": {
+        "base": "F4",
+        "tasti": [
+         0,
+         1,
+         2,
+         3,
+         4
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       }
+      }
+     }
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "Destra, pollice",
+     "mano": "r",
+     "variante": "pollice"
+    },
+    {
+     "rip": 2,
+     "nome": "Destra, mignolo",
+     "mano": "r",
+     "variante": "mignolo"
+    },
+    {
+     "rip": 2,
+     "nome": "Sinistra",
+     "mano": "l",
+     "variante": "pollice"
+    },
+    {
+     "rip": 2,
+     "nome": "A specchio",
+     "mano": "rl",
+     "variante": "pollice"
+    }
+   ]
+  },
+  {
+   "id": "hanon",
+   "titolo": "«13456»",
+   "rif": "Ripasso · §3.8",
+   "testo": "Il secondo dito salta un tasto, poi un dito per tasto. Il gruppo sale di un tasto alla volta; all'ottava il giro finisce e durante il conteggio riporti giù la mano.",
+   "occhio": "La mano va a onda, senza scatti e senza girare il polso. Non pensare a quale tasto: pensa a come sta la mano.",
+   "bpm": 60,
+   "figura": {
+    "seq": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     3,
+     2,
+     1
+    ],
+    "gruppi": 8,
+    "passo": 1,
+    "mani": {
+     "r": {
+      "base": "C4",
+      "tasti": [
+       0,
+       2,
+       3,
+       4,
+       5
+      ],
+      "dita": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     },
+     "l": {
+      "base": "C3",
+      "tasti": [
+       0,
+       2,
+       3,
+       4,
+       5
+      ],
+      "dita": [
+       5,
+       4,
+       3,
+       2,
+       1
+      ],
+      "incerto": "dita come nell'Hanon, da confermare"
+     }
+    }
+   },
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "Destra",
+     "mano": "r"
+    },
+    {
+     "rip": 2,
+     "nome": "Sinistra",
+     "mano": "l"
+    }
+   ]
+  },
+  {
+   "id": "medio",
+   "titolo": "Partenza dal medio",
+   "rif": "Ripasso · §3.9",
+   "testo": "Sempre dal terzo dito, un'ottava, lentissimo. All'ottava il giro finisce: durante il conteggio riporti la mano all'inizio.",
+   "occhio": "Nessuna scorciatoia con il medio: il maestro ha detto che «non è assolutamente un dettaglio», si perde il lavoro delle dita deboli.",
+   "avviso": "Figure ricostruite dai vocali della lezione 3: da confermare con il maestro.",
+   "bpm": 50,
+   "varianti": [
+    {
+     "id": "dritto",
+     "nome": "Dritto",
+     "figura": {
+      "seq": [
+       2,
+       3,
+       4,
+       3,
+       2,
+       0,
+       1
+      ],
+      "gruppi": 8,
+      "passo": 1,
+      "mani": {
+       "r": {
+        "base": "F4",
+        "tasti": [
+         -2,
+         -1,
+         0,
+         1,
+         2
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       }
+      }
+     }
+    },
+    {
+     "id": "contrario",
+     "nome": "Al contrario",
+     "figura": {
+      "seq": [
+       2,
+       1,
+       0,
+       1,
+       2,
+       4,
+       3
+      ],
+      "gruppi": 8,
+      "passo": -1,
+      "mani": {
+       "r": {
+        "base": "C5",
+        "tasti": [
+         -2,
+         -1,
+         0,
+         1,
+         2
+        ],
+        "dita": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       },
+       "l": {
+        "base": "C4",
+        "tasti": [
+         -2,
+         -1,
+         0,
+         1,
+         2
+        ],
+        "dita": [
+         5,
+         4,
+         3,
+         2,
+         1
+        ],
+        "incerto": "stesse note un'ottava sotto, da confermare"
+       }
+      }
+     }
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Destra, dritto",
+     "mano": "r",
+     "variante": "dritto"
+    },
+    {
+     "rip": 1,
+     "nome": "Destra, contrario",
+     "mano": "r",
+     "variante": "contrario"
+    },
+    {
+     "rip": 1,
+     "nome": "Sinistra, contrario",
+     "mano": "l",
+     "variante": "contrario"
+    }
+   ]
+  },
+  {
+   "id": "armature",
+   "titolo": "Le alterazioni delle cinque scale",
+   "rif": "Lezione 4 · §4.7",
+   "testo": "Oggi il maestro a ogni scala ti chiederà le alterazioni. Le scale sono cinque: do, sol, re, la, mi. Per ognuna di' ad alta voce i diesis, poi trovali sulla tastiera, e solo dopo controlla qui sotto. La regola: a ogni passo di quinta si aggiunge un diesis, quello un semitono sotto la tonica, e i vecchi restano.",
+   "occhio": "Sbagli quello di la o di mi? Rifallo dalla regola, non a memoria: tonica, semitono sotto, più quelli di prima.",
+   "avviso": "Soluzioni: do nessuno · sol fa♯ · re fa♯ do♯ · la fa♯ do♯ sol♯ · mi fa♯ do♯ sol♯ re♯.",
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Dillo e trovali"
+    }
+   ]
+  },
+  {
+   "id": "scala-sol",
+   "titolo": "Scala di sol, mani separate",
+   "rif": "Lezione 4 · §4.9",
+   "testo": "Prima di suonare di' l'alterazione: un diesis, il fa♯. Destra salendo 1-2-3 | 1-2-3-4-5: dopo il medio sul si il pollice passa sotto sul do. Scendendo 5-4-3-2-1 | 3-2-1. Sinistra salendo 5-4-3-2-1 | 3-2-1: dopo il pollice sul re il medio passa sopra sul mi; scendendo 1-2-3 | 1-2-3-4-5. Lentissima, senza metronomo. Un'ottava, salendo e scendendo. In fondo, se «inizia a farne due» voleva dire due scale: la scala di do, stessa diteggiatura, nessun tasto nero (destra: il pollice passa sul fa; sinistra: il medio passa sopra sul la).",
+   "occhio": "Polso fermo: a lezione girava. Mano morbida e vicina ai tasti, il pollice passa sotto senza arco. Se il passaggio inciampa, isola le tre note intorno (destra la-si-do, sinistra do-re-mi) finché escono giuste tre volte di fila.",
+   "avviso": "«Inizia a farne due»: due scale o due ottave? È tra le domande per il maestro. Intanto un'ottava.",
+   "fasi": [
+    {
+     "rip": 3,
+     "nome": "Destra"
+    },
+    {
+     "rip": 3,
+     "nome": "Sinistra"
+    },
+    {
+     "rip": 1,
+     "nome": "Do, facoltativa"
+    }
+   ]
+  },
+  {
+   "id": "basso",
+   "titolo": "Il basso sotto i quattro accordi",
+   "rif": "Lezione 4 · §4.2–4.4",
+   "testo": "Destra: l'accordo, fermo per tutta la battuta. Sinistra: mignolo sulla nota del basso, pollice sull'ottava sopra, in mezzo la quinta, tutte insieme. Una battuta per accordo, niente pedale. Le fasi si alternano: un giro liscio, uno con la discesa.",
+   "occhio": "Discesa: nella battuta del fa il basso scende fa-mi-re-do, una nota per battito, senza quinta; sul do suoni l'accordo di do. Guarda la sinistra che si sposta: la destra la sai già.",
+   "avviso": "Le durate della discesa non si sentono nella registrazione: una nota per battito è una nostra proposta. L'ultima fase, il giro di do, è facoltativa: cantaci sopra.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "quattro",
+     "titolo": "Quattro accordi I–V–VI–IV",
+     "artista": "Esercizio del maestro",
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "Am",
+      "F"
+     ]
+    },
+    {
+     "id": "girodo",
+     "titolo": "Giro di do I–VI–II–V",
+     "artista": "Esercizio del maestro",
+     "ton": "C",
+     "accordi": [
+      "C",
+      "Am",
+      "Dm",
+      "G"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Liscio",
+     "giro": "quattro"
+    },
+    {
+     "rip": 1,
+     "nome": "Discesa",
+     "giro": "quattro"
+    },
+    {
+     "rip": 1,
+     "nome": "Liscio",
+     "giro": "quattro"
+    },
+    {
+     "rip": 1,
+     "nome": "Discesa",
+     "giro": "quattro"
+    },
+    {
+     "rip": 2,
+     "nome": "Giro di do",
+     "giro": "girodo"
+    }
+   ]
+  },
+  {
+   "id": "scala-sol-insieme",
+   "titolo": "Scala di sol, mani insieme",
+   "rif": "Lezione 4 · §4.9",
+   "testo": "Le due mani insieme, in moto parallelo: partono dal sol e salgono insieme, un'ottava, poi tornano. I passaggi delle due mani cadono in punti diversi: la destra passa sul do, la sinistra sul mi.",
+   "occhio": "Il maestro ha avvisato che insieme è molto più difficile: ancora più lenta che a mani separate. Se una mano si perde, torna un giro a mani separate.",
+   "fasi": [
+    {
+     "rip": 3,
+     "nome": "Insieme, parallelo"
+    }
+   ]
+  },
+  {
+   "id": "quinte",
+   "titolo": "Le quinte sul cerchio",
+   "rif": "Lezione 4 · §4.2, §4.7",
+   "testo": "Sinistra: fondamentale, quinta e ottava di ogni accordo. La quinta che suoni diventa la fondamentale dell'accordo dopo, come ha fatto il maestro a lezione. Prima del quarto battito, quando compare il prossimo, dillo ad alta voce.",
+   "occhio": "Dopo fa♯ il cerchio cambia nome: do♯ si scrive re♭, stesso tasto (§4.8). La destra è facoltativa: se i tasti neri ti rallentano, lasciala ferma. I numeri romani qui non servono.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "cerchio",
+     "titolo": "Il circolo delle quinte",
+     "artista": "Le dodici quinte, compito del maestro",
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "D",
+      "A",
+      "E",
+      "B",
+      "F#",
+      "Db",
+      "Ab",
+      "Eb",
+      "Bb",
+      "F"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "Il cerchio",
+     "giro": "cerchio"
+    }
+   ]
+  },
+  {
+   "id": "amore",
+   "titolo": "Cosa nuova: il basso in un brano",
+   "rif": "Dai cinque brani scelti per il maestro",
+   "testo": "Lo stesso basso del blocco 6 sotto «La canzone dell'amore perduto»: mignolo, quinta, pollice all'ottava, una battuta per accordo. Se ti va, cantaci sopra.",
+   "occhio": "Tutti gli accordi stanno nella scala di do: sono i gradi del §3.7. Sul sol7 il basso resta sol-re-sol.",
+   "avviso": "Accordi da una scheda amatoriale: bastano per esercitare il basso, non per suonare il pezzo come nel disco.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "amore",
+     "titolo": "La canzone dell'amore perduto",
+     "artista": "Fabrizio De André",
+     "livello": 2,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "Am",
+      "Dm",
+      "G7",
+      "F",
+      "G7",
+      "C",
+      "G7",
+      "Am",
+      "Dm",
+      "G7"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "L'amore perduto",
+     "giro": "amore"
+    }
+   ]
+  },
+  {
+   "id": "domande",
+   "titolo": "Prima di andare: le domande",
+   "rif": "Dal quaderno, aperte al 21/11",
+   "testo": "1. Scale: «inizia a farne due» voleva dire due scale o due ottave? E oltre l'ottava con che dita prosegue la sinistra? 2. Il terzo esercizio, quello del perno: ricostruito dalla registrazione, me lo fai vedere? E la sinistra a specchio in che ottava? 3. «Freddie»: il do minore è uno scambio modale? Il si7 nasce dal re alzato a re♯? 4. Partenza dal medio: le figure ricostruite sono giuste, e com'è la sinistra dritta? 5. «13456»: quali altre declinazioni?",
+   "occhio": "Fai suonare a lui il terzo esercizio e registralo: è il modo più rapido per chiudere la domanda 2.",
+   "avviso": "Le altre domande aperte sono nel quaderno: come si segna una nota più forte, BPM di Beethoven e Chopin, rivolti su tutte le note.",
+   "fasi": [
+    {
+     "rip": 1,
+     "nome": "Le domande"
+    }
+   ]
+  }
+ ],
+ "valuta": [
+  {
+   "id": "perno",
+   "nome": "Terzo esercizio (perno)"
+  },
+  {
+   "id": "scala-sol",
+   "nome": "Scala di sol"
+  }
+ ],
+ "messaggio": "Oggi a lezione: chiedi di vedere il terzo esercizio e se «inizia a farne due» voleva dire due scale o due ottave."
+}
