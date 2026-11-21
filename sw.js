@@ -1,6 +1,6 @@
 // Service worker del Leggio: cache versionata per l'uso offline.
 // Rete prima per la pagina e per piano.json (così piano e app nuovi arrivano subito), cache prima per icone e manifest.
-const VERSION = '1.0.0';
+const VERSION = '1.0.1';
 const CACHE = `leggio-${VERSION}`;
 const ASSETS = ['./', './index.html', './piano.json', './manifest.webmanifest',
   './icons/favicon-64.png', './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './icons/apple-touch-icon.png'];

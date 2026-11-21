@@ -1,9 +1,9 @@
 {
  "schema": 2,
- "versione": "lezione-4-b",
+ "versione": "lezione-4-c",
  "lezione": "Verso la lezione 5",
  "quando": "oggi, sabato 21 nov",
- "fonte": "Compiti della lezione 4 (15 nov): ginnastica, scala di sol, basso, quinte. La lezione 5 sarà sulle scale.",
+ "fonte": "Compiti della lezione 4 (15 nov): ginnastica, scala di sol, basso con la discesa, Let It Be, quinte. La lezione 5 sarà sulle scale.",
  "blocchi": [
   {
    "id": "perno",
@@ -395,9 +395,9 @@
    "id": "basso",
    "titolo": "Il basso sotto i quattro accordi",
    "rif": "Lezione 4 · §4.2–4.4",
-   "testo": "Destra: l'accordo, fermo per tutta la battuta. Sinistra: mignolo sulla nota del basso, pollice sull'ottava sopra, in mezzo la quinta, tutte insieme. Una battuta per accordo, niente pedale. Le fasi si alternano: un giro liscio, uno con la discesa.",
-   "occhio": "Discesa: nella battuta del fa il basso scende fa-mi-re-do, una nota per battito, senza quinta; sul do suoni l'accordo di do. Guarda la sinistra che si sposta: la destra la sai già.",
-   "avviso": "Le durate della discesa non si sentono nella registrazione: una nota per battito è una nostra proposta. L'ultima fase, il giro di do, è facoltativa: cantaci sopra.",
+   "testo": "Destra: l'accordo, fermo per la battuta. Sinistra: fondamentale col mignolo, quinta, ottava col pollice, tutte insieme. Una battuta per accordo, niente pedale. Le fasi si alternano: un giro liscio, uno con la discesa.",
+   "occhio": "Nella discesa la sinistra cammina da sola: sul fa due battiti, poi mi e re, una nota per battito e senza quinta, mentre la destra tiene il fa; sul do arrivi con l'accordo di do. È la nota di passaggio che porta all'accordo dopo.",
+   "avviso": "Le durate della discesa non si sentono nella registrazione: due battiti sul fa e uno su mi e re sono una nostra proposta.",
    "bpm": 60,
    "widget": {
     "tipo": "giro"
@@ -407,6 +407,7 @@
      "id": "quattro",
      "titolo": "Quattro accordi I–V–VI–IV",
      "artista": "Esercizio del maestro",
+     "esercizio": true,
      "ton": "C",
      "accordi": [
       "C",
@@ -416,15 +417,19 @@
      ]
     },
     {
-     "id": "girodo",
-     "titolo": "Giro di do I–VI–II–V",
+     "id": "discesa",
+     "titolo": "Con la discesa fa-mi-re-do",
      "artista": "Esercizio del maestro",
+     "esercizio": true,
      "ton": "C",
      "accordi": [
       "C",
+      "G",
       "Am",
-      "Dm",
-      "G"
+      "F:2",
+      "F/E:1",
+      "F/D:1",
+      "C"
      ]
     }
    ],
@@ -437,7 +442,7 @@
     {
      "rip": 1,
      "nome": "Discesa",
-     "giro": "quattro"
+     "giro": "discesa"
     },
     {
      "rip": 1,
@@ -447,12 +452,7 @@
     {
      "rip": 1,
      "nome": "Discesa",
-     "giro": "quattro"
-    },
-    {
-     "rip": 2,
-     "nome": "Giro di do",
-     "giro": "girodo"
+     "giro": "discesa"
     }
    ]
   },
@@ -466,6 +466,55 @@
     {
      "rip": 3,
      "nome": "Insieme, parallelo"
+    }
+   ]
+  },
+  {
+   "id": "letitbe",
+   "titolo": "Let It Be sul giro",
+   "rif": "Lezione 4 · §4.3–4.4",
+   "testo": "Il maestro ha preso Let It Be come esempio dei quattro accordi e della discesa. Qui ci sono la strofa e il ritornello, con il basso del blocco 6 e la discesa fa-mi-re-do alla fine di ogni metà. Una battuta per accordo, non il ritmo del disco. Cantaci sopra.",
+   "occhio": "La strofa è I–V–VI–IV, poi I–V–IV–I; il ritornello parte dal la minore, VI–V–IV–I. Le discese sono due, una per metà.",
+   "avviso": "Accordi da Pianote: strofa C–G–Am–F, C–G–F–C; ritornello Am–G–F–C, C–G–F–C, con la discesa fa-mi-re-do. Nel disco sulla discesa cambia anche la destra; qui la destra tiene il fa, come nella versione semplice del maestro.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "letitbe",
+     "titolo": "Let It Be",
+     "artista": "The Beatles",
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "Am",
+      "F",
+      "C",
+      "G",
+      "F:2",
+      "F/E:1",
+      "F/D:1",
+      "C",
+      "Am",
+      "G",
+      "F",
+      "C",
+      "C",
+      "G",
+      "F:2",
+      "F/E:1",
+      "F/D:1",
+      "C"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "Strofa e ritornello",
+     "giro": "letitbe"
     }
    ]
   },
@@ -498,7 +547,8 @@
       "Eb",
       "Bb",
       "F"
-     ]
+     ],
+     "esercizio": true
     }
    ],
    "fasi": [
@@ -506,6 +556,59 @@
      "rip": 2,
      "nome": "Il cerchio",
      "giro": "cerchio"
+    }
+   ]
+  },
+  {
+   "id": "basso-extra",
+   "titolo": "Se ti va: giro di do e basso in quarti",
+   "rif": "Lezione 4 · §4.5, min 30:17",
+   "testo": "Due facoltativi. Il giro di do, I–VI–II–V, con lo stesso basso: cantaci sopra. Poi i quattro accordi con il basso ribattuto su ogni battito: la variante più mossa che il maestro ha accennato per quando ti annoi.",
+   "occhio": "Il basso in quarti non corre: stesso tempo, solo più colpi. La destra resta ferma per tutta la battuta.",
+   "avviso": "La variante in quarti è una nostra ricostruzione dalla registrazione, dove si sente solo «do do do do»: è tra le domande per il maestro.",
+   "bpm": 60,
+   "widget": {
+    "tipo": "giro"
+   },
+   "giri": [
+    {
+     "id": "girodo",
+     "titolo": "Giro di do I–VI–II–V",
+     "artista": "Esercizio del maestro",
+     "esercizio": true,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "Am",
+      "Dm",
+      "G"
+     ]
+    },
+    {
+     "id": "quarti",
+     "titolo": "Quattro accordi, basso in quarti",
+     "artista": "Ricostruzione dalla lezione 4",
+     "esercizio": true,
+     "quarti": true,
+     "ton": "C",
+     "accordi": [
+      "C",
+      "G",
+      "Am",
+      "F"
+     ]
+    }
+   ],
+   "fasi": [
+    {
+     "rip": 2,
+     "nome": "Giro di do",
+     "giro": "girodo"
+    },
+    {
+     "rip": 1,
+     "nome": "In quarti",
+     "giro": "quarti"
     }
    ]
   },
@@ -554,7 +657,7 @@
    "id": "domande",
    "titolo": "Prima di andare: le domande",
    "rif": "Dal quaderno, aperte al 21/11",
-   "testo": "1. Scale: «inizia a farne due» voleva dire due scale o due ottave? E oltre l'ottava con che dita prosegue la sinistra? 2. Il terzo esercizio, quello del perno: ricostruito dalla registrazione, me lo fai vedere? E la sinistra a specchio in che ottava? 3. «Freddie»: il do minore è uno scambio modale? Il si7 nasce dal re alzato a re♯? 4. Partenza dal medio: le figure ricostruite sono giuste, e com'è la sinistra dritta? 5. «13456»: quali altre declinazioni?",
+   "testo": "1. Scale: «inizia a farne due» voleva dire due scale o due ottave? E oltre l'ottava con che dita prosegue la sinistra? 2. Il terzo esercizio, quello del perno: ricostruito dalla registrazione, me lo fai vedere? E la sinistra a specchio in che ottava? 3. «Freddie»: il do minore è uno scambio modale? Il si7 nasce dal re alzato a re♯? 4. Partenza dal medio: le figure ricostruite sono giuste, e com'è la sinistra dritta? 5. «13456»: quali altre declinazioni? 6. La variante più mossa del basso (min 30:17): è il basso ribattuto su ogni battito? E nella discesa fa-mi-re-do, quanto dura ogni nota?",
    "occhio": "Fai suonare a lui il terzo esercizio e registralo: è il modo più rapido per chiudere la domanda 2.",
    "avviso": "Le altre domande aperte sono nel quaderno: come si segna una nota più forte, BPM di Beethoven e Chopin, rivolti su tutte le note.",
    "fasi": [

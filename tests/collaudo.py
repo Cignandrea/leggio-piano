@@ -29,8 +29,8 @@ try:
         eyebrow = pg.locator(".home-h .eyebrow").inner_text()
         check("verso la lezione 5" in eyebrow.lower() and "oggi, sabato 21 nov" in eyebrow.lower(), f"intestazione: {eyebrow!r}")
         n = pg.locator("ol.blocks > li").count()
-        check(n == 10, f"blocchi in elenco: {n}")
-        check("piano lezione-4-b" in pg.locator(".settings").inner_text(), "versione del piano visibile nelle impostazioni")
+        check(n == 12, f"blocchi in elenco: {n}")
+        check("piano lezione-4-c" in pg.locator(".settings").inner_text(), "versione del piano visibile nelle impostazioni")
         check("claude.ai" not in pg.locator("#diario").inner_text(), "nessun messaggio «apri su claude.ai» nel diario")
         pg.screenshot(path=str(shots / "1-oggi-chiaro.png"), full_page=True)
 
@@ -43,6 +43,30 @@ try:
         pg.wait_for_timeout(1500)
         sw = pg.evaluate("navigator.serviceWorker.getRegistration().then(r => !!(r && (r.active || r.waiting || r.installing)))")
         check(sw, "service worker registrato")
+
+        # 2b. Basso a tre note e discesa animata (blocco 6)
+        pg.locator('[data-act="open"][data-i="5"]').click(); pg.wait_for_timeout(500)
+        nl = pg.locator("#kb-l .mk circle").count()
+        check(nl == 3, f"basso di do: tre note alla sinistra ({nl})")
+        labs = pg.eval_on_selector_all("#kb-l .mk text.fn", "els => els.map(e => e.textContent)")
+        check(sorted(labs) == ["1", "5"], f"dita del basso: mignolo e pollice numerati {labs}")
+        check(pg.locator("text=Ti piace suonarlo?").count() == 0, "giro-esercizio senza «Ti piace suonarlo?»")
+        pg.locator('[data-act="phase"][data-i="1"]').click(); pg.wait_for_timeout(300)
+        for _ in range(24): pg.locator('[data-act="bpm"][data-d="5"]').click()
+        pg.locator('[data-act="play"]').click()
+        seen = False
+        for _ in range(60):
+            pg.wait_for_timeout(250)
+            t = pg.locator("#cname").inner_text()
+            if t.startswith("solo il basso: mi"):
+                seen = pg.locator("#kb-l .mk circle[class^='hot']").count() == 1 and pg.locator("#beats i").count() == 1
+                pg.screenshot(path=str(shots / "2b-discesa.png"), full_page=True)
+                break
+        check(seen, "discesa: sul mi suona solo il basso, la destra tiene, un battito")
+        pg.locator('[data-act="play"]').click()
+        for _ in range(24): pg.locator('[data-act="bpm"][data-d="-5"]').click()
+        pg.locator('[data-act="home"]').click(); pg.wait_for_timeout(400)
+        pg.evaluate("localStorage.removeItem('leggio-v2')"); pg.reload(); pg.wait_for_timeout(1200)
 
         # 3. Sessione simulata: blocco a figura avviato, poi tutti i blocchi fino a Fine
         pg.locator('[data-act="start"]').click(); pg.wait_for_timeout(600)
@@ -59,7 +83,7 @@ try:
             if "giro" in pg.locator("#stage").inner_html()[:0] : pass
             pg.locator('[data-act="next"]').click(); pg.wait_for_timeout(350)
             if pg.locator('[data-act="salva"]').count(): break
-        check(len(titles) == 10 and titles[-1].startswith("Prima di andare"), f"percorsi {len(titles)} blocchi, ultimo: {titles[-1]!r}")
+        check(len(titles) == 12 and titles[-1].startswith("Prima di andare"), f"percorsi {len(titles)} blocchi, ultimo: {titles[-1]!r}")
         pg.locator('[data-act="rate"][data-id="perno"][data-v="bene"]').click()
         pg.locator('[data-act="rate"][data-id="scala-sol"][data-v="cosi"]').click()
         pg.fill("#nota", "Prova del collaudo")
@@ -68,18 +92,20 @@ try:
         st = pg.locator("#dstat").inner_text()
         check(st.startswith("Salvato sul telefono alle"), f"stato salvataggio: {st!r}")
         diary = pg.evaluate("JSON.parse(localStorage.getItem('leggio-diario') || '[]')")
-        check(len(diary) == 1 and diary[0]["piano"] == "lezione-4-b" and diary[0]["valutazioni"]["perno"] == "bene" and diary[0]["nota"] == "Prova del collaudo", "diario sul telefono: 1 sessione completa")
+        check(len(diary) == 1 and diary[0]["piano"] == "lezione-4-c" and diary[0]["valutazioni"]["perno"] == "bene" and diary[0]["nota"] == "Prova del collaudo", "diario sul telefono: 1 sessione completa")
         pg.locator("#perclaude").click(); pg.wait_for_timeout(800)
         clip = pg.evaluate("navigator.clipboard.readText()")
-        check(clip.startswith("Leggio del piano, 1 sessione da registrare:") and '"piano": "lezione-4-b"' not in clip and '"piano":"lezione-4-b"' in clip, "testo copiato per Claude")
+        check(clip.startswith("Leggio del piano, 1 sessione da registrare:") and '"piano": "lezione-4-c"' not in clip and '"piano":"lezione-4-c"' in clip, "testo copiato per Claude")
         check(pg.locator("#perclaude").inner_text().startswith("Copiato"), "conferma «Copiato»")
+        fine = pg.locator(".app").inner_text()
+        check("Let It Be" in fine and "Quattro accordi" not in fine and "livello \n" not in fine and "Let It Be · livello" not in fine, "Fine: solo i brani, senza livello vuoto")
         pg.screenshot(path=str(shots / "3-fine-chiaro.png"), full_page=True)
         pg.locator('[data-act="home"]').click(); pg.wait_for_timeout(400)
         check("Prova del collaudo" in pg.locator("#diario").inner_text(), "la sessione compare in «Ultime sessioni»")
 
         # 4. Riapertura senza rete: pagina e piano dalla cache
         ctx.set_offline(True); pg.reload(); pg.wait_for_timeout(1500)
-        check(pg.locator("ol.blocks > li").count() == 10 and "verso la lezione 5" in pg.locator(".home-h .eyebrow").inner_text().lower(), "senza rete: app e piano dalla cache")
+        check(pg.locator("ol.blocks > li").count() == 12 and "verso la lezione 5" in pg.locator(".home-h .eyebrow").inner_text().lower(), "senza rete: app e piano dalla cache")
         ctx.set_offline(False)
 
         # 5. Aggiornamento del piano: cambio piano.json e riapro
