@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pattern · Leggio del piano</title>
+<meta name="description" content="Pattern: i concetti del quaderno di piano visti come grafici interattivi.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F4F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1012" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Pattern: una tavola per concetto. In alto la conclusione, poi il grafico, la riga che lo legge e i comandi a portata di pollice;
+   sotto, pochi punti su che cosa guardare. Stessi colori dell'app (ebano e avorio); nei grafici rosso e blu come le due mani,
+   e ogni distinzione fatta col colore è fatta anche con la forma o con un'etichetta. */
+:root{
+  --paper:#F4F5F2; --surface:#FFFFFF; --ink:#16181B; --ink-2:#555C61; --rule:#DCE0D9; --wash:#EAEDE7;
+  --ebony:#16181B; --ebony-ink:#F6F4EE; --focus:#2A57A6;
+  --ok:#2D7A4D; --warn:#8F5C0E;
+  --key-w:#FDFDFB; --key-b:#1B1D20; --key-edge:#A8AEA6;
+  --ser-a:#C4352B; --ser-b:#2A57A6; --ser-c:#2D7A4D; --ser-d:#8F5C0E; --ser-ink:#FFFFFF;
+  --f-disp:"Bricolage Grotesque", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --f-body:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --t-xs:12px; --t-s:14px; --t-m:16px; --t-l:20px; --t-xl:28px;
+  --r-1:10px; --r-2:14px; --r-3:20px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1012; --surface:#16191C; --ink:#ECEEE9; --ink-2:#A1A8A4; --rule:#2B3034; --wash:#1E2225;
+    --ebony:#ECE9E1; --ebony-ink:#121416; --focus:#8DB1F2;
+    --ok:#63C590; --warn:#E4AA4E;
+    --key-w:#D8DBD5; --key-b:#08090A; --key-edge:#6E7570;
+    --ser-a:#F08277; --ser-b:#8DB1F2; --ser-c:#63C590; --ser-d:#E4AA4E; --ser-ink:#0E1012;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1012; --surface:#16191C; --ink:#ECEEE9; --ink-2:#A1A8A4; --rule:#2B3034; --wash:#1E2225;
+  --ebony:#ECE9E1; --ebony-ink:#121416; --focus:#8DB1F2;
+  --ok:#63C590; --warn:#E4AA4E;
+  --key-w:#D8DBD5; --key-b:#08090A; --key-edge:#6E7570;
+  --ser-a:#F08277; --ser-b:#8DB1F2; --ser-c:#63C590; --ser-d:#E4AA4E; --ser-ink:#0E1012;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 var(--t-m)/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:20;background:var(--paper)}
+.app{max-width:600px;margin:0 auto;padding-block:16px calc(40px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3{font-family:var(--f-disp);margin:0;text-wrap:balance;letter-spacing:-.015em}
+h1{font-size:var(--t-xl);line-height:1.08;font-weight:700}
+h1:focus{outline:none}
+h2{font-size:var(--t-l);line-height:1.2;font-weight:700}
+h3{font-size:var(--t-m);line-height:1.25;font-weight:700}
+p{margin:0}
+.eyebrow{font-size:var(--t-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.muted{color:var(--ink-2)}
+.stack{display:flex;flex-direction:column;gap:10px;min-width:0}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+code{font:500 .94em/1.3 ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Menlo,monospace;background:var(--wash);padding:1px 5px;border-radius:5px;white-space:nowrap}
+
+/* Comandi comuni con l'app */
+.btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 var(--t-m)/1.1 var(--f-body);min-height:52px;padding:0 18px;border-radius:var(--r-2);border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;text-decoration:none}
+.btn:active{transform:scale(.98)}
+.btn.s{min-height:44px;font-size:var(--t-s);padding:0 14px}
+.btn.sq44{width:44px;min-width:44px;min-height:44px;padding:0;font-size:22px;font-weight:500}
+.btn.grow{flex:1}
+.btn[aria-disabled="true"]{opacity:.38;pointer-events:none}
+.tog{appearance:none;font:600 var(--t-s)/1 var(--f-body);min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink-2);cursor:pointer;touch-action:manipulation}
+.tog::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;border:1.5px solid currentColor;margin-right:8px;vertical-align:1px}
+.tog[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.tog[aria-pressed="true"]::before{background:currentColor}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:22px;overflow:hidden;max-width:100%}
+.seg button{appearance:none;border:0;background:transparent;color:var(--ink-2);font:600 var(--t-s)/1 var(--f-body);min-height:40px;min-width:44px;padding:0 12px;cursor:pointer;font-variant-numeric:tabular-nums;touch-action:manipulation;white-space:nowrap;flex:1 1 auto}
+.seg button + button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--ebony);color:var(--ebony-ink)}
+.tabs{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;padding:4px;border-radius:var(--r-2);background:var(--wash)}
+.tabs a{min-height:44px;border-radius:10px;font:600 var(--t-s)/1 var(--f-body);color:var(--ink-2);text-decoration:none;display:flex;align-items:center;justify-content:center;touch-action:manipulation}
+.tabs [aria-current="page"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+
+/* Elenco delle tavole */
+.testa{display:flex;flex-direction:column;gap:8px}
+.ordine{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ordine > span{font-size:var(--t-s);font-weight:600;color:var(--ink-2)}
+.gruppo{display:flex;flex-direction:column;gap:6px}
+.gruppo > p{font-size:var(--t-s);color:var(--ink-2)}
+.voci{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--rule)}
+.voce{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule);color:inherit;text-decoration:none}
+.voce b{display:block;font-weight:600;line-height:1.3}
+.voce small{display:block;color:var(--ink-2);font-size:var(--t-s);line-height:1.35;margin-top:2px}
+.voce .fr{color:var(--ink-2);font-size:20px;line-height:1}
+.nota-piede{font-size:var(--t-s);color:var(--ink-2);border-top:1px solid var(--rule);padding-top:14px}
+
+/* Tavola */
+.topline{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:var(--t-s);color:var(--ink-2);margin-bottom:-10px}
+.back{color:var(--ink);font:600 var(--t-s)/1 var(--f-body);padding:12px 8px 12px 0;text-decoration:none}
+.thead{display:flex;flex-direction:column;gap:8px}
+.thead .sotto{color:var(--ink-2)}
+.refs{display:flex;flex-wrap:wrap;gap:6px}
+.ref{font:600 var(--t-xs)/1 var(--f-body);color:var(--ink);text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:7px 10px;background:var(--surface);font-variant-numeric:tabular-nums}
+.pt{display:flex;flex-direction:column;gap:12px}
+.pt-graf{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-2);padding:10px 8px 6px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.pt-graf h3{font-size:var(--t-s);padding:0 6px;color:var(--ink-2);font-family:var(--f-body);font-weight:600;letter-spacing:0}
+.pt-lettura{font-size:var(--t-m);line-height:1.4;padding:10px 12px;border-radius:var(--r-1);background:var(--wash);min-height:44px}
+.pt-lettura b{font-weight:700}
+.pt-comandi{display:flex;flex-direction:column;gap:12px;position:sticky;bottom:0;z-index:3;background:var(--paper);margin-inline:-16px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--rule);box-shadow:0 -8px 14px -12px rgba(0,0,0,.35)}
+.pt-comandi:empty{display:none}
+@media (max-height:600px){ .pt-comandi{position:static;margin-inline:0;padding:0;border-top:0;box-shadow:none} .pt-graf .g-svg{max-height:86svh} }
+.pt-com{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pt-com-l{font-size:var(--t-s);font-weight:600;color:var(--ink-2)}
+.pt-cur{flex-direction:column;align-items:stretch;gap:6px}
+.pt-cur-t{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.pt-val{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.pt-cur-r{display:flex;align-items:center;gap:10px}
+.pt-cur-r input{flex:1;min-width:0;height:44px;margin:0;accent-color:var(--ink)}
+.pt-riga{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pt-leg{list-style:none;margin:0;padding:0 6px;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:var(--t-xs);color:var(--ink-2)}
+.pt-leg li{display:flex;align-items:center;gap:6px}
+.pt-leg-i{display:block;width:22px;height:12px;flex:none}
+.sez{display:flex;flex-direction:column;gap:8px}
+.sez ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.sez li::marker{color:var(--ink-2)}
+.formule{list-style:none;padding:0!important;gap:6px!important}
+.formule code{white-space:normal;display:inline-block;padding:5px 8px}
+details{border-top:1px solid var(--rule);padding-top:10px}
+summary{font-weight:600;cursor:pointer;min-height:44px;display:flex;align-items:center;list-style:none;gap:8px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--wash);font-weight:600;line-height:1}
+details[open] summary::before{content:"−"}
+details > div{display:flex;flex-direction:column;gap:8px;font-size:var(--t-s);color:var(--ink-2);padding-bottom:6px}
+details ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.nav2{display:flex;gap:8px}
+.vuoto{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+
+/* Grafici */
+.g-svg{display:block;width:100%;height:auto;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+.g-fondo{fill:var(--surface)}
+.g-griglia line{stroke:var(--rule);stroke-width:1}
+.g-asse{stroke:var(--ink);stroke-width:1.5;stroke-linecap:square}
+.g-tacca{stroke:var(--ink);stroke-width:1}
+.g-num{fill:var(--ink-2);font:500 11px var(--f-body);font-variant-numeric:tabular-nums}
+.g-num.forte{fill:var(--ink);font-weight:700}
+.g-lab{fill:var(--ink-2);font:600 11px var(--f-body)}
+.g-testo{fill:var(--ink);font:600 11px var(--f-body);font-variant-numeric:tabular-nums}
+.g-testo.m{fill:var(--ink-2);font-weight:500}
+.g-testo.p{font-size:10px}
+.g-testo.g{font-size:13px;font-weight:700}
+.g-linea{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.g-linea.fine{stroke-width:1.25}
+.g-linea.grossa{stroke-width:3.5}
+.g-linea.tratt{stroke-dasharray:5 4}
+.g-linea.punt{stroke-dasharray:1.5 4}
+.g-punto{fill:var(--ink);stroke:var(--surface);stroke-width:1.5}
+.g-area{fill:var(--ink);opacity:.1;stroke:none}
+.g-fascia{fill:var(--ink);opacity:.06}
+.s-a.g-linea{stroke:var(--ser-a)} .s-b.g-linea{stroke:var(--ser-b)} .s-c.g-linea{stroke:var(--ser-c)} .s-d.g-linea{stroke:var(--ser-d)} .s-m.g-linea{stroke:var(--ink-2);stroke-width:1.25}
+.s-a.g-punto{fill:var(--ser-a)} .s-b.g-punto{fill:var(--ser-b)} .s-c.g-punto{fill:var(--ser-c)} .s-d.g-punto{fill:var(--ser-d)} .s-m.g-punto{fill:var(--ink-2)}
+.g-punto.vuoto{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+.s-a.g-punto.vuoto{stroke:var(--ser-a)} .s-b.g-punto.vuoto{stroke:var(--ser-b)} .s-c.g-punto.vuoto{stroke:var(--ser-c)} .s-d.g-punto.vuoto{stroke:var(--ser-d)} .s-m.g-punto.vuoto{stroke:var(--ink-2)}
+.s-a.g-testo{fill:var(--ser-a)} .s-b.g-testo{fill:var(--ser-b)} .s-c.g-testo{fill:var(--ser-c)} .s-d.g-testo{fill:var(--ser-d)} .s-m.g-testo{fill:var(--ink-2)}
+.s-a.g-area,.s-a.g-fascia{fill:var(--ser-a)} .s-b.g-area,.s-b.g-fascia{fill:var(--ser-b)} .s-c.g-area,.s-c.g-fascia{fill:var(--ser-c)} .s-d.g-area,.s-d.g-fascia{fill:var(--ser-d)}
+.g-fascia.s-a,.g-fascia.s-b,.g-fascia.s-c,.g-fascia.s-d{opacity:.13}
+.g-tocco{fill:transparent}
+.g-premi{cursor:pointer;outline:none}
+.g-premi:focus-visible .g-punto{stroke:var(--focus);stroke-width:3}
+.g-tb{fill:var(--key-w);stroke:var(--key-edge);stroke-width:1}
+.g-tn{fill:var(--key-b)}
+.g-segno{stroke:var(--surface);stroke-width:1}
+.g-segno.f-a{fill:var(--ser-a)} .g-segno.f-b{fill:var(--ser-b)} .g-segno.f-c{fill:var(--ser-c)} .g-segno.f-d{fill:var(--ser-d)} .g-segno.f-i{fill:var(--ink)}
+.g-segno-t{fill:var(--ser-ink);font:700 10px var(--f-body)}
+.g-segno.f-i + .g-segno-t{fill:var(--paper)}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important} }
+</style>
+</head>
+<body>
+<main class="app" id="view"><p class="muted">Apro le tavole…</p></main>
+
+<script src="pattern/nucleo.js"></script>
+<script src="pattern/grafico.js"></script>
+<script>
+/* Registro dei motori: ogni file in pattern/motori/ registra qui il proprio disegno. */
+window.Pattern = { motori: {}, motore(nome, def){ this.motori[nome] = def; } };
+</script>
+<script>
+"use strict";
+/* ---------- Stato e dati ---------- */
+const LS = "leggio-pattern";
+const S = { ordine: "capitoli", dati: null, errore: false };
+try { const o = JSON.parse(localStorage.getItem(LS) || "null"); if (o && (o.ordine === "capitoli" || o.ordine === "idee")) S.ordine = o.ordine; } catch (e) { /* memoria non disponibile */ }
+const salva = () => { try { localStorage.setItem(LS, JSON.stringify({ ordine: S.ordine })); } catch (e) { /* memoria non disponibile */ } };
+const h = PG.h, $ = (q) => document.querySelector(q);
+let attiva = null;   // la tavola montata, per smontarla al cambio
+
+// Testo delle tavole: **grassetto** e `formula`, nient'altro. Si costruiscono nodi, non HTML.
+function ricco(t){
+  const out = [], re = /\*\*([^*]+)\*\*|`([^`]+)`/g; let i = 0, m;
+  while ((m = re.exec(t))){ if (m.index > i) out.push(t.slice(i, m.index)); out.push(m[1] != null ? h("strong", { text: m[1] }) : h("code", { text: m[2] })); i = re.lastIndex; }
+  if (i < t.length) out.push(t.slice(i));
+  return out;
+}
+const capDi = (par) => Number(String(par).split(".")[0]);
+const monta = (...nodi) => $("#view").replaceChildren(...nodi.filter((n) => n != null && n !== false));   // un pezzo che manca non si scrive
+const tavole = () => (S.dati && Array.isArray(S.dati.tavole) ? S.dati.tavole : []);
+const tabsHTML = () => h("nav", { class: "tabs", "aria-label": "Sezioni dell'app" },
+  h("a", { href: "./#oggi", text: "Oggi" }), h("a", { href: "./#esercizi", text: "Esercizi" }), h("a", { href: "quaderno.html", text: "Quaderno" }), h("a", { href: "pattern.html", "aria-current": "page", text: "Pattern" }));
+
+/* ---------- Elenco ---------- */
+function voce(t, parSolo){
+  const par = parSolo || t.par || [];
+  return h("li", {}, h("a", { class: "voce", href: "#t-" + t.id },
+    h("span", {}, h("b", { text: t.titolo }), h("small", { text: par.map((p) => "§" + p).join(" · ") + (S.ordine === "capitoli" ? " · " + nomeIdea(t.idea) : "") + (Pattern.motori[t.motore] ? "" : " · non caricata") })),
+    h("span", { class: "fr", "aria-hidden": "true", text: "›" })));
+}
+const nomeIdea = (id) => { const i = (S.dati.idee || []).find((x) => x.id === id); return i ? i.titolo : ""; };
+function renderElenco(){
+  smonta();
+  const T = tavole(), gruppi = [];
+  if (S.ordine === "capitoli"){
+    const caps = [...new Set(T.flatMap((t) => (t.par || []).map(capDi)))].sort((a, b) => a - b);
+    for (const c of caps){
+      const mie = T.filter((t) => (t.par || []).some((p) => capDi(p) === c));
+      gruppi.push(h("section", { class: "gruppo", "aria-label": "Capitolo " + c }, h("h2", { text: "Capitolo " + c }),
+        h("ul", { class: "voci" }, mie.map((t) => voce(t, t.par.filter((p) => capDi(p) === c))))));
+    }
+  } else {
+    for (const i of S.dati.idee || []){
+      const mie = T.filter((t) => t.idea === i.id); if (!mie.length) continue;
+      gruppi.push(h("section", { class: "gruppo", "aria-label": i.titolo }, h("h2", { text: i.titolo }), i.sotto ? h("p", { text: i.sotto }) : null, h("ul", { class: "voci" }, mie.map((t) => voce(t)))));
+    }
+  }
+  const sw = PG.seg({ etichetta: "Ordine", mostraEtichetta: false, opzioni: [{ v: "capitoli", t: "Per capitolo" }, { v: "idee", t: "Per idea matematica" }], valore: S.ordine, su: (v) => { S.ordine = v; salva(); renderElenco(); } });
+  monta(tabsHTML(),
+    h("header", { class: "testa" }, h("h1", { tabindex: "-1", text: "Pattern" }), h("p", { class: "muted", text: S.dati.intro || "" })),
+    h("div", { class: "ordine" }, h("span", { text: T.length + " tavole" }), sw),
+    ...gruppi,
+    S.dati.nota ? h("p", { class: "nota-piede", text: S.dati.nota }) : null);
+  document.title = "Pattern · Leggio del piano";
+}
+
+/* ---------- Tavola ---------- */
+function smonta(){ if (attiva && typeof attiva.smonta === "function"){ try { attiva.smonta(); } catch (e) { /* niente da smontare */ } } attiva = null; PG.zitto(); }
+function renderTavola(id){
+  smonta();
+  const T = tavole(), i = T.findIndex((t) => t.id === id), t = T[i];
+  if (!t){ try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* resta l'indirizzo */ } renderElenco(); return; }
+  const graf = h("div", { class: "pt-graf" }), lettura = h("p", { class: "pt-lettura", "aria-live": "polite" }), comandi = h("div", { class: "pt-comandi" });
+  // la riga di lettura non si accorcia mai: così ciò che sta sotto non salta a ogni tocco
+  const leggi = (...n) => { lettura.replaceChildren(...n.flat().map((x) => (typeof x === "string" ? ricco(x) : x)).flat()); lettura.style.minHeight = Math.max(lettura.offsetHeight, parseFloat(lettura.style.minHeight) || 0) + "px"; };
+  // dopo un ridisegno chi usa la tastiera ritrova il punto su cui era
+  const metti = graf.replaceChildren.bind(graf);
+  graf.replaceChildren = (...n) => {
+    const a = document.activeElement, k = a && graf.contains(a) ? a.getAttribute("aria-label") : null;
+    metti(...n.filter((x) => x != null && x !== false));
+    if (k){ const e = [...graf.querySelectorAll("[aria-label]")].find((x) => x.getAttribute("aria-label") === k); if (e && e.focus) e.focus({ preventScroll: true }); }
+  };
+  const ctx = { graf, comandi, lettura: leggi, ricco };
+  const sez = (titolo, corpo) => h("section", { class: "sez" }, h("h2", { text: titolo }), corpo);
+  const prec = T[i - 1], succ = T[i + 1];
+  monta(
+    h("div", { class: "topline" }, h("a", { class: "back", href: "#", text: "‹ Pattern" }), h("span", { text: (i + 1) + " di " + T.length })),
+    h("header", { class: "thead" }, h("p", { class: "eyebrow", text: nomeIdea(t.idea) }), h("h1", { tabindex: "-1", text: t.titolo }), t.sotto ? h("p", { class: "sotto" }, ricco(t.sotto)) : null,
+      h("div", { class: "refs", "aria-label": "Paragrafi del quaderno" }, (t.par || []).map((p) => h("a", { class: "ref", href: "quaderno.html#par-" + p, text: "§" + p })))),
+    h("h2", { class: "sr", text: "Grafico" }),
+    h("div", { class: "pt" }, lettura, graf, comandi),
+    t.guarda && t.guarda.length ? sez("Che cosa guardare", h("ul", {}, t.guarda.map((g) => h("li", {}, ricco(g))))) : null,
+    t.formule && t.formule.length ? sez("In formula", h("ul", { class: "formule" }, t.formule.map((f) => h("li", {}, h("code", { text: f }))))) : null,
+    t.prova ? sez("Alla tastiera", h("p", {}, ricco(t.prova))) : null,
+    (t.corsi && t.corsi.length) || t.calcolo ? h("div", {},
+      t.corsi && t.corsi.length ? h("details", {}, h("summary", { text: "Dai corsi dell'università" }), h("div", {}, h("ul", {}, t.corsi.map((c) => h("li", {}, h("strong", { text: c.corso + ". " }), ricco(c.tema)))))) : null,
+      t.calcolo ? h("details", {}, h("summary", { text: "Come è calcolato" }), h("div", {}, [].concat(t.calcolo).map((c) => h("p", {}, ricco(c))))) : null) : null,
+    h("nav", { class: "nav2", "aria-label": "Altre tavole" },
+      prec ? h("a", { class: "btn s grow", href: "#t-" + prec.id, text: "‹ Precedente" }) : h("span", { class: "btn s grow", "aria-disabled": "true", text: "‹ Precedente" }),
+      succ ? h("a", { class: "btn s grow", href: "#t-" + succ.id, text: "Successiva ›" }) : h("span", { class: "btn s grow", "aria-disabled": "true", text: "Successiva ›" })));
+  document.title = t.titolo + " · Pattern";
+  if (!Pattern.motori[t.motore]){
+    // il motore non è arrivato (rete, cache a metà): la tavola resta, lo dice, e si può riprovare
+    lettura.textContent = "Il grafico di questa tavola non si è caricato.";
+    graf.replaceChildren(h("div", { class: "vuoto" }, h("p", { text: "Serve la rete almeno una volta per scaricarlo." }), h("button", { class: "btn s", type: "button", text: "Riprova", onclick: () => caricaMotore(t.motore).then(render) })));
+    window.scrollTo(0, 0); return;
+  }
+  try { attiva = Pattern.motori[t.motore].disegna(ctx, t.param || {}) || {}; }
+  catch (e) { graf.replaceChildren(h("p", { class: "muted", text: "Questa tavola non si è aperta: " + (e && e.message ? e.message : "errore") })); console.error(e); }
+  window.scrollTo(0, 0);
+}
+
+/* ---------- Avvio ---------- */
+function render(){
+  if (!S.dati){
+    monta(tabsHTML(), h("header", { class: "testa" }, h("h1", { text: "Pattern" })),
+      S.errore ? h("div", { class: "vuoto" }, h("p", { text: "Le tavole non si sono caricate: serve la rete almeno la prima volta." }), h("button", { class: "btn s", type: "button", text: "Riprova", onclick: carica })) : h("p", { class: "muted", text: "Apro le tavole…" }));
+    return;
+  }
+  const m = /^#t-([a-z0-9-]+)$/.exec(location.hash);
+  if (m) renderTavola(m[1]); else renderElenco();
+}
+// I motori si caricano per nome, dall'elenco delle tavole: aggiungere un motore non chiede di toccare questa pagina.
+function caricaMotore(nome){
+  if (Pattern.motori[nome]) return Promise.resolve(true);
+  if (!/^[a-z0-9-]+$/.test(nome)) return Promise.resolve(false);
+  return new Promise((fatto) => { const s = document.createElement("script"); s.src = "pattern/motori/" + nome + ".js"; s.onload = () => fatto(!!Pattern.motori[nome]); s.onerror = () => { s.remove(); fatto(false); }; document.head.append(s); });
+}
+// In locale, per provare una tavola nuova: pattern.html?dati=pattern/prova.json
+const LOCALE = ["localhost", "127.0.0.1"].includes(location.hostname);
+const mDati = LOCALE ? /[?&]dati=([A-Za-z0-9_./-]+\.json)/.exec(location.search) : null;
+const FILE_DATI = mDati && !mDati[1].includes("..") ? mDati[1] : "pattern.json";
+async function carica(){
+  S.errore = false; render();
+  try {
+    const r = await fetch(FILE_DATI, { cache: "no-store" }); if (!r.ok) throw new Error(String(r.status));
+    const d = await r.json(); if (!d || !Array.isArray(d.tavole)) throw new Error("formato");
+    await Promise.all([...new Set(d.tavole.map((t) => t.motore))].map(caricaMotore));
+    S.dati = d;
+  } catch (e) { S.errore = true; }
+  render();
+}
+window.addEventListener("hashchange", render);
+carica();
+if ("serviceWorker" in navigator && (/\.github\.io$/.test(location.hostname) || ["localhost", "127.0.0.1"].includes(location.hostname))){
+  window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
+}
+</script>
+</body>
+</html>

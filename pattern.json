@@ -1,0 +1,650 @@
+{
+  "schema": 1,
+  "versione": "2026-11-28",
+  "intro": "I concetti del quaderno, visti come grafici: una tavola per idea, da toccare.",
+  "nota": "Ogni numero delle tavole è calcolato dall'app e ricontrollato da un collaudo. I rimandi ai corsi dell'università citano solo materiali letti davvero.",
+  "idee": [
+    {
+      "id": "rette",
+      "titolo": "Rette e traslazioni",
+      "sotto": "Quando una regola musicale è una retta, e cambiare tonalità è scorrere lungo la retta."
+    },
+    {
+      "id": "orologio",
+      "titolo": "Aritmetica dell'orologio",
+      "sotto": "Dodici note che tornano su sé stesse: si conta modulo 12."
+    },
+    {
+      "id": "esponenziali",
+      "titolo": "Esponenziali e logaritmi",
+      "sotto": "L'orecchio misura rapporti, non differenze."
+    },
+    {
+      "id": "onde",
+      "titolo": "Onde e funzioni periodiche",
+      "sotto": "Ciò che si ripete: nel suono e nelle dita."
+    },
+    {
+      "id": "successioni",
+      "titolo": "Successioni e limiti",
+      "sotto": "Dove va a finire una regola ripetuta."
+    },
+    {
+      "id": "processi",
+      "titolo": "Ottimizzazione e processi",
+      "sotto": "Lo studio come processo: costi, rese, minimi."
+    }
+  ],
+  "tavole": [
+    {
+      "id": "scala-retta",
+      "titolo": "La scala maggiore è una retta",
+      "sotto": "Tono, tono, semitono… non è un elenco da imparare: sono i punti interi sotto una retta di pendenza 12/7.",
+      "idea": "rette",
+      "par": [
+        "2.5",
+        "3.1",
+        "4.6"
+      ],
+      "motore": "scala-retta",
+      "param": {
+        "c": 5
+      },
+      "guarda": [
+        "**Pendenza 12/7**: dodici semitoni da dividere in sette gradi. Ogni grado vale in media 1,71 semitoni; le note sono numeri interi, quindi alcuni passi valgono 2 (tono) e altri 1 (semitono).",
+        "**Parte intera**: la nota è il semitono intero più alto che non supera la retta. A ogni grado la retta sale di 1,71: se nel passo attraversa due righe intere il passo è un tono, se ne attraversa una sola è un semitono.",
+        "**Intercetta c**: muovila. Con 5 esce la scala maggiore, con 2 la minore naturale: stessa pendenza, retta spostata in basso di 3/7. È ciò che fa la relativa minore quando legge le stesse note a partire dal VI grado (§4.6).",
+        "**Tasti bianchi**: le sette intercette sono i sette modi di leggere i tasti bianchi, partendo ogni volta da una nota diversa."
+      ],
+      "formule": [
+        "semitoni(k) = ⌊(12·k + c) / 7⌋   con k = 0, 1 … 7",
+        "c = 5 → 0 2 4 5 7 9 11 12 (maggiore)",
+        "c = 2 → 0 2 3 5 7 8 10 12 (minore naturale)"
+      ],
+      "prova": "Metti c = 2 e suona i tasti segnati, da la a la: è la minore naturale. Poi c = 5, da do a do. Sono gli stessi sette tasti.",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "Il **coefficiente angolare**: negli appunti compare con la derivata come pendenza della tangente (lezione su rapporto incrementale e derivata) e nel libro del corso con l'asintoto obliquo, retta di coefficiente angolare m."
+        }
+      ],
+      "calcolo": [
+        "La formula è verificata dal collaudo per tutte e sette le intercette: i passi coincidono con le scale costruite da una libreria musicale indipendente (music21).",
+        "In teoria musicale un insieme di note distribuito così, il più uniformemente possibile, si chiama «massimamente uniforme»: la scala diatonica è il caso 7 su 12."
+      ]
+    },
+    {
+      "id": "giri-rette",
+      "titolo": "La tabella dei giri è fatta di rette parallele",
+      "sotto": "Ogni grado è una retta; cambiare tonalità è fare un passo lungo tutte le rette insieme.",
+      "idea": "rette",
+      "par": [
+        "4.3",
+        "4.5",
+        "5.4",
+        "5.5"
+      ],
+      "motore": "giri-rette",
+      "param": {},
+      "guarda": [
+        "**Rette parallele**: in ordine di quinte, la fondamentale di ogni grado sale di un posto a ogni tonalità. I gradi sono rette con la stessa pendenza e altezze diverse: IV a −1, I a 0, V a +1, II a +2, VI a +3.",
+        "**Righe orizzontali**: tocca un punto. La stessa nota torna nella tonalità accanto su un'altra retta: il V di una tonalità è il I della successiva, il II è il VI della precedente.",
+        "**Cerchi e quadrati**: il tipo dipende dalla retta, non dalla nota. Sulle rette di I, IV e V l'accordo è maggiore, su quelle di II e VI è minore: re è minore in do (II) e maggiore in sol (V).",
+        "**Il ritorno**: nel giro armonico l'ultimo tratto scende di una quinta, da dominante a tonica: è il ritorno che fa del giro armonico il proprio turnaround (§5.5). Nel giro pop il ritorno sale di una quinta: cadenza plagale, meno tesa."
+      ],
+      "formule": [
+        "fondamentale = tonalità + d   (in quinte)",
+        "d: IV = −1 · I = 0 · V = +1 · II = +2 · VI = +3",
+        "giro armonico: 0 → +3 → +2 → +1 → 0"
+      ],
+      "prova": "Scegli la, poi mi, e guarda quali accordi restano: fa♯ minore è il VI di la e il II di mi. Suona i due giri armonici uno dopo l'altro.",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "Rette con lo stesso **coefficiente angolare** e termine noto diverso: il termine noto qui è lo spostamento del grado in quinte, d."
+        }
+      ],
+      "calcolo": [
+        "Gli accordi sono costruiti sovrapponendo terze sulle note della scala di ogni tonalità, non letti da una tabella. Il collaudo li confronta con la tabella del §5.4 e con music21, in tutte e cinque le tonalità."
+      ]
+    },
+    {
+      "id": "rigo-asse",
+      "titolo": "Il pentagramma è un asse: la chiave ne sposta l'origine",
+      "sotto": "Le posizioni sul rigo sono numeri, le note anche: ogni chiave è una retta di pendenza 1, e violino e basso differiscono solo per il termine noto.",
+      "idea": "rette",
+      "par": [
+        "2.3",
+        "5.1"
+      ],
+      "motore": "rigo-asse",
+      "param": {
+        "p": 4,
+        "diesis": 3
+      },
+      "guarda": [
+        "**Due rette parallele**: salire di una posizione (da rigo a spazio o da spazio a rigo) è salire di una nota, in tutte e due le chiavi. Cambia solo l'intercetta: +2 in violino, −10 in basso.",
+        "**Due fatti bastano**: il sol4 sul secondo rigo fissa la retta del violino, il fa3 sul quarto rigo quella del basso (§2.3). Il do centrale cade sul taglio sotto il rigo di violino e sul taglio sopra il rigo di basso.",
+        "**L'errore tipico**: la stessa posizione in chiave di basso sta 12 note più in basso. Di nome, però, si va due note più su (si → re), perché −12 ≡ +2 modulo 7. Leggere il basso con la griglia del violino sbaglia sempre di due nomi (§2.3).",
+        "**I diesis in armatura**: ogni diesis è una quinta sopra il precedente, scritto quattro posizioni più su o tre più giù; di nome è lo stesso, perché +4 ≡ −3 modulo 7. Restano tutti tra il secondo spazio e lo spazio sopra il quinto rigo; i primi quattro sono nel §5.1."
+      ],
+      "formule": [
+        "violino: nota = p + 2 · basso: nota = p − 10",
+        "basso − violino = −12 ≡ +2 (mod 7)",
+        "diesis: 8, 5, 9, 6 … passi −3, +4, −3"
+      ],
+      "prova": "Metti la mano destra sul si del terzo rigo in chiave di violino e la sinistra sul re del terzo rigo in chiave di basso: stessa posizione, due note diverse. Poi trova il do centrale da tutte e due le chiavi.",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "Rette con lo stesso **coefficiente angolare** e termine noto diverso: la chiave fissa il termine noto."
+        },
+        {
+          "corso": "Geometria",
+          "tema": "**Congruenza modulo n**: i nomi delle note sono classi di resto modulo 7, e −12 e +2 stanno nella stessa classe."
+        }
+      ],
+      "calcolo": [
+        "Le due intercette sono ricavate dai due fatti del §2.3 e confrontate con music21 (primo rigo delle chiavi di violino e di basso), posizione per posizione, dal taglio sotto al taglio sopra.",
+        "I posti dei diesis sono una convenzione di scrittura, dichiarata nel codice. Il collaudo li ricava una seconda volta con la regola «l'unico posto con quel nome tra il secondo spazio e lo spazio sopra il quinto rigo» e li confronta con il §5.1 per i primi quattro. music21 non fornisce i posti grafici dell'armatura."
+      ]
+    },
+    {
+      "id": "esercizi-grafico",
+      "titolo": "Gli esercizi di ginnastica sono un motivo che trasla",
+      "sotto": "Ogni esercizio con una figura nell'app diventa un grafico: un motivo di note che si ripete un tasto più in là, gruppo dopo gruppo.",
+      "idea": "rette",
+      "par": [
+        "2.1",
+        "3.8",
+        "3.9",
+        "4.1"
+      ],
+      "motore": "esercizi-grafico",
+      "param": {},
+      "guarda": [
+        "**Traslazione**: ogni gruppo è lo stesso motivo spostato di un tasto. Nel «13456» il motivo di 8 note si ripete 8 volte, ogni volta un tasto più su.",
+        "**Parallelo**: la differenza tra le due mani resta costante. Nel «13456» vale 7 tasti bianchi, un'ottava: da una mano all'altra è ancora una traslazione.",
+        "**A specchio**: nel moto contrario resta costante la somma dei tasti: è una riflessione. Una mano sale quando l'altra scende (§2.1).",
+        "**La rampa**: la retta per l'inizio di ogni gruppo. La pendenza, passo diviso lunghezza del gruppo, dice quanto sale la mano a ogni nota: 1/8 di tasto nel «13456», 1/7 nella partenza dal medio, in salita o in discesa."
+      ],
+      "formule": [
+        "tasto(g, k) = base + (g − 1)·passo + motivo(k)",
+        "parallelo: d − s = costante · specchio: d + s = costante",
+        "rampa: pendenza = passo / lunghezza del gruppo"
+      ],
+      "prova": "Suona il «13456» con la sola destra e fermati sulla prima nota di ogni gruppo: il pollice sale di un tasto alla volta, do, re, mi… È la rampa del grafico.",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "Funzione **periodica**, `f(x + T) = f(x)` (libro del corso): tolta la rampa, il motivo si ripete con periodo pari alla lunghezza del gruppo. La rampa è una retta di **coefficiente angolare** m = passo / lunghezza."
+        }
+      ],
+      "calcolo": [
+        "Il grafico si costruisce da esercizi.json, lo stesso file della sezione Esercizi: un esercizio nuovo con una figura ha il suo grafico senza scrivere codice.",
+        "L'espansione della figura in note replica quella dell'app; il collaudo la confronta nota per nota con la funzione dell'app e con un'espansione indipendente (music21), su tutti gli esercizi. Parallelo e specchio sono riconosciuti per calcolo: differenza o somma costante dei tasti.",
+        "Dove l'app segna una mano come ricostruita, la lettura lo ripete con «da confermare»."
+      ]
+    },
+    {
+      "id": "finestra-quinte",
+      "titolo": "Una tonalità è una finestra di sette note in fila per quinte",
+      "sotto": "Le note in fila per quinte: ogni tonalità maggiore ne prende sette consecutive, e dove cade la finestra si leggono armatura, gradi e accordi.",
+      "idea": "orologio",
+      "par": [
+        "2.5",
+        "2.6",
+        "2.7",
+        "3.7",
+        "4.6",
+        "4.7",
+        "4.8",
+        "5.1"
+      ],
+      "motore": "finestra-quinte",
+      "param": {
+        "t": 3,
+        "relativa": false
+      },
+      "guarda": [
+        "**Scorrere è traslare**: un passo in su sposta la finestra di una riga. Esce in basso il vecchio IV grado ed entra in alto il nuovo VII, la sensibile, un semitono sotto la tonica (§4.7): dal lato dei diesis è il diesis nuovo, dal lato dei bemolle esce un bemolle.",
+        "**Posizione e tipo**: dal basso, i primi tre posti (IV, I, V) portano accordi maggiori, i tre sopra (II, VI, III) accordi minori, l'ultimo in cima (VII) l'accordo diminuito. Lo schema non cambia con la tonalità (§3.7).",
+        "**Le due linee**: tra le linee stanno i sette nomi senza alterazioni. Le righe della finestra oltre la linea alta sono i diesis dell'armatura, oltre la linea bassa i bemolle: contarle dà l'armatura.",
+        "**Gli estremi**: IV e VII distano sei quinte, cioè 6 · 7 = 42 semitoni, che modulo 12 fanno 6. È il tritono, l'unico della scala maggiore (§2.7). In fa♯ e sol♭ le due finestre suonano gli stessi tasti: enarmonia (§4.8)."
+      ],
+      "formule": [
+        "finestra di t = { t − 1, t, …, t + 5 }   (do = 0, sol = 1, fa = −1)",
+        "diesis = posti ≥ 6 · bemolle = posti ≤ −2",
+        "IV → VII: 6 quinte = 42 ≡ 6 (mod 12) semitoni"
+      ],
+      "prova": "Con tre diesis, suona fa♯, do♯ e sol♯ e poi il la un semitono sopra l'ultimo: è la tonica. Accendi «Relativa minore» e suona la stessa scala partendo da fa♯.",
+      "corsi": [
+        {
+          "corso": "Geometria",
+          "tema": "**Congruenza modulo n** e classi di resto: due note sono la stessa classe quando differiscono di un multiplo di 12 semitoni, come il do e la nota che si raggiunge dopo dodici quinte, 84 semitoni più su."
+        }
+      ],
+      "calcolo": [
+        "Gradi, armature, tipi degli accordi e relative sono calcolati dalla posizione sulla retta e confrontati, per le tredici tonalità da sol♭ a fa♯, con music21 (scale, armature, accordi sui gradi, relativa minore).",
+        "Il tritono è cercato per forza bruta tra tutte le coppie di gradi: in ogni tonalità esce una sola coppia, IV e VII. Le due regole dell'armatura (§4.7) sono verificate per ogni tonalità con diesis e con almeno due bemolle."
+      ]
+    },
+    {
+      "id": "orologio-intervalli",
+      "titolo": "Un intervallo e il suo rivolto fanno sempre dodici",
+      "sotto": "Le dodici note su un quadrante come le ore: un intervallo è un arco, e il resto del giro è il suo rivolto.",
+      "idea": "orologio",
+      "par": [
+        "3.1",
+        "2.7",
+        "4.2",
+        "4.7"
+      ],
+      "motore": "orologio",
+      "param": {
+        "modo": "intervalli",
+        "n": 7,
+        "ripeti": false
+      },
+      "guarda": [
+        "**Arco e resto**: dal do si percorrono n semitoni in senso orario; il resto del giro misura 12 − n ed è il rivolto. Quinta giusta (7) e quarta giusta (5) sono le due facce dello stesso arco (§4.7).",
+        "**Il tritono**: con 6 i due archi sono uguali. Il tritono è metà esatta dell'ottava, e rovesciato resta tritono (§2.7).",
+        "**Ripetere l'intervallo**: accendi l'interruttore. Il numero di note toccate è 12 diviso il massimo comune divisore tra n e 12. Con 7 le tocca tutte e dodici, nell'ordine del circolo delle quinte; con 4 ne tocca tre, le note della triade aumentata.",
+        "**Tocca una nota**: sul quadrante, ogni nota sceglie l'intervallo che la separa dal do."
+      ],
+      "formule": [
+        "rivolto(n) = 12 − n",
+        "note toccate ripetendo n = 12 / MCD(n, 12)",
+        "k · n (mod 12), con k = 0, 1, 2 …"
+      ],
+      "prova": "Suona do e il sol sopra (7 semitoni), poi sol e il do sopra (5): insieme fanno l'ottava. Poi fa e si, e si e il fa sopra: 6 e 6.",
+      "corsi": [
+        {
+          "corso": "Geometria",
+          "tema": "**Congruenza modulo n** e classi di resto: sul quadrante si conta modulo 12, e ripetere un intervallo è sommare n più volte nelle classi di resto."
+        }
+      ],
+      "calcolo": [
+        "Nomi e rivolti degli undici intervalli sono confrontati con music21 (nome dell'intervallo e del suo complemento all'ottava).",
+        "Le note toccate ripetendo l'intervallo sono ricavate per forza bruta, trasponendo il do finché torna al do; con 7 l'ordine coincide con la retta delle quinte delle altre tavole."
+      ]
+    },
+    {
+      "id": "orologio-triadi",
+      "titolo": "Le triadi sono triangoli, e i rivolti non li cambiano",
+      "sotto": "Tre note sul quadrante sono un triangolo: i suoi lati, in semitoni, dicono il tipo dell'accordo, e cambiare la nota al basso non lo sposta.",
+      "idea": "orologio",
+      "par": [
+        "1.1",
+        "3.2",
+        "3.3",
+        "3.6"
+      ],
+      "motore": "orologio",
+      "param": {
+        "modo": "triadi",
+        "tipo": "magg",
+        "fond": 0,
+        "basso": 0
+      },
+      "guarda": [
+        "**Tre lati, dodici semitoni**: maggiore 4 + 3 + 5, minore 3 + 4 + 5, diminuita 3 + 3 + 6, aumentata 4 + 4 + 4. La somma è sempre 12, perché il giro si chiude sul quadrante.",
+        "**Forma e tipo**: cambiando la fondamentale il triangolo ruota ma non cambia forma. Il tipo dell'accordo è la forma a meno di rotazioni: ribaltando il triangolo, il maggiore diventa il minore (stessi lati, ordine inverso) (§3.3).",
+        "**I rivolti**: scegli la nota al basso. Il triangolo resta fermo, cambia solo il vertice segnato e la disposizione sulla tastiera: C, C/E, C/G sono la stessa triade (§1.1).",
+        "**Triangoli speciali**: l'aumentata è equilatera, quindi ruotata di 4 semitoni torna su sé stessa. Do sus4 e fa sus2 sono lo stesso triangolo con due nomi (le definizioni sono nel §3.6)."
+      ],
+      "formule": [
+        "lati: a + b + c = 12",
+        "maggiore 4·3·5 · minore 3·4·5 · diminuita 3·3·6 · aumentata 4·4·4",
+        "sus4 5·2·5 · sus2 2·5·5"
+      ],
+      "prova": "Suona do-mi-sol, poi mi-sol-do, poi sol-do-mi: tre posizioni della mano, un solo triangolo. Poi do-fa-sol e fa-sol-do: do sus4 e fa sus2.",
+      "corsi": [
+        {
+          "corso": "Geometria",
+          "tema": "**Classi di resto modulo 12**: una triade è un insieme di tre classi, e i lati sono differenze modulo 12."
+        },
+        {
+          "corso": "Statistica",
+          "tema": "**Permutazioni**: tre note si ordinano in 6 modi; i rivolti in posizione stretta sono le 3 permutazioni cicliche (1-3-5, 3-5-1, 5-1-3)."
+        }
+      ],
+      "calcolo": [
+        "Per le dodici fondamentali e i sei tipi (72 triadi) nomi delle note, classi di altezza, lati e rivolti sono confrontati con music21: note costruite per intervalli, tipo e rivolto riconosciuti dall'accordo.",
+        "I nomi seguono la retta delle quinte (terza maggiore +4, minore −3, quinta giusta +1), quindi do diminuita è do–mi♭–sol♭ e non do–re♯–fa♯. Gli accordi sospesi non hanno terza: per loro il quaderno non usa i nomi «primo» e «secondo rivolto»."
+      ]
+    },
+    {
+      "id": "frequenze",
+      "titolo": "Ogni semitono moltiplica: in scala logaritmica le frequenze sono una retta",
+      "sotto": "Da un tasto al successivo la frequenza non cresce di una quantità fissa ma di una percentuale fissa, ed è per questo che i passi suonano uguali.",
+      "idea": "esponenziali",
+      "par": [
+        "4.10"
+      ],
+      "motore": "frequenze",
+      "param": {
+        "tasto": 40,
+        "log": false
+      },
+      "guarda": [
+        "**Rapporti, non differenze**: da 440 a 880 Hz e da 880 a 1760 Hz c'è sempre un'ottava, anche se gli hertz in più sono il doppio. I quadrati blu, i la, raddoppiano a ogni ottava.",
+        "**Tasso composto**: ogni semitono moltiplica per 1,0595, un aumento del 5,95% a passo, che si applica al valore già cresciuto. Dopo dodici passi la frequenza è raddoppiata, come un capitale a interesse composto.",
+        "**Sotto la corda**: accendi il confronto. La crescita lineare tra due la darebbe a metà ottava × 1,5; l'esponenziale dà × 1,414, la radice di 2, e in scala lineare resta sempre sotto la retta tratteggiata.",
+        "**Asse logaritmico**: la curva diventa una retta e le ottave diventano tacche equidistanti. È l'asse dei diagrammi di Bode, dove un'ottava è × 2 e una decade × 10: il pianoforte copre 7,25 ottave, 2,18 decadi."
+      ],
+      "formule": [
+        "f(n) = 440 · 2^((n − 49)/12)",
+        "f(n+1) / f(n) = 2^(1/12) ≈ 1,0595",
+        "ottave = log₂(f₂/f₁) ≈ 3,32 · decadi"
+      ],
+      "prova": "Suona la3, poi re♯4 (o mi♭4), poi la4: due passi che all'orecchio sono uguali, anche se gli hertz in più sono 91 nel primo e 129 nel secondo.",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "Nel libro del corso, la **funzione esponenziale e il logaritmo come funzioni inverse**: la scala logaritmica è ciò che trasforma la curva in retta. Nell'appendice sulle **progressioni**, i la sono una progressione geometrica di ragione 2."
+        },
+        {
+          "corso": "Economia per ingegneri",
+          "tema": "**Interesse semplice e composto**, valore futuro: il semitono è un tasso costante applicato al valore già cresciuto."
+        },
+        {
+          "corso": "Controlli automatici",
+          "tema": "I **diagrammi di Bode**: asse delle frequenze logaritmico, con la decade (× 10) e l'ottava (× 2)."
+        }
+      ],
+      "calcolo": [
+        "Le frequenze vengono dalla formula dell'equabile con la4 = 440 Hz. Il collaudo le confronta, per tutti gli 88 tasti, con quelle di una libreria musicale indipendente (music21), e ricava il raddoppio dopo dodici semitoni con un prodotto ripetuto in aritmetica decimale a 50 cifre.",
+        "È il modello equabile: nei pianoforti veri le ottave sono appena allargate (§4.10, A.5), e le frequenze reali si scostano un poco da questi valori."
+      ]
+    },
+    {
+      "id": "comma",
+      "titolo": "Dodici quinte pure non chiudono il cerchio",
+      "sotto": "Avanza un comma di 23,46 centesimi: pitagorica, mesotonica ed equabile sono tre modi di decidere dove metterlo.",
+      "idea": "esponenziali",
+      "par": [
+        "4.8",
+        "4.10"
+      ],
+      "motore": "comma",
+      "param": {
+        "acc": "pitagorica"
+      },
+      "guarda": [
+        "**Una retta che non torna a zero**: con le quinte pure ogni passo aggiunge 1,96 centesimi rispetto al tasto. Dopo dodici quinte il si♯ sta 23,46 sopra il do: è il comma pitagorico.",
+        "**Mi♯ e fa**: il mi♯ è undici quinte sopra il do, il fa una sotto. Con le quinte pure tra i due c'è il comma intero; nella mesotonica il mi♯ finisce 41 centesimi sotto il fa; nell'equabile coincidono (§4.8, §4.10).",
+        "**La somma non cambia**: nel secondo grafico gli scarti delle dodici quinte cambiano da un'accordatura all'altra, la somma no. Il comma si sposta: tutto in una quinta (il lupo) oppure un dodicesimo per quinta.",
+        "**Il prezzo delle terze**: con le quinte pure la terza maggiore è troppo larga di un comma sintonico; la mesotonica la rende pura stringendo le quinte, e scarica il resto sul lupo."
+      ],
+      "formule": [
+        "(3/2)¹² = 129,75  contro  2⁷ = 128",
+        "comma = 3¹²/2¹⁹ → 23,46 centesimi",
+        "Σ scarti = 8400 − 12 · 701,955"
+      ],
+      "prova": "Suona do e sol insieme, poi do e mi, e ascolta la coda del suono: la quinta è quasi ferma, la terza ondeggia. Sul pianoforte la quinta è stretta di 1,96 centesimi, la terza larga di 13,69.",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "Nell'appendice del libro sulle **progressioni**: le quinte sono una progressione geometrica di ragione 3/2, e (3/2)¹² non arriva mai esattamente a una potenza di 2. Il **logaritmo**, inverso dell'esponenziale, porta i rapporti in centesimi, dove le quinte si sommano invece di moltiplicarsi."
+        }
+      ],
+      "calcolo": [
+        "Tutti i centesimi vengono da rapporti esatti: 3/2, 81/80, 3¹²/2¹⁹, 5/4. Il collaudo li ricalcola con frazioni esatte e ricava la quinta mesotonica per un'altra strada, come radice quarta di 5 (quattro quinte che fanno una terza pura più due ottave); controlla che le dodici quinte facciano 8400 centesimi in ogni accordatura e confronta ogni numero con quelli del §4.10.",
+        "Nel cerchio della tastiera la quinta che chiude, il lupo, è messa tra sol♯ e mi♭, una delle due posizioni abituali (l'altra è do♯–la♭); altre scelte spostano il lupo, non la somma.",
+        "Il primo grafico segue la catena delle quinte uguali dell'accordatura scelta, senza il lupo: è la catena teorica delle note, non le corde di uno strumento."
+      ]
+    },
+    {
+      "id": "diteggiatura",
+      "titolo": "A mani unite i medi suonano insieme, i pollici quasi mai",
+      "sotto": "Le dita di ogni mano si ripetono ogni sette note: sovrapposte, mostrano dove le mani si appoggiano e dove passano.",
+      "idea": "onde",
+      "par": [
+        "1.2",
+        "2.1",
+        "4.9",
+        "5.2"
+      ],
+      "motore": "diteggiatura",
+      "param": {
+        "t": 0,
+        "ottave": 1,
+        "moto": "parallelo",
+        "nota": 4
+      },
+      "guarda": [
+        "**Periodo 7**: il disegno delle dita si ripete ogni sette note, `f(k + 7) = f(k)`. Il mignolo entra solo agli estremi: in cima per la destra, in partenza per la sinistra.",
+        "**Mai insieme**: in moto parallelo le due mani non passano mai sulla stessa nota. Mentre una passa l'altra cammina: su un'ottava la destra passa alla nota 4, la sinistra alla 6.",
+        "**I medi**: sono l'appiglio. Cadono insieme sulle note 3 e 6, e su due ottave anche 10 e 13; i pollici coincidono solo sulla tonica di mezzo, la nota 8.",
+        "**Moto contrario**: partendo dalla tonica, la sinistra che scende usa le stesse dita della destra che sale. Le due linee si sovrappongono e i passaggi cadono insieme."
+      ],
+      "formule": [
+        "destra: 1 2 3 1 2 3 4 per k mod 7 = 0 … 6, ultima nota 5",
+        "sinistra: 1 4 3 2 1 3 2 per k mod 7 = 0 … 6, prima nota 5",
+        "k = 0 sulla tonica; passaggio = salto contro il verso delle dita"
+      ],
+      "prova": "A mani unite, un'ottava in do, lentamente: fermati sulle note 3 e 6 e senti i due medi premere insieme; alla nota 4 passa solo la destra, alla 6 solo la sinistra.",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "Funzione **periodica** di periodo T, `f(x + T) = f(x)` (libro del corso): qui T = 7 note, con il mignolo come eccezione agli estremi."
+        }
+      ],
+      "calcolo": [
+        "Le dita sono generate da una regola di periodo 7, non da un elenco. Il collaudo le confronta con gli elenchi del §1.2, a una e a due ottave, e ritrova coincidenze e passaggi confrontando gli elenchi posizione per posizione.",
+        "Note e tasti neri vengono dalla scala di ogni tonalità e sono controllati con music21; la tabella del §1.2 (pollice della destra sul IV grado, medio della sinistra sul VI) è ritrovata per calcolo nelle cinque scale.",
+        "Un passaggio è contato dove le dita saltano contro il loro verso naturale: è la definizione usata dal grafico, e dà gli stessi punti descritti nel §1.2 e nel §4.9."
+      ]
+    },
+    {
+      "id": "battimenti",
+      "titolo": "Due onde quasi uguali: la somma pulsa",
+      "sotto": "Quando due armonici sono vicini ma non uguali, il suono ondeggia tante volte al secondo quanti sono gli hertz di differenza: è il prezzo del temperamento, e si sente.",
+      "idea": "onde",
+      "par": [
+        "4.10"
+      ],
+      "motore": "battimenti",
+      "param": {
+        "int": "quinta"
+      },
+      "guarda": [
+        "**Armonici vicini**: nella quinta do4–sol4 il 3º armonico del do e il 2º del sol sono quasi uguali, 784,88 e 783,99 Hz. Sul pianoforte non coincidono perché la quinta è stretta di 1,96 centesimi.",
+        "**Battimenti = differenza**: la somma delle due onde ha un inviluppo che pulsa Δf volte al secondo. Nella quinta 0,89 battiti al secondo, quasi fermi; nella terza maggiore 10,38, un tremolio fitto.",
+        "**In fase, in opposizione**: nello zoom, quando le due onde salgono insieme la somma arriva quasi a 2; mezzo battito dopo una sale mentre l'altra scende, e la somma quasi sparisce.",
+        "**Il modello**: due armonici esatti. Nei pianoforti veri gli armonici sono un poco più alti dei multipli esatti (corde rigide), e i battiti cambiano da strumento a strumento."
+      ],
+      "formule": [
+        "sin a + sin b = 2 cos((a−b)/2) · sin((a+b)/2)",
+        "battiti al secondo = |3·f(do4) − 2·f(sol4)|",
+        "inviluppo = 2 · |cos(π · Δf · t)|"
+      ],
+      "prova": "Tieni premuti insieme do4 e sol4 e ascolta la coda del suono: un'ondulazione lentissima. Poi do4 e mi4: molto più fitta. Confronta con i due pulsanti.",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "La **funzione periodica** (f(x + T) = f(x), nel libro del corso) e il **seno e coseno** degli appunti: l'inviluppo è un coseno con periodo 1/Δf."
+        },
+        {
+          "corso": "Controlli automatici",
+          "tema": "Il **segnale sinusoidale** del teorema della risposta armonica, descritto da ampiezza, frequenza e fase: qui due sinusoidi con fase relativa che scorre."
+        }
+      ],
+      "calcolo": [
+        "Frequenze dell'equabile con la4 = 440 Hz, armonici esatti (multipli interi). Il collaudo ricava le frequenze da una libreria musicale indipendente (music21), i rapporti puri da frazioni esatte, e campiona la somma delle due sinusoidi a 48 000 punti al secondo: gli zeri dell'inviluppo campionato distano 1/Δf, e l'identità sin a + sin b = 2·cos·sin è verificata in migliaia di punti.",
+        "La portante, a metà tra le due frequenze (circa 784 Hz nella quinta), oscilla troppo in fretta per vedersi su due secondi: nel primo grafico c'è solo l'inviluppo, la portante si vede nello zoom.",
+        "È un modello a due armonici: la nota vera ne ha molti, e i battiti di altre coppie si sommano a questi."
+      ]
+    },
+    {
+      "id": "fibonacci",
+      "titolo": "I rapporti di Fibonacci convergono a un numero che sulla tastiera non c'è",
+      "sotto": "I primi quattro sono intervalli consonanti; poi la successione si stringe attorno al numero aureo, in mezzo a due tasti.",
+      "idea": "successioni",
+      "par": [
+        "4.11"
+      ],
+      "motore": "fibonacci",
+      "param": {
+        "n": 4,
+        "asse": "cents"
+      },
+      "guarda": [
+        "**Oscilla e converge**: 2 sta sopra φ, 1,5 sotto, 1,667 sopra, 1,6 sotto… Ogni rapporto cade dall'altra parte del limite, sempre più vicino. Passa all'asse «valore» per vederlo meglio.",
+        "**Piccoli, non speciali**: 2/1, 3/2, 5/3 e 8/5 sono ottava, quinta, sesta maggiore e sesta minore perché sono rapporti tra numeri piccoli. La quarta 4/3 e le terze 5/4 e 6/5 sono altrettanto semplici, e nella successione non ci sono.",
+        "**Tra due tasti**: dal quinto rapporto in poi i punti non sono più intervalli puri: restano nella fascia tra la sesta minore (800) e la sesta maggiore (900), lontano dai due tasti. 13/8 vale 840,5 centesimi, 21/13 830,3.",
+        "**Il limite**: φ vale 833,09 centesimi. Come intervallo la musica tonale non lo usa."
+      ],
+      "formule": [
+        "F(1) = F(2) = 1,  F(k+2) = F(k+1) + F(k)",
+        "r(n) = F(n+2) / F(n+1) → φ = (1 + √5)/2",
+        "1200 · log₂ φ ≈ 833,09 centesimi"
+      ],
+      "prova": "Suona do4 con la♭4 (sesta minore, 800) e poi do4 con la4 (sesta maggiore, 900): il numero aureo starebbe tra i due, a 833, dove non c'è nessun tasto.",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "Le **successioni** come funzioni dai naturali e la **convergenza**: qui una successione che converge oscillando, con |r(n) − φ| che decresce a ogni passo."
+        }
+      ],
+      "calcolo": [
+        "I termini di Fibonacci sono interi esatti e il riconoscimento di un intervallo puro è un confronto tra interi (a · F(n+1) = b · F(n+2)), non tra numeri arrotondati. Il collaudo ricalcola rapporti e centesimi con frazioni esatte e φ con 60 cifre decimali, e verifica fino a n = 30 che i rapporti alternino sopra e sotto φ e che la distanza da φ diminuisca sempre.",
+        "I rapporti si leggono come intervalli tra frequenze (§4.10): che uno di essi suoni consonante dipende dalla semplicità del rapporto, non dal fatto di stare nella successione."
+      ]
+    },
+    {
+      "id": "tempo",
+      "titolo": "Battiti al minuto e secondi sono inversi",
+      "sotto": "Il metronomo conta battiti al minuto, le dita vivono in secondi: `T = 60 / BPM` è una curva, e dieci battiti in più non pesano sempre uguale.",
+      "idea": "processi",
+      "par": [
+        "2.4",
+        "4.4",
+        "4.5",
+        "5.3"
+      ],
+      "motore": "tempo",
+      "param": {
+        "bpm": 60,
+        "divisione": "pari"
+      },
+      "guarda": [
+        "**Inversi**: raddoppiare il metronomo dimezza la durata. A 60 un tempo dura 1 s, a 120 dura 0,5 s; minima e semibreve valgono sempre 2 e 4 tempi, a qualunque velocità (§2.4).",
+        "**Ripida, poi piatta**: da 60 a 70 ogni nota perde il 14,3% della sua durata, da 70 a 80 il 12,5%, da 170 a 180 il 5,6%. I gradini 60, 70, 80 del §5.3 sono uguali sul metronomo, non per le dita.",
+        "**La tangente**: la sua pendenza, `−60 / BPM²`, dice quanti secondi perde un tempo per ogni battito in più. A sinistra è ripida: lì pochi battiti cambiano molto.",
+        "**Pari e shuffle**: il metronomo fissa la durata del tempo, non come lo si divide. Nello shuffle la prima parte dura circa il doppio della seconda (§4.4)."
+      ],
+      "formule": [
+        "T = 60 / BPM   (secondi per tempo)",
+        "minima = 2·T · semibreve = 4·T",
+        "con 10 BPM in più ogni tempo perde 10 / (BPM + 10) della sua durata"
+      ],
+      "prova": "Metronomo a 60, poi a 70, poi a 80: a ogni velocità suona quattro semiminime su un tasto. Il secondo scatto accorcia ogni nota un poco meno del primo (12,5% contro 14,3%).",
+      "corsi": [
+        {
+          "corso": "Analisi matematica 1",
+          "tema": "La **derivata** come coefficiente angolare della tangente (lezione su rapporto incrementale e derivata): la tangente tratteggiata ha pendenza `−60 / BPM²`."
+        },
+        {
+          "corso": "Business Process Management",
+          "tema": "Il **throughput**, unità per unità di tempo, è una grandezza dello stesso tipo dei BPM, battiti per minuto."
+        }
+      ],
+      "calcolo": [
+        "Le durate sono confrontate con frazioni esatte da 40 a 180 BPM e la pendenza con una derivata numerica (differenza centrale); la tabella del §2.4, a 60 e a 120 BPM, è ritrovata per calcolo.",
+        "Lo shuffle è disegnato come 2/3 + 1/3 del tempo, la prima e la terza nota di una terzina. È un'approssimazione: il rapporto vero cambia da un brano all'altro e da un esecutore all'altro (§4.4)."
+      ]
+    },
+    {
+      "id": "gradini",
+      "titolo": "Tre gradini in fila: le probabilità si moltiplicano",
+      "sotto": "Un modello della regola 60, 70, 80 del §5.3: se ogni giro riesce pulito con probabilità p, i giri attesi crescono in fretta quando p scende.",
+      "idea": "processi",
+      "par": [
+        "5.3",
+        "3.8",
+        "4.1"
+      ],
+      "motore": "gradini",
+      "param": {
+        "p": 0.8,
+        "diversi": [
+          0.9,
+          0.8,
+          0.6
+        ]
+      },
+      "guarda": [
+        "**Si moltiplicano**: per fare i tre gradini di fila al primo colpo servono tre successi. Con 8 giri puliti su 10 a ogni gradino, 0,8 × 0,8 × 0,8 = 0,51: una volta su due.",
+        "**Crescono in fretta**: 4,8 giri con 8 su 10, 9,1 con 6, 14 con 5, 51,5 con 3. Il modello mostra quanto costa una p bassa; il segnale di andare troppo veloci, nel §5.3, è il blocco.",
+        "**Alzare p**: nel modello conta solo p. Da 5 a 8 giri puliti su 10 i giri attesi scendono da 14 a 4,8; quanto costa in tempo un giro lento il modello non lo dice.",
+        "**Il minimo è 3**: un giro per gradino, quando ogni giro riesce. La curva si avvicina a 3 solo con p vicina a 1."
+      ],
+      "formule": [
+        "E = (1 + p60 + p60·p70) / (p60·p70·p80)",
+        "stessa p: E(p) = (1 + p + p²) / p³",
+        "tre di fila al primo colpo: p60·p70·p80"
+      ],
+      "prova": "Suona dieci giri di una scala a 60 e conta quanti escono puliti: è una stima di p a quel gradino. Fai lo stesso a 70 e a 80, e metti i tre valori in «Gradini diversi».",
+      "corsi": [
+        {
+          "corso": "Statistica",
+          "tema": "**Prova di Bernoulli** e **indipendenza**: ogni giro è una prova con successo p; la curva è il **valore atteso** dei giri."
+        },
+        {
+          "corso": "Gestione degli impianti",
+          "tema": "Il **grafo di Markov** con le probabilità di transizione: lo schema a caselle è un grafo di questo tipo."
+        },
+        {
+          "corso": "Gestione della qualità",
+          "tema": "Le **rilavorazioni** come costo della variabilità: un giro non pulito rimanda a 60 e si rifà."
+        }
+      ],
+      "calcolo": [
+        "**È un modello.** Ipotesi: a ogni gradino ogni giro riesce pulito con la stessa probabilità p, e i giri sono indipendenti tra loro. Un giro non pulito a 60 si ripete a 60; nel §5.3 invece, se non riesce nemmeno a 60, si toglie il metronomo. Nello studio vero p cambia a ogni giro, ed è proprio lo scopo dello studio.",
+        "Il modello conta i giri e non dice quale regola di ritorno sia migliore. Con p fisse, tornare al gradino appena sotto costerebbe meno giri (verificato per calcolo); la regola del §5.3 ha senso perché i giri lenti e puliti alzano p, un effetto che questo modello non descrive.",
+        "La formula viene dal sistema dei giri attesi, `E60 = 1 + p60·E70 + (1 − p60)·E60` e simili. Il collaudo la confronta con la soluzione esatta del sistema (frazioni) da p = 0,30 a 1 e con una simulazione di 200 000 partite per caso, entro il 2%."
+      ]
+    },
+    {
+      "id": "rivolti-costo",
+      "titolo": "Il rivolto giusto è quello che muove meno la mano",
+      "sotto": "Un modello semplice: il costo di un cambio di accordo è la somma dei semitoni di cui si spostano le tre dita, e il rivolto migliore è il minimo.",
+      "idea": "processi",
+      "par": [
+        "1.1",
+        "2.6",
+        "4.5"
+      ],
+      "motore": "rivolti-costo",
+      "param": {
+        "da": 0,
+        "a": 3,
+        "pos": 0
+      },
+      "guarda": [
+        "**Una funzione di costo**: per ogni rivolto d'arrivo si sommano gli spostamenti delle tre voci, la bassa con la bassa e così via. Scegliere il rivolto è cercare il minimo: da do a fa costa 15 in stato fondamentale e 3 in secondo rivolto (§1.1).",
+        "**Note comuni**: una nota che i due accordi hanno in comune può restare ferma, e quella voce costa zero. Sulla tastiera è segnata con =.",
+        "**Terze vicine**: nel secondo grafico, da qualunque accordo i due arrivi più economici sono i due a distanza di terza, che hanno due note su tre in comune: per questo si sostituiscono (§2.6), come re minore e fa nel giro di do (§4.5).",
+        "**Limiti del modello**: conta solo i semitoni. Non pesa la comodità della diteggiatura né la nota che finisce al basso, che cambia il peso dell'accordo (§4.2)."
+      ],
+      "formule": [
+        "costo = |b₁ − a₁| + |b₂ − a₂| + |b₃ − a₃|",
+        "do-mi-sol → fa-la-do: 5 + 5 + 5 = 15",
+        "do-mi-sol → do-fa-la: 0 + 1 + 2 = 3"
+      ],
+      "prova": "Suona do-mi-sol e poi fa-la-do, poi di nuovo do-mi-sol e do-fa-la: nel secondo cambio il pollice non si muove. Fai lo stesso da do a la minore (do-mi-la).",
+      "corsi": [
+        {
+          "corso": "Economia per ingegneri",
+          "tema": "Il **costo medio** che decresce fino a un minimo (economie di scala): anche lì si cerca il punto in cui una funzione di costo è minima."
+        }
+      ],
+      "calcolo": [
+        "È un modello: la mano è ridotta a tre voci e lo sforzo alla somma delle distanze in semitoni. Non tiene conto delle dita, del tempo a disposizione né del suono.",
+        "I costi delle 147 combinazioni (7 accordi di partenza, 3 posizioni, 7 arrivi) sono confrontati con una ricerca per forza bruta su tutte le terne di tasti dell'accordo d'arrivo da do2 a do7, anche in posizione larga: nessuna posizione larga costa meno della migliore posizione stretta. Le triadi vengono da music21."
+      ]
+    }
+  ]
+}

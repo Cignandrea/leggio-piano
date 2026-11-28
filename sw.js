@@ -1,10 +1,12 @@
 // Service worker del Leggio: cache versionata per l'uso offline.
-// Rete prima per le pagine e i dati (piano, esercizi, quaderno cifrato), così le novità arrivano alla riapertura;
+// Rete prima per le pagine e i dati (piano, esercizi, tavole di Pattern, quaderno cifrato), così le novità arrivano alla riapertura;
 // cache prima per icone, librerie e manifest.
 // L'origine cignandrea.github.io è condivisa con le altre app dell'account: si toccano solo le cache «leggio-».
-const VERSION = '2.2.0';
+const VERSION = '2.3.0';
 const CACHE = `leggio-${VERSION}`;
-const ASSETS = ['./', './index.html', './quaderno.html', './piano.json', './esercizi.json', './quaderno.cifrato.json', './manifest.webmanifest',
+const MOTORI = ['battimenti', 'comma', 'diteggiatura', 'esercizi-grafico', 'fibonacci', 'finestra-quinte', 'frequenze', 'giri-rette', 'gradini', 'orologio', 'rigo-asse', 'rivolti-costo', 'scala-retta', 'tempo'];   // i motori di Pattern: uno per file in pattern/motori/
+const ASSETS = ['./', './index.html', './quaderno.html', './pattern.html', './piano.json', './esercizi.json', './pattern.json', './quaderno.cifrato.json', './manifest.webmanifest',
+  './pattern/nucleo.js', './pattern/grafico.js', ...MOTORI.map((m) => `./pattern/motori/${m}.js`),
   './vendor/marked.min.js', './vendor/purify.min.js', './vendor/abcjs-basic-min.js',
   './icons/favicon-64.png', './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './icons/apple-touch-icon.png'];
 const nuovo = (u) => new Request(u, { cache: 'reload' });   // salta la cache HTTP del browser

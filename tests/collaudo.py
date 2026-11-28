@@ -1,7 +1,7 @@
 """Collaudo del Leggio in Chrome vero (headless), telefono 390 px, chiaro e scuro.
 Uso: LEGGIO_CHIAVE=<chiave del quaderno> python3 tests/collaudo.py
 Senza LEGGIO_CHIAVE le prove che aprono il quaderno vengono saltate (e il collaudo non è completo)."""
-import json, os, shutil, socket, subprocess, sys, tempfile, time, pathlib
+import copy, json, os, re, shutil, socket, subprocess, sys, tempfile, time, pathlib
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent
@@ -26,6 +26,11 @@ ok = True
 def check(c, msg):
     global ok
     print(("OK  " if c else "ERR ") + msg); ok &= bool(c)
+def font_finti(c):
+    """I caratteri di Google non fanno parte dell'app: nel collaudo si simulano, così la prova non dipende dalla rete esterna."""
+    c.route("https://fonts.googleapis.com/**", lambda r: r.fulfill(status=200, content_type="text/css", body=""))
+    c.route("https://fonts.gstatic.com/**", lambda r: r.fulfill(status=200, content_type="font/woff2", body=b""))
+    return c
 
 sys.path.insert(0, str(REPO / "tools"))
 import quaderno as QT
@@ -40,6 +45,7 @@ try:
         b = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--autoplay-policy=no-user-gesture-required"])
         ctx = b.new_context(viewport={"width": 390, "height": 844}, device_scale_factor=2, is_mobile=True, has_touch=True,
                             color_scheme="light", permissions=["clipboard-read", "clipboard-write"])
+        font_finti(ctx)
         pg = ctx.new_page()
         errs = []
         pg.on("pageerror", lambda e: errs.append(str(e)))
@@ -206,6 +212,92 @@ try:
             print("SALTATO quaderno: manca LEGGIO_CHIAVE")
             ok = False
 
+        # 6b. Pattern: dati, calcoli, tavole, comandi, rimandi al quaderno, uso senza rete
+        sys.path.insert(0, str(ROOT))
+        import pattern_dati as PD
+        PATT = json.loads((REPO / "pattern.json").read_text(encoding="utf-8")); TAV = PATT["tavole"]
+        par_q = {str(s["num"]) for l in QUADERNO["lezioni"] for s in l.get("sezioni", [])} if CHIAVE else None
+        pr = PD.problemi(PATT, paragrafi=par_q)
+        check(not pr, f"Pattern: dati a posto, {len(TAV)} tavole {pr[:3]}")
+        def guasta(f):
+            d = copy.deepcopy(PATT); f(d); return PD.problemi(d, paragrafi=par_q)
+        check(any("non esiste" in x for x in guasta(lambda d: d["tavole"][0].update(motore="inesistente"))), "spia Pattern: un motore che non esiste viene fermato")
+        check(any("voce" in x for x in guasta(lambda d: d["tavole"][0]["guarda"].append("**Nota**: il maestro dice così."))), "spia Pattern: «il maestro dice» viene fermato")
+        swfinto = pathlib.Path(tempfile.mkdtemp(prefix="leggio-sw-")); shutil.copytree(REPO / "pattern", swfinto / "pattern"); shutil.copytree(REPO / "icons", swfinto / "icons"); shutil.copytree(REPO / "vendor", swfinto / "vendor")
+        for f in REPO.glob("*.*"):
+            if f.is_file(): shutil.copy(f, swfinto / f.name)
+        (swfinto / "pattern" / "motori" / (TAV[0]["motore"] + ".js")).unlink(); (swfinto / "pattern" / "grafico.js").unlink()
+        psw = PD.problemi(PATT, repo=swfinto)
+        check(any("aggiornerebbe" in x for x in psw) and any("MOTORI non coincide" in x for x in psw), "spia Pattern: un file elencato nel service worker ma assente viene fermato")
+        shutil.rmtree(swfinto, ignore_errors=True)
+        if CHIAVE: check(any("§9.9" in x for x in guasta(lambda d: d["tavole"][0]["par"].append("9.9"))), "spia Pattern: un paragrafo che non è nel quaderno viene fermato")
+        rn = subprocess.run("node --test tests/pattern/*.test.js", shell=True, cwd=str(REPO), capture_output=True, text=True)
+        mp = re.search(r"# pass (\d+)", rn.stdout); mf = re.search(r"# fail (\d+)", rn.stdout)
+        check(rn.returncode == 0 and mp and int(mp.group(1)) > 0 and mf and int(mf.group(1)) == 0, f"Pattern: calcoli verificati contro i riferimenti ({mp.group(1) if mp else 0} prove, {mf.group(1) if mf else '?'} fallite)")
+        pg.goto(URL + "index.html#oggi"); pg.wait_for_timeout(800)
+        pg.locator(".tabs a", has_text="Pattern").click(); pg.wait_for_timeout(1500)
+        check(pg.locator(".tabs [aria-current='page']").inner_text() == "Pattern", "da Oggi la scheda Pattern apre la sezione")
+        pg.locator(".ordine .seg button", has_text="Per idea matematica").click(); pg.wait_for_timeout(300)
+        check(pg.locator("a.voce").count() == len(TAV), f"Pattern per idea matematica: {len(TAV)} tavole")
+        pg.locator(".ordine .seg button", has_text="Per capitolo").click(); pg.wait_for_timeout(300)
+        attese = sum(len({p.split(".")[0] for p in t["par"]}) for t in TAV)
+        check(pg.locator("a.voce").count() == attese, f"Pattern per capitolo: {attese} voci")
+        pg.screenshot(path=str(shots / "7-pattern.png"), full_page=True)
+        e0, vuote, sforano, ferme = len(errs), [], [], []
+        STATO = "document.querySelector('.pt-graf').innerHTML + '|' + document.querySelector('.pt-lettura').textContent"
+        for t in TAV:
+            pg.goto(URL + "pattern.html#t-" + t["id"]); pg.wait_for_timeout(800)
+            if pg.locator(".pt-graf svg").count() == 0 or not pg.locator(".pt-lettura").inner_text().strip() or pg.locator("h1").inner_text().strip() != t["titolo"]: vuote.append(t["id"])
+            # ogni comando si tocca davvero e deve cambiare il grafico o la riga di lettura: scelte e interruttori a ogni tocco,
+            # i cursori con almeno uno tra più e meno (a un estremo uno dei due non può fare nulla)
+            for sel in (".pt-comandi .seg button[aria-pressed='false']", ".pt-comandi .tog"):
+                for i in range(min(pg.locator(sel).count(), 14)):
+                    prima = pg.evaluate(STATO)
+                    try: nome = pg.locator(sel).nth(i).inner_text(timeout=1500); pg.locator(sel).nth(i).click(timeout=1500)
+                    except Exception: continue
+                    pg.wait_for_timeout(60)
+                    if pg.evaluate(STATO) == prima: ferme.append(f"{t['id']}: «{nome}»")
+            for i in range(pg.locator(".pt-comandi .pt-cur").count()):
+                cur, mossa = pg.locator(".pt-comandi .pt-cur").nth(i), False
+                for j in (1, 0, 0, 1):   # più, meno, meno, più: passa anche dagli estremi vicini
+                    prima = pg.evaluate(STATO)
+                    try: cur.locator(".pt-cur-r .btn").nth(j).click(timeout=1500)
+                    except Exception: continue
+                    pg.wait_for_timeout(60); mossa = mossa or pg.evaluate(STATO) != prima
+                if not mossa: ferme.append(f"{t['id']}: cursore {i + 1}")
+            if pg.evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth") > 0: sforano.append(t["id"])
+        pg.screenshot(path=str(shots / "8-pattern-tavola.png"), full_page=True)
+        check(not vuote, f"Pattern: ogni tavola ha titolo, grafico e riga di lettura {vuote}")
+        check(not ferme, f"Pattern: ogni comando di ogni tavola cambia il grafico o la riga di lettura {ferme}")
+        check(not sforano, f"Pattern: nessuna tavola esce dallo schermo a 390 px {sforano}")
+        check(len(errs) == e0, f"Pattern: nessun errore aprendo le tavole e toccando i comandi {errs[e0:e0 + 3]}")
+        if CHIAVE:
+            t0 = TAV[0]; pg.goto(URL + "pattern.html#t-" + t0["id"]); pg.wait_for_timeout(700)
+            pg.locator("a.ref").first.click(); pg.wait_for_timeout(2500)
+            sid = "s-" + t0["par"][0].replace(".", "-")
+            top = pg.evaluate("(id) => { const e = document.getElementById(id); return e ? e.getBoundingClientRect().top : null; }", sid)
+            check("quaderno.html" in pg.url and top is not None and -80 < top < 500, f"Pattern: il rimando §{t0['par'][0]} apre il quaderno su quel paragrafo ({top})")
+            pg.locator(".tabs a", has_text="Pattern").click(); pg.wait_for_timeout(1200)
+            check(pg.locator("a.voce").count() == attese, "dal quaderno la scheda Pattern apre la sezione")
+        # un indirizzo che non esiste più porta all'elenco e non intrappola il tasto Indietro
+        pg.goto(URL + "pattern.html"); pg.wait_for_timeout(600)
+        pg.goto(URL + "pattern.html#t-" + TAV[1]["id"]); pg.wait_for_timeout(500)
+        pg.goto(URL + "pattern.html#t-tavola-che-non-esiste"); pg.wait_for_timeout(600)
+        check(pg.locator("a.voce").count() == attese and "#t-" not in pg.url, "Pattern: un indirizzo che non esiste più porta all'elenco")
+        pg.go_back(); pg.wait_for_timeout(600)
+        check(pg.url.endswith("#t-" + TAV[1]["id"]) and pg.locator(".pt-graf svg").count() >= 1, f"Pattern: da lì il tasto Indietro torna alla tavola di prima ({pg.url.split('/')[-1]})")
+        # tutte le combinazioni dei comandi, con i cursori agli estremi: scritte sovrapposte o tagliate, NaN, sforamenti
+        rs = subprocess.run([sys.executable, str(ROOT / "pattern_stati.py")], cwd=str(REPO), capture_output=True, text=True)
+        check(rs.returncode == 0 and "TUTTO OK" in rs.stdout, "Pattern: tutte le combinazioni dei comandi, nessuna scritta sovrapposta o fuori dal disegno " + " | ".join(l for l in rs.stdout.splitlines() if l.startswith("ERR"))[:300])
+        chiavi = [k for k in pg.evaluate("caches.keys()") if k.startswith("leggio-")]
+        check(chiavi == ["leggio-" + re.search(r"const VERSION = '([^']+)'", (REPO / "sw.js").read_text(encoding="utf-8")).group(1)], f"service worker: una sola cache, quella della versione nuova {chiavi}")
+        ctx.set_offline(True); senza = []
+        for t in TAV:
+            pg.goto(URL + "pattern.html#t-" + t["id"]); pg.wait_for_timeout(600)
+            if pg.locator(".pt-graf svg").count() == 0: senza.append(t["id"])
+        ctx.set_offline(False)
+        check(not senza, f"Pattern senza rete: tutte le tavole si aprono {senza}")
+
         # 7. Senza rete: app e piano dalla cache
         ctx.set_offline(True); pg.goto(URL + "index.html#oggi"); pg.wait_for_timeout(1500)
         check(pg.locator("ol.blocks > li").count() == NB, "senza rete: app e piano dalla cache")
@@ -213,7 +305,7 @@ try:
         check(not [e for e in errs if "favicon" not in e and "INTERNET_DISCONNECTED" not in e], f"nessun errore in console {errs[:3]}")
 
         # 8. Tema scuro
-        ctx2 = b.new_context(viewport={"width": 390, "height": 844}, device_scale_factor=2, is_mobile=True, has_touch=True, color_scheme="dark")
+        ctx2 = font_finti(b.new_context(viewport={"width": 390, "height": 844}, device_scale_factor=2, is_mobile=True, has_touch=True, color_scheme="dark"))
         p2 = ctx2.new_page(); p2.goto(URL); p2.wait_for_timeout(1500)
         p2.locator('[data-act="tab"][data-v="esercizi"]').click(); p2.wait_for_timeout(400)
         p2.screenshot(path=str(shots / "5-esercizi-scuro.png"), full_page=True)
@@ -221,9 +313,12 @@ try:
             p2.goto(URL + "quaderno.html#chiave=" + CHIAVE); p2.wait_for_timeout(2000)
             p2.screenshot(path=str(shots / "6-quaderno-scuro.png"))
             check(p2.locator(".toc > li.cap").count() >= 4, "quaderno scuro")
+        p2.goto(URL + "pattern.html#t-" + TAV[0]["id"]); p2.wait_for_timeout(1200)
+        p2.screenshot(path=str(shots / "9-pattern-scuro.png"), full_page=True)
+        check(p2.locator(".pt-graf svg").count() >= 1, "Pattern in tema scuro")
 
         # 9. Robustezza (senza service worker, per controllare la rete richiesta per richiesta)
-        nuovo = lambda: b.new_context(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True, service_workers="block")
+        nuovo = lambda: font_finti(b.new_context(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True, service_workers="block"))
         c3 = nuovo(); p3 = c3.new_page()
         p3.route("**/esercizi.json", lambda r: r.abort()); p3.goto(URL); p3.wait_for_timeout(1500)
         n3 = p3.locator("ol.blocks > li").count()
@@ -258,6 +353,15 @@ try:
             p4.goto(URL + "quaderno.html#chiave=" + "AAAA" + CHIAVE[4:]); p4.wait_for_timeout(1500)
             check(p4.locator(".toc > li.cap").count() >= 4, "link con chiave sbagliata, ma quella giusta è salvata: si apre")
             c4.close()
+        # un motore di Pattern che non arriva: la tavola resta in elenco, lo dice, e «Riprova» la carica
+        c6 = nuovo(); p6 = c6.new_page(); m0 = TAV[0]["motore"]
+        p6.route(f"**/pattern/motori/{m0}.js", lambda r: r.abort()); p6.goto(URL + "pattern.html"); p6.wait_for_timeout(1500)
+        check(p6.locator("a.voce").count() == attese and "non caricata" in p6.locator("#view").inner_text(), "Pattern: un motore irraggiungibile non fa sparire la tavola dall'elenco")
+        p6.goto(URL + "pattern.html#t-" + TAV[0]["id"]); p6.wait_for_timeout(700)
+        check("non si è caricato" in p6.locator(".pt").inner_text() and p6.locator(".pt-graf svg").count() == 0, "Pattern: la tavola senza motore lo dice")
+        p6.unroute(f"**/pattern/motori/{m0}.js"); p6.locator(".pt button", has_text="Riprova").click(); p6.wait_for_timeout(1200)
+        check(p6.locator(".pt-graf svg").count() >= 1, "Pattern: «Riprova» carica il motore e disegna la tavola")
+        c6.close()
         c5 = nuovo(); p5 = c5.new_page(); p5.goto(URL_V); p5.wait_for_timeout(1500)
         righe = p5.locator("ol.blocks > li")
         vuote = [i for i in range(righe.count()) if not righe.nth(i).locator(".bt b").inner_text().strip()]

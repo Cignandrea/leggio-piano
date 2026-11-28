@@ -92,7 +92,7 @@ p{margin:0}
 /* Oggi */
 .home-h{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
 .home-h > div{min-width:0;display:flex;flex-direction:column;gap:6px}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:var(--r-2);background:var(--wash)}
+.tabs{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;padding:4px;border-radius:var(--r-2);background:var(--wash)}
 .tabs button,.tabs a{appearance:none;border:0;background:transparent;min-height:44px;border-radius:10px;font:600 var(--t-s)/1 var(--f-body);color:var(--ink-2);text-decoration:none;display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation}
 .tabs [aria-current="page"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
 .qlink{font-weight:600;font-size:var(--t-s);color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--rule);padding-bottom:2px;white-space:nowrap}
@@ -326,7 +326,7 @@ let PLAN = DEFAULT_PLAN;
 /* Due case possibili: come artifact su claude.ai (piano e diario nel database) o come app installata
    (GitHub Pages: piano da piano.json, diario sul telefono, «Copia per Claude» per portarlo in chat). */
 const ON_CLAUDE = !!(window.claude && typeof window.claude.use === "function");
-const APP_VERSION = "2.2.0";
+const APP_VERSION = "2.3.0";
 const LS_PLAN = "leggio-piano-cache", LS_DIARY = "leggio-diario", LS_COPIED = "leggio-copiato-fino";
 const vociPlan = d => d ? (d.schema >= 3 ? d.sessione : d.blocchi) : null;
 const validPlan = d => { const v = vociPlan(d); return !!(d && d.schema >= 2 && Array.isArray(v) && v.length); };
@@ -785,7 +785,7 @@ const firstTodo = () => { const i = blocks().findIndex(b => !S.done[b.id]); retu
 function render(){ if (S.view === "blocco" && curBlock()) renderBlock(); else if (S.view === "fine") renderFine(); else if (S.view === "esercizi") renderEsercizi(); else renderOggi(); }
 const QLINK = ON_CLAUDE ? QUADERNO : "quaderno.html";
 function tabsHTML(cur){
-  return `<nav class="tabs" aria-label="Sezioni dell'app"><button data-act="tab" data-v="oggi"${cur === "oggi" ? ' aria-current="page"' : ""}>Oggi</button><button data-act="tab" data-v="esercizi"${cur === "esercizi" ? ' aria-current="page"' : ""}>Esercizi</button><a href="${QLINK}"${ON_CLAUDE ? ' target="_blank" rel="noopener"' : ""}>Quaderno</a></nav>`;
+  return `<nav class="tabs" aria-label="Sezioni dell'app"><button data-act="tab" data-v="oggi"${cur === "oggi" ? ' aria-current="page"' : ""}>Oggi</button><button data-act="tab" data-v="esercizi"${cur === "esercizi" ? ' aria-current="page"' : ""}>Esercizi</button><a href="${QLINK}"${ON_CLAUDE ? ' target="_blank" rel="noopener"' : ""}>Quaderno</a>${ON_CLAUDE ? "" : '<a href="pattern.html">Pattern</a>'}</nav>`;
 }
 function renderEsercizi(){
   const L = LIB && Array.isArray(LIB.esercizi) ? LIB.esercizi : [], aree = LIB && Array.isArray(LIB.aree) ? LIB.aree : [];

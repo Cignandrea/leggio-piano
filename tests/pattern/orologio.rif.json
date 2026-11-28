@@ -1,0 +1,4781 @@
+{
+ "intervalli": {
+  "1": {
+   "nome": "seconda minore",
+   "rivolto": 11,
+   "nome_rivolto": "settima maggiore",
+   "orbita": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "2": {
+   "nome": "seconda maggiore",
+   "rivolto": 10,
+   "nome_rivolto": "settima minore",
+   "orbita": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10
+   ]
+  },
+  "3": {
+   "nome": "terza minore",
+   "rivolto": 9,
+   "nome_rivolto": "sesta maggiore",
+   "orbita": [
+    0,
+    3,
+    6,
+    9
+   ]
+  },
+  "4": {
+   "nome": "terza maggiore",
+   "rivolto": 8,
+   "nome_rivolto": "sesta minore",
+   "orbita": [
+    0,
+    4,
+    8
+   ]
+  },
+  "5": {
+   "nome": "quarta giusta",
+   "rivolto": 7,
+   "nome_rivolto": "quinta giusta",
+   "orbita": [
+    0,
+    5,
+    10,
+    3,
+    8,
+    1,
+    6,
+    11,
+    4,
+    9,
+    2,
+    7
+   ]
+  },
+  "6": {
+   "nome": "tritono",
+   "rivolto": 6,
+   "nome_rivolto": "tritono",
+   "orbita": [
+    0,
+    6
+   ]
+  },
+  "7": {
+   "nome": "quinta giusta",
+   "rivolto": 5,
+   "nome_rivolto": "quarta giusta",
+   "orbita": [
+    0,
+    7,
+    2,
+    9,
+    4,
+    11,
+    6,
+    1,
+    8,
+    3,
+    10,
+    5
+   ]
+  },
+  "8": {
+   "nome": "sesta minore",
+   "rivolto": 4,
+   "nome_rivolto": "terza maggiore",
+   "orbita": [
+    0,
+    8,
+    4
+   ]
+  },
+  "9": {
+   "nome": "sesta maggiore",
+   "rivolto": 3,
+   "nome_rivolto": "terza minore",
+   "orbita": [
+    0,
+    9,
+    6,
+    3
+   ]
+  },
+  "10": {
+   "nome": "settima minore",
+   "rivolto": 2,
+   "nome_rivolto": "seconda maggiore",
+   "orbita": [
+    0,
+    10,
+    8,
+    6,
+    4,
+    2
+   ]
+  },
+  "11": {
+   "nome": "settima maggiore",
+   "rivolto": 1,
+   "nome_rivolto": "seconda minore",
+   "orbita": [
+    0,
+    11,
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+   ]
+  }
+ },
+ "triadi": {
+  "C:magg": {
+   "nomi": [
+    "do",
+    "mi",
+    "sol"
+   ],
+   "pc": [
+    0,
+    4,
+    7
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      60,
+      64,
+      67
+     ],
+     "nomi": [
+      "do4",
+      "mi4",
+      "sol4"
+     ],
+     "sigla": "C",
+     "inversione": 0,
+     "fondamentale": "do",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      64,
+      67,
+      72
+     ],
+     "nomi": [
+      "mi4",
+      "sol4",
+      "do5"
+     ],
+     "sigla": "C/E",
+     "inversione": 1,
+     "fondamentale": "do",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      67,
+      72,
+      76
+     ],
+     "nomi": [
+      "sol4",
+      "do5",
+      "mi5"
+     ],
+     "sigla": "C/G",
+     "inversione": 2,
+     "fondamentale": "do",
+     "qualita": "major"
+    }
+   ]
+  },
+  "C:min": {
+   "nomi": [
+    "do",
+    "mi♭",
+    "sol"
+   ],
+   "pc": [
+    0,
+    3,
+    7
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      60,
+      63,
+      67
+     ],
+     "nomi": [
+      "do4",
+      "mi♭4",
+      "sol4"
+     ],
+     "sigla": "Cm",
+     "inversione": 0,
+     "fondamentale": "do",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      63,
+      67,
+      72
+     ],
+     "nomi": [
+      "mi♭4",
+      "sol4",
+      "do5"
+     ],
+     "sigla": "Cm/E♭",
+     "inversione": 1,
+     "fondamentale": "do",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      67,
+      72,
+      75
+     ],
+     "nomi": [
+      "sol4",
+      "do5",
+      "mi♭5"
+     ],
+     "sigla": "Cm/G",
+     "inversione": 2,
+     "fondamentale": "do",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "C:dim": {
+   "nomi": [
+    "do",
+    "mi♭",
+    "sol♭"
+   ],
+   "pc": [
+    0,
+    3,
+    6
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      60,
+      63,
+      66
+     ],
+     "nomi": [
+      "do4",
+      "mi♭4",
+      "sol♭4"
+     ],
+     "sigla": "C°",
+     "inversione": 0,
+     "fondamentale": "do",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      63,
+      66,
+      72
+     ],
+     "nomi": [
+      "mi♭4",
+      "sol♭4",
+      "do5"
+     ],
+     "sigla": "C°/E♭",
+     "inversione": 1,
+     "fondamentale": "do",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      66,
+      72,
+      75
+     ],
+     "nomi": [
+      "sol♭4",
+      "do5",
+      "mi♭5"
+     ],
+     "sigla": "C°/G♭",
+     "inversione": 2,
+     "fondamentale": "do",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "C:aum": {
+   "nomi": [
+    "do",
+    "mi",
+    "sol♯"
+   ],
+   "pc": [
+    0,
+    4,
+    8
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      60,
+      64,
+      68
+     ],
+     "nomi": [
+      "do4",
+      "mi4",
+      "sol♯4"
+     ],
+     "sigla": "C+",
+     "inversione": 0,
+     "fondamentale": "do",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      64,
+      68,
+      72
+     ],
+     "nomi": [
+      "mi4",
+      "sol♯4",
+      "do5"
+     ],
+     "sigla": "C+/E",
+     "inversione": 1,
+     "fondamentale": "do",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      68,
+      72,
+      76
+     ],
+     "nomi": [
+      "sol♯4",
+      "do5",
+      "mi5"
+     ],
+     "sigla": "C+/G♯",
+     "inversione": 2,
+     "fondamentale": "do",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "C:sus4": {
+   "nomi": [
+    "do",
+    "fa",
+    "sol"
+   ],
+   "pc": [
+    0,
+    5,
+    7
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      60,
+      65,
+      67
+     ],
+     "nomi": [
+      "do4",
+      "fa4",
+      "sol4"
+     ],
+     "sigla": "Csus4"
+    },
+    {
+     "midi": [
+      65,
+      67,
+      72
+     ],
+     "nomi": [
+      "fa4",
+      "sol4",
+      "do5"
+     ],
+     "sigla": "Csus4/F"
+    },
+    {
+     "midi": [
+      67,
+      72,
+      77
+     ],
+     "nomi": [
+      "sol4",
+      "do5",
+      "fa5"
+     ],
+     "sigla": "Csus4/G"
+    }
+   ]
+  },
+  "C:sus2": {
+   "nomi": [
+    "do",
+    "re",
+    "sol"
+   ],
+   "pc": [
+    0,
+    2,
+    7
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      60,
+      62,
+      67
+     ],
+     "nomi": [
+      "do4",
+      "re4",
+      "sol4"
+     ],
+     "sigla": "Csus2"
+    },
+    {
+     "midi": [
+      62,
+      67,
+      72
+     ],
+     "nomi": [
+      "re4",
+      "sol4",
+      "do5"
+     ],
+     "sigla": "Csus2/D"
+    },
+    {
+     "midi": [
+      67,
+      72,
+      74
+     ],
+     "nomi": [
+      "sol4",
+      "do5",
+      "re5"
+     ],
+     "sigla": "Csus2/G"
+    }
+   ]
+  },
+  "D-:magg": {
+   "nomi": [
+    "re♭",
+    "fa",
+    "la♭"
+   ],
+   "pc": [
+    1,
+    5,
+    8
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      61,
+      65,
+      68
+     ],
+     "nomi": [
+      "re♭4",
+      "fa4",
+      "la♭4"
+     ],
+     "sigla": "D♭",
+     "inversione": 0,
+     "fondamentale": "re♭",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      65,
+      68,
+      73
+     ],
+     "nomi": [
+      "fa4",
+      "la♭4",
+      "re♭5"
+     ],
+     "sigla": "D♭/F",
+     "inversione": 1,
+     "fondamentale": "re♭",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      68,
+      73,
+      77
+     ],
+     "nomi": [
+      "la♭4",
+      "re♭5",
+      "fa5"
+     ],
+     "sigla": "D♭/A♭",
+     "inversione": 2,
+     "fondamentale": "re♭",
+     "qualita": "major"
+    }
+   ]
+  },
+  "D-:min": {
+   "nomi": [
+    "re♭",
+    "fa♭",
+    "la♭"
+   ],
+   "pc": [
+    1,
+    4,
+    8
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      61,
+      64,
+      68
+     ],
+     "nomi": [
+      "re♭4",
+      "fa♭4",
+      "la♭4"
+     ],
+     "sigla": "D♭m",
+     "inversione": 0,
+     "fondamentale": "re♭",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      64,
+      68,
+      73
+     ],
+     "nomi": [
+      "fa♭4",
+      "la♭4",
+      "re♭5"
+     ],
+     "sigla": "D♭m/F♭",
+     "inversione": 1,
+     "fondamentale": "re♭",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      68,
+      73,
+      76
+     ],
+     "nomi": [
+      "la♭4",
+      "re♭5",
+      "fa♭5"
+     ],
+     "sigla": "D♭m/A♭",
+     "inversione": 2,
+     "fondamentale": "re♭",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "D-:dim": {
+   "nomi": [
+    "re♭",
+    "fa♭",
+    "la♭♭"
+   ],
+   "pc": [
+    1,
+    4,
+    7
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      61,
+      64,
+      67
+     ],
+     "nomi": [
+      "re♭4",
+      "fa♭4",
+      "la♭♭4"
+     ],
+     "sigla": "D♭°",
+     "inversione": 0,
+     "fondamentale": "re♭",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      64,
+      67,
+      73
+     ],
+     "nomi": [
+      "fa♭4",
+      "la♭♭4",
+      "re♭5"
+     ],
+     "sigla": "D♭°/F♭",
+     "inversione": 1,
+     "fondamentale": "re♭",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      67,
+      73,
+      76
+     ],
+     "nomi": [
+      "la♭♭4",
+      "re♭5",
+      "fa♭5"
+     ],
+     "sigla": "D♭°/A♭♭",
+     "inversione": 2,
+     "fondamentale": "re♭",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "D-:aum": {
+   "nomi": [
+    "re♭",
+    "fa",
+    "la"
+   ],
+   "pc": [
+    1,
+    5,
+    9
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      61,
+      65,
+      69
+     ],
+     "nomi": [
+      "re♭4",
+      "fa4",
+      "la4"
+     ],
+     "sigla": "D♭+",
+     "inversione": 0,
+     "fondamentale": "re♭",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      65,
+      69,
+      73
+     ],
+     "nomi": [
+      "fa4",
+      "la4",
+      "re♭5"
+     ],
+     "sigla": "D♭+/F",
+     "inversione": 1,
+     "fondamentale": "re♭",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      69,
+      73,
+      77
+     ],
+     "nomi": [
+      "la4",
+      "re♭5",
+      "fa5"
+     ],
+     "sigla": "D♭+/A",
+     "inversione": 2,
+     "fondamentale": "re♭",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "D-:sus4": {
+   "nomi": [
+    "re♭",
+    "sol♭",
+    "la♭"
+   ],
+   "pc": [
+    1,
+    6,
+    8
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      61,
+      66,
+      68
+     ],
+     "nomi": [
+      "re♭4",
+      "sol♭4",
+      "la♭4"
+     ],
+     "sigla": "D♭sus4"
+    },
+    {
+     "midi": [
+      66,
+      68,
+      73
+     ],
+     "nomi": [
+      "sol♭4",
+      "la♭4",
+      "re♭5"
+     ],
+     "sigla": "D♭sus4/G♭"
+    },
+    {
+     "midi": [
+      68,
+      73,
+      78
+     ],
+     "nomi": [
+      "la♭4",
+      "re♭5",
+      "sol♭5"
+     ],
+     "sigla": "D♭sus4/A♭"
+    }
+   ]
+  },
+  "D-:sus2": {
+   "nomi": [
+    "re♭",
+    "mi♭",
+    "la♭"
+   ],
+   "pc": [
+    1,
+    3,
+    8
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      61,
+      63,
+      68
+     ],
+     "nomi": [
+      "re♭4",
+      "mi♭4",
+      "la♭4"
+     ],
+     "sigla": "D♭sus2"
+    },
+    {
+     "midi": [
+      63,
+      68,
+      73
+     ],
+     "nomi": [
+      "mi♭4",
+      "la♭4",
+      "re♭5"
+     ],
+     "sigla": "D♭sus2/E♭"
+    },
+    {
+     "midi": [
+      68,
+      73,
+      75
+     ],
+     "nomi": [
+      "la♭4",
+      "re♭5",
+      "mi♭5"
+     ],
+     "sigla": "D♭sus2/A♭"
+    }
+   ]
+  },
+  "D:magg": {
+   "nomi": [
+    "re",
+    "fa♯",
+    "la"
+   ],
+   "pc": [
+    2,
+    6,
+    9
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      62,
+      66,
+      69
+     ],
+     "nomi": [
+      "re4",
+      "fa♯4",
+      "la4"
+     ],
+     "sigla": "D",
+     "inversione": 0,
+     "fondamentale": "re",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      66,
+      69,
+      74
+     ],
+     "nomi": [
+      "fa♯4",
+      "la4",
+      "re5"
+     ],
+     "sigla": "D/F♯",
+     "inversione": 1,
+     "fondamentale": "re",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      69,
+      74,
+      78
+     ],
+     "nomi": [
+      "la4",
+      "re5",
+      "fa♯5"
+     ],
+     "sigla": "D/A",
+     "inversione": 2,
+     "fondamentale": "re",
+     "qualita": "major"
+    }
+   ]
+  },
+  "D:min": {
+   "nomi": [
+    "re",
+    "fa",
+    "la"
+   ],
+   "pc": [
+    2,
+    5,
+    9
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      62,
+      65,
+      69
+     ],
+     "nomi": [
+      "re4",
+      "fa4",
+      "la4"
+     ],
+     "sigla": "Dm",
+     "inversione": 0,
+     "fondamentale": "re",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      65,
+      69,
+      74
+     ],
+     "nomi": [
+      "fa4",
+      "la4",
+      "re5"
+     ],
+     "sigla": "Dm/F",
+     "inversione": 1,
+     "fondamentale": "re",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      69,
+      74,
+      77
+     ],
+     "nomi": [
+      "la4",
+      "re5",
+      "fa5"
+     ],
+     "sigla": "Dm/A",
+     "inversione": 2,
+     "fondamentale": "re",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "D:dim": {
+   "nomi": [
+    "re",
+    "fa",
+    "la♭"
+   ],
+   "pc": [
+    2,
+    5,
+    8
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      62,
+      65,
+      68
+     ],
+     "nomi": [
+      "re4",
+      "fa4",
+      "la♭4"
+     ],
+     "sigla": "D°",
+     "inversione": 0,
+     "fondamentale": "re",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      65,
+      68,
+      74
+     ],
+     "nomi": [
+      "fa4",
+      "la♭4",
+      "re5"
+     ],
+     "sigla": "D°/F",
+     "inversione": 1,
+     "fondamentale": "re",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      68,
+      74,
+      77
+     ],
+     "nomi": [
+      "la♭4",
+      "re5",
+      "fa5"
+     ],
+     "sigla": "D°/A♭",
+     "inversione": 2,
+     "fondamentale": "re",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "D:aum": {
+   "nomi": [
+    "re",
+    "fa♯",
+    "la♯"
+   ],
+   "pc": [
+    2,
+    6,
+    10
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      62,
+      66,
+      70
+     ],
+     "nomi": [
+      "re4",
+      "fa♯4",
+      "la♯4"
+     ],
+     "sigla": "D+",
+     "inversione": 0,
+     "fondamentale": "re",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      66,
+      70,
+      74
+     ],
+     "nomi": [
+      "fa♯4",
+      "la♯4",
+      "re5"
+     ],
+     "sigla": "D+/F♯",
+     "inversione": 1,
+     "fondamentale": "re",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      70,
+      74,
+      78
+     ],
+     "nomi": [
+      "la♯4",
+      "re5",
+      "fa♯5"
+     ],
+     "sigla": "D+/A♯",
+     "inversione": 2,
+     "fondamentale": "re",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "D:sus4": {
+   "nomi": [
+    "re",
+    "sol",
+    "la"
+   ],
+   "pc": [
+    2,
+    7,
+    9
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      62,
+      67,
+      69
+     ],
+     "nomi": [
+      "re4",
+      "sol4",
+      "la4"
+     ],
+     "sigla": "Dsus4"
+    },
+    {
+     "midi": [
+      67,
+      69,
+      74
+     ],
+     "nomi": [
+      "sol4",
+      "la4",
+      "re5"
+     ],
+     "sigla": "Dsus4/G"
+    },
+    {
+     "midi": [
+      69,
+      74,
+      79
+     ],
+     "nomi": [
+      "la4",
+      "re5",
+      "sol5"
+     ],
+     "sigla": "Dsus4/A"
+    }
+   ]
+  },
+  "D:sus2": {
+   "nomi": [
+    "re",
+    "mi",
+    "la"
+   ],
+   "pc": [
+    2,
+    4,
+    9
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      62,
+      64,
+      69
+     ],
+     "nomi": [
+      "re4",
+      "mi4",
+      "la4"
+     ],
+     "sigla": "Dsus2"
+    },
+    {
+     "midi": [
+      64,
+      69,
+      74
+     ],
+     "nomi": [
+      "mi4",
+      "la4",
+      "re5"
+     ],
+     "sigla": "Dsus2/E"
+    },
+    {
+     "midi": [
+      69,
+      74,
+      76
+     ],
+     "nomi": [
+      "la4",
+      "re5",
+      "mi5"
+     ],
+     "sigla": "Dsus2/A"
+    }
+   ]
+  },
+  "E-:magg": {
+   "nomi": [
+    "mi♭",
+    "sol",
+    "si♭"
+   ],
+   "pc": [
+    3,
+    7,
+    10
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      63,
+      67,
+      70
+     ],
+     "nomi": [
+      "mi♭4",
+      "sol4",
+      "si♭4"
+     ],
+     "sigla": "E♭",
+     "inversione": 0,
+     "fondamentale": "mi♭",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      67,
+      70,
+      75
+     ],
+     "nomi": [
+      "sol4",
+      "si♭4",
+      "mi♭5"
+     ],
+     "sigla": "E♭/G",
+     "inversione": 1,
+     "fondamentale": "mi♭",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      70,
+      75,
+      79
+     ],
+     "nomi": [
+      "si♭4",
+      "mi♭5",
+      "sol5"
+     ],
+     "sigla": "E♭/B♭",
+     "inversione": 2,
+     "fondamentale": "mi♭",
+     "qualita": "major"
+    }
+   ]
+  },
+  "E-:min": {
+   "nomi": [
+    "mi♭",
+    "sol♭",
+    "si♭"
+   ],
+   "pc": [
+    3,
+    6,
+    10
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      63,
+      66,
+      70
+     ],
+     "nomi": [
+      "mi♭4",
+      "sol♭4",
+      "si♭4"
+     ],
+     "sigla": "E♭m",
+     "inversione": 0,
+     "fondamentale": "mi♭",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      66,
+      70,
+      75
+     ],
+     "nomi": [
+      "sol♭4",
+      "si♭4",
+      "mi♭5"
+     ],
+     "sigla": "E♭m/G♭",
+     "inversione": 1,
+     "fondamentale": "mi♭",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      70,
+      75,
+      78
+     ],
+     "nomi": [
+      "si♭4",
+      "mi♭5",
+      "sol♭5"
+     ],
+     "sigla": "E♭m/B♭",
+     "inversione": 2,
+     "fondamentale": "mi♭",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "E-:dim": {
+   "nomi": [
+    "mi♭",
+    "sol♭",
+    "si♭♭"
+   ],
+   "pc": [
+    3,
+    6,
+    9
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      63,
+      66,
+      69
+     ],
+     "nomi": [
+      "mi♭4",
+      "sol♭4",
+      "si♭♭4"
+     ],
+     "sigla": "E♭°",
+     "inversione": 0,
+     "fondamentale": "mi♭",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      66,
+      69,
+      75
+     ],
+     "nomi": [
+      "sol♭4",
+      "si♭♭4",
+      "mi♭5"
+     ],
+     "sigla": "E♭°/G♭",
+     "inversione": 1,
+     "fondamentale": "mi♭",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      69,
+      75,
+      78
+     ],
+     "nomi": [
+      "si♭♭4",
+      "mi♭5",
+      "sol♭5"
+     ],
+     "sigla": "E♭°/B♭♭",
+     "inversione": 2,
+     "fondamentale": "mi♭",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "E-:aum": {
+   "nomi": [
+    "mi♭",
+    "sol",
+    "si"
+   ],
+   "pc": [
+    3,
+    7,
+    11
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      63,
+      67,
+      71
+     ],
+     "nomi": [
+      "mi♭4",
+      "sol4",
+      "si4"
+     ],
+     "sigla": "E♭+",
+     "inversione": 0,
+     "fondamentale": "mi♭",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      67,
+      71,
+      75
+     ],
+     "nomi": [
+      "sol4",
+      "si4",
+      "mi♭5"
+     ],
+     "sigla": "E♭+/G",
+     "inversione": 1,
+     "fondamentale": "mi♭",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      71,
+      75,
+      79
+     ],
+     "nomi": [
+      "si4",
+      "mi♭5",
+      "sol5"
+     ],
+     "sigla": "E♭+/B",
+     "inversione": 2,
+     "fondamentale": "mi♭",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "E-:sus4": {
+   "nomi": [
+    "mi♭",
+    "la♭",
+    "si♭"
+   ],
+   "pc": [
+    3,
+    8,
+    10
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      63,
+      68,
+      70
+     ],
+     "nomi": [
+      "mi♭4",
+      "la♭4",
+      "si♭4"
+     ],
+     "sigla": "E♭sus4"
+    },
+    {
+     "midi": [
+      68,
+      70,
+      75
+     ],
+     "nomi": [
+      "la♭4",
+      "si♭4",
+      "mi♭5"
+     ],
+     "sigla": "E♭sus4/A♭"
+    },
+    {
+     "midi": [
+      70,
+      75,
+      80
+     ],
+     "nomi": [
+      "si♭4",
+      "mi♭5",
+      "la♭5"
+     ],
+     "sigla": "E♭sus4/B♭"
+    }
+   ]
+  },
+  "E-:sus2": {
+   "nomi": [
+    "mi♭",
+    "fa",
+    "si♭"
+   ],
+   "pc": [
+    3,
+    5,
+    10
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      63,
+      65,
+      70
+     ],
+     "nomi": [
+      "mi♭4",
+      "fa4",
+      "si♭4"
+     ],
+     "sigla": "E♭sus2"
+    },
+    {
+     "midi": [
+      65,
+      70,
+      75
+     ],
+     "nomi": [
+      "fa4",
+      "si♭4",
+      "mi♭5"
+     ],
+     "sigla": "E♭sus2/F"
+    },
+    {
+     "midi": [
+      70,
+      75,
+      77
+     ],
+     "nomi": [
+      "si♭4",
+      "mi♭5",
+      "fa5"
+     ],
+     "sigla": "E♭sus2/B♭"
+    }
+   ]
+  },
+  "E:magg": {
+   "nomi": [
+    "mi",
+    "sol♯",
+    "si"
+   ],
+   "pc": [
+    4,
+    8,
+    11
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      64,
+      68,
+      71
+     ],
+     "nomi": [
+      "mi4",
+      "sol♯4",
+      "si4"
+     ],
+     "sigla": "E",
+     "inversione": 0,
+     "fondamentale": "mi",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      68,
+      71,
+      76
+     ],
+     "nomi": [
+      "sol♯4",
+      "si4",
+      "mi5"
+     ],
+     "sigla": "E/G♯",
+     "inversione": 1,
+     "fondamentale": "mi",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      71,
+      76,
+      80
+     ],
+     "nomi": [
+      "si4",
+      "mi5",
+      "sol♯5"
+     ],
+     "sigla": "E/B",
+     "inversione": 2,
+     "fondamentale": "mi",
+     "qualita": "major"
+    }
+   ]
+  },
+  "E:min": {
+   "nomi": [
+    "mi",
+    "sol",
+    "si"
+   ],
+   "pc": [
+    4,
+    7,
+    11
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      64,
+      67,
+      71
+     ],
+     "nomi": [
+      "mi4",
+      "sol4",
+      "si4"
+     ],
+     "sigla": "Em",
+     "inversione": 0,
+     "fondamentale": "mi",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      67,
+      71,
+      76
+     ],
+     "nomi": [
+      "sol4",
+      "si4",
+      "mi5"
+     ],
+     "sigla": "Em/G",
+     "inversione": 1,
+     "fondamentale": "mi",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      71,
+      76,
+      79
+     ],
+     "nomi": [
+      "si4",
+      "mi5",
+      "sol5"
+     ],
+     "sigla": "Em/B",
+     "inversione": 2,
+     "fondamentale": "mi",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "E:dim": {
+   "nomi": [
+    "mi",
+    "sol",
+    "si♭"
+   ],
+   "pc": [
+    4,
+    7,
+    10
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      64,
+      67,
+      70
+     ],
+     "nomi": [
+      "mi4",
+      "sol4",
+      "si♭4"
+     ],
+     "sigla": "E°",
+     "inversione": 0,
+     "fondamentale": "mi",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      67,
+      70,
+      76
+     ],
+     "nomi": [
+      "sol4",
+      "si♭4",
+      "mi5"
+     ],
+     "sigla": "E°/G",
+     "inversione": 1,
+     "fondamentale": "mi",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      70,
+      76,
+      79
+     ],
+     "nomi": [
+      "si♭4",
+      "mi5",
+      "sol5"
+     ],
+     "sigla": "E°/B♭",
+     "inversione": 2,
+     "fondamentale": "mi",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "E:aum": {
+   "nomi": [
+    "mi",
+    "sol♯",
+    "si♯"
+   ],
+   "pc": [
+    4,
+    8,
+    0
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      64,
+      68,
+      72
+     ],
+     "nomi": [
+      "mi4",
+      "sol♯4",
+      "si♯4"
+     ],
+     "sigla": "E+",
+     "inversione": 0,
+     "fondamentale": "mi",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      68,
+      72,
+      76
+     ],
+     "nomi": [
+      "sol♯4",
+      "si♯4",
+      "mi5"
+     ],
+     "sigla": "E+/G♯",
+     "inversione": 1,
+     "fondamentale": "mi",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      60,
+      64,
+      68
+     ],
+     "nomi": [
+      "si♯3",
+      "mi4",
+      "sol♯4"
+     ],
+     "sigla": "E+/B♯",
+     "inversione": 2,
+     "fondamentale": "mi",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "E:sus4": {
+   "nomi": [
+    "mi",
+    "la",
+    "si"
+   ],
+   "pc": [
+    4,
+    9,
+    11
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      64,
+      69,
+      71
+     ],
+     "nomi": [
+      "mi4",
+      "la4",
+      "si4"
+     ],
+     "sigla": "Esus4"
+    },
+    {
+     "midi": [
+      69,
+      71,
+      76
+     ],
+     "nomi": [
+      "la4",
+      "si4",
+      "mi5"
+     ],
+     "sigla": "Esus4/A"
+    },
+    {
+     "midi": [
+      71,
+      76,
+      81
+     ],
+     "nomi": [
+      "si4",
+      "mi5",
+      "la5"
+     ],
+     "sigla": "Esus4/B"
+    }
+   ]
+  },
+  "E:sus2": {
+   "nomi": [
+    "mi",
+    "fa♯",
+    "si"
+   ],
+   "pc": [
+    4,
+    6,
+    11
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      64,
+      66,
+      71
+     ],
+     "nomi": [
+      "mi4",
+      "fa♯4",
+      "si4"
+     ],
+     "sigla": "Esus2"
+    },
+    {
+     "midi": [
+      66,
+      71,
+      76
+     ],
+     "nomi": [
+      "fa♯4",
+      "si4",
+      "mi5"
+     ],
+     "sigla": "Esus2/F♯"
+    },
+    {
+     "midi": [
+      71,
+      76,
+      78
+     ],
+     "nomi": [
+      "si4",
+      "mi5",
+      "fa♯5"
+     ],
+     "sigla": "Esus2/B"
+    }
+   ]
+  },
+  "F:magg": {
+   "nomi": [
+    "fa",
+    "la",
+    "do"
+   ],
+   "pc": [
+    5,
+    9,
+    0
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      65,
+      69,
+      72
+     ],
+     "nomi": [
+      "fa4",
+      "la4",
+      "do5"
+     ],
+     "sigla": "F",
+     "inversione": 0,
+     "fondamentale": "fa",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      69,
+      72,
+      77
+     ],
+     "nomi": [
+      "la4",
+      "do5",
+      "fa5"
+     ],
+     "sigla": "F/A",
+     "inversione": 1,
+     "fondamentale": "fa",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      60,
+      65,
+      69
+     ],
+     "nomi": [
+      "do4",
+      "fa4",
+      "la4"
+     ],
+     "sigla": "F/C",
+     "inversione": 2,
+     "fondamentale": "fa",
+     "qualita": "major"
+    }
+   ]
+  },
+  "F:min": {
+   "nomi": [
+    "fa",
+    "la♭",
+    "do"
+   ],
+   "pc": [
+    5,
+    8,
+    0
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      65,
+      68,
+      72
+     ],
+     "nomi": [
+      "fa4",
+      "la♭4",
+      "do5"
+     ],
+     "sigla": "Fm",
+     "inversione": 0,
+     "fondamentale": "fa",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      68,
+      72,
+      77
+     ],
+     "nomi": [
+      "la♭4",
+      "do5",
+      "fa5"
+     ],
+     "sigla": "Fm/A♭",
+     "inversione": 1,
+     "fondamentale": "fa",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      60,
+      65,
+      68
+     ],
+     "nomi": [
+      "do4",
+      "fa4",
+      "la♭4"
+     ],
+     "sigla": "Fm/C",
+     "inversione": 2,
+     "fondamentale": "fa",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "F:dim": {
+   "nomi": [
+    "fa",
+    "la♭",
+    "do♭"
+   ],
+   "pc": [
+    5,
+    8,
+    11
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      65,
+      68,
+      71
+     ],
+     "nomi": [
+      "fa4",
+      "la♭4",
+      "do♭5"
+     ],
+     "sigla": "F°",
+     "inversione": 0,
+     "fondamentale": "fa",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      68,
+      71,
+      77
+     ],
+     "nomi": [
+      "la♭4",
+      "do♭5",
+      "fa5"
+     ],
+     "sigla": "F°/A♭",
+     "inversione": 1,
+     "fondamentale": "fa",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      71,
+      77,
+      80
+     ],
+     "nomi": [
+      "do♭5",
+      "fa5",
+      "la♭5"
+     ],
+     "sigla": "F°/C♭",
+     "inversione": 2,
+     "fondamentale": "fa",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "F:aum": {
+   "nomi": [
+    "fa",
+    "la",
+    "do♯"
+   ],
+   "pc": [
+    5,
+    9,
+    1
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      65,
+      69,
+      73
+     ],
+     "nomi": [
+      "fa4",
+      "la4",
+      "do♯5"
+     ],
+     "sigla": "F+",
+     "inversione": 0,
+     "fondamentale": "fa",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      69,
+      73,
+      77
+     ],
+     "nomi": [
+      "la4",
+      "do♯5",
+      "fa5"
+     ],
+     "sigla": "F+/A",
+     "inversione": 1,
+     "fondamentale": "fa",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      61,
+      65,
+      69
+     ],
+     "nomi": [
+      "do♯4",
+      "fa4",
+      "la4"
+     ],
+     "sigla": "F+/C♯",
+     "inversione": 2,
+     "fondamentale": "fa",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "F:sus4": {
+   "nomi": [
+    "fa",
+    "si♭",
+    "do"
+   ],
+   "pc": [
+    5,
+    10,
+    0
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      65,
+      70,
+      72
+     ],
+     "nomi": [
+      "fa4",
+      "si♭4",
+      "do5"
+     ],
+     "sigla": "Fsus4"
+    },
+    {
+     "midi": [
+      70,
+      72,
+      77
+     ],
+     "nomi": [
+      "si♭4",
+      "do5",
+      "fa5"
+     ],
+     "sigla": "Fsus4/B♭"
+    },
+    {
+     "midi": [
+      60,
+      65,
+      70
+     ],
+     "nomi": [
+      "do4",
+      "fa4",
+      "si♭4"
+     ],
+     "sigla": "Fsus4/C"
+    }
+   ]
+  },
+  "F:sus2": {
+   "nomi": [
+    "fa",
+    "sol",
+    "do"
+   ],
+   "pc": [
+    5,
+    7,
+    0
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      65,
+      67,
+      72
+     ],
+     "nomi": [
+      "fa4",
+      "sol4",
+      "do5"
+     ],
+     "sigla": "Fsus2"
+    },
+    {
+     "midi": [
+      67,
+      72,
+      77
+     ],
+     "nomi": [
+      "sol4",
+      "do5",
+      "fa5"
+     ],
+     "sigla": "Fsus2/G"
+    },
+    {
+     "midi": [
+      60,
+      65,
+      67
+     ],
+     "nomi": [
+      "do4",
+      "fa4",
+      "sol4"
+     ],
+     "sigla": "Fsus2/C"
+    }
+   ]
+  },
+  "F#:magg": {
+   "nomi": [
+    "fa♯",
+    "la♯",
+    "do♯"
+   ],
+   "pc": [
+    6,
+    10,
+    1
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      66,
+      70,
+      73
+     ],
+     "nomi": [
+      "fa♯4",
+      "la♯4",
+      "do♯5"
+     ],
+     "sigla": "F♯",
+     "inversione": 0,
+     "fondamentale": "fa♯",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      70,
+      73,
+      78
+     ],
+     "nomi": [
+      "la♯4",
+      "do♯5",
+      "fa♯5"
+     ],
+     "sigla": "F♯/A♯",
+     "inversione": 1,
+     "fondamentale": "fa♯",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      61,
+      66,
+      70
+     ],
+     "nomi": [
+      "do♯4",
+      "fa♯4",
+      "la♯4"
+     ],
+     "sigla": "F♯/C♯",
+     "inversione": 2,
+     "fondamentale": "fa♯",
+     "qualita": "major"
+    }
+   ]
+  },
+  "F#:min": {
+   "nomi": [
+    "fa♯",
+    "la",
+    "do♯"
+   ],
+   "pc": [
+    6,
+    9,
+    1
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      66,
+      69,
+      73
+     ],
+     "nomi": [
+      "fa♯4",
+      "la4",
+      "do♯5"
+     ],
+     "sigla": "F♯m",
+     "inversione": 0,
+     "fondamentale": "fa♯",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      69,
+      73,
+      78
+     ],
+     "nomi": [
+      "la4",
+      "do♯5",
+      "fa♯5"
+     ],
+     "sigla": "F♯m/A",
+     "inversione": 1,
+     "fondamentale": "fa♯",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      61,
+      66,
+      69
+     ],
+     "nomi": [
+      "do♯4",
+      "fa♯4",
+      "la4"
+     ],
+     "sigla": "F♯m/C♯",
+     "inversione": 2,
+     "fondamentale": "fa♯",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "F#:dim": {
+   "nomi": [
+    "fa♯",
+    "la",
+    "do"
+   ],
+   "pc": [
+    6,
+    9,
+    0
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      66,
+      69,
+      72
+     ],
+     "nomi": [
+      "fa♯4",
+      "la4",
+      "do5"
+     ],
+     "sigla": "F♯°",
+     "inversione": 0,
+     "fondamentale": "fa♯",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      69,
+      72,
+      78
+     ],
+     "nomi": [
+      "la4",
+      "do5",
+      "fa♯5"
+     ],
+     "sigla": "F♯°/A",
+     "inversione": 1,
+     "fondamentale": "fa♯",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      60,
+      66,
+      69
+     ],
+     "nomi": [
+      "do4",
+      "fa♯4",
+      "la4"
+     ],
+     "sigla": "F♯°/C",
+     "inversione": 2,
+     "fondamentale": "fa♯",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "F#:aum": {
+   "nomi": [
+    "fa♯",
+    "la♯",
+    "do♯♯"
+   ],
+   "pc": [
+    6,
+    10,
+    2
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      66,
+      70,
+      74
+     ],
+     "nomi": [
+      "fa♯4",
+      "la♯4",
+      "do♯♯5"
+     ],
+     "sigla": "F♯+",
+     "inversione": 0,
+     "fondamentale": "fa♯",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      70,
+      74,
+      78
+     ],
+     "nomi": [
+      "la♯4",
+      "do♯♯5",
+      "fa♯5"
+     ],
+     "sigla": "F♯+/A♯",
+     "inversione": 1,
+     "fondamentale": "fa♯",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      62,
+      66,
+      70
+     ],
+     "nomi": [
+      "do♯♯4",
+      "fa♯4",
+      "la♯4"
+     ],
+     "sigla": "F♯+/C♯♯",
+     "inversione": 2,
+     "fondamentale": "fa♯",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "F#:sus4": {
+   "nomi": [
+    "fa♯",
+    "si",
+    "do♯"
+   ],
+   "pc": [
+    6,
+    11,
+    1
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      66,
+      71,
+      73
+     ],
+     "nomi": [
+      "fa♯4",
+      "si4",
+      "do♯5"
+     ],
+     "sigla": "F♯sus4"
+    },
+    {
+     "midi": [
+      71,
+      73,
+      78
+     ],
+     "nomi": [
+      "si4",
+      "do♯5",
+      "fa♯5"
+     ],
+     "sigla": "F♯sus4/B"
+    },
+    {
+     "midi": [
+      61,
+      66,
+      71
+     ],
+     "nomi": [
+      "do♯4",
+      "fa♯4",
+      "si4"
+     ],
+     "sigla": "F♯sus4/C♯"
+    }
+   ]
+  },
+  "F#:sus2": {
+   "nomi": [
+    "fa♯",
+    "sol♯",
+    "do♯"
+   ],
+   "pc": [
+    6,
+    8,
+    1
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      66,
+      68,
+      73
+     ],
+     "nomi": [
+      "fa♯4",
+      "sol♯4",
+      "do♯5"
+     ],
+     "sigla": "F♯sus2"
+    },
+    {
+     "midi": [
+      68,
+      73,
+      78
+     ],
+     "nomi": [
+      "sol♯4",
+      "do♯5",
+      "fa♯5"
+     ],
+     "sigla": "F♯sus2/G♯"
+    },
+    {
+     "midi": [
+      61,
+      66,
+      68
+     ],
+     "nomi": [
+      "do♯4",
+      "fa♯4",
+      "sol♯4"
+     ],
+     "sigla": "F♯sus2/C♯"
+    }
+   ]
+  },
+  "G:magg": {
+   "nomi": [
+    "sol",
+    "si",
+    "re"
+   ],
+   "pc": [
+    7,
+    11,
+    2
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      67,
+      71,
+      74
+     ],
+     "nomi": [
+      "sol4",
+      "si4",
+      "re5"
+     ],
+     "sigla": "G",
+     "inversione": 0,
+     "fondamentale": "sol",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      71,
+      74,
+      79
+     ],
+     "nomi": [
+      "si4",
+      "re5",
+      "sol5"
+     ],
+     "sigla": "G/B",
+     "inversione": 1,
+     "fondamentale": "sol",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      62,
+      67,
+      71
+     ],
+     "nomi": [
+      "re4",
+      "sol4",
+      "si4"
+     ],
+     "sigla": "G/D",
+     "inversione": 2,
+     "fondamentale": "sol",
+     "qualita": "major"
+    }
+   ]
+  },
+  "G:min": {
+   "nomi": [
+    "sol",
+    "si♭",
+    "re"
+   ],
+   "pc": [
+    7,
+    10,
+    2
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      67,
+      70,
+      74
+     ],
+     "nomi": [
+      "sol4",
+      "si♭4",
+      "re5"
+     ],
+     "sigla": "Gm",
+     "inversione": 0,
+     "fondamentale": "sol",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      70,
+      74,
+      79
+     ],
+     "nomi": [
+      "si♭4",
+      "re5",
+      "sol5"
+     ],
+     "sigla": "Gm/B♭",
+     "inversione": 1,
+     "fondamentale": "sol",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      62,
+      67,
+      70
+     ],
+     "nomi": [
+      "re4",
+      "sol4",
+      "si♭4"
+     ],
+     "sigla": "Gm/D",
+     "inversione": 2,
+     "fondamentale": "sol",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "G:dim": {
+   "nomi": [
+    "sol",
+    "si♭",
+    "re♭"
+   ],
+   "pc": [
+    7,
+    10,
+    1
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      67,
+      70,
+      73
+     ],
+     "nomi": [
+      "sol4",
+      "si♭4",
+      "re♭5"
+     ],
+     "sigla": "G°",
+     "inversione": 0,
+     "fondamentale": "sol",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      70,
+      73,
+      79
+     ],
+     "nomi": [
+      "si♭4",
+      "re♭5",
+      "sol5"
+     ],
+     "sigla": "G°/B♭",
+     "inversione": 1,
+     "fondamentale": "sol",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      61,
+      67,
+      70
+     ],
+     "nomi": [
+      "re♭4",
+      "sol4",
+      "si♭4"
+     ],
+     "sigla": "G°/D♭",
+     "inversione": 2,
+     "fondamentale": "sol",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "G:aum": {
+   "nomi": [
+    "sol",
+    "si",
+    "re♯"
+   ],
+   "pc": [
+    7,
+    11,
+    3
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      67,
+      71,
+      75
+     ],
+     "nomi": [
+      "sol4",
+      "si4",
+      "re♯5"
+     ],
+     "sigla": "G+",
+     "inversione": 0,
+     "fondamentale": "sol",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      71,
+      75,
+      79
+     ],
+     "nomi": [
+      "si4",
+      "re♯5",
+      "sol5"
+     ],
+     "sigla": "G+/B",
+     "inversione": 1,
+     "fondamentale": "sol",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      63,
+      67,
+      71
+     ],
+     "nomi": [
+      "re♯4",
+      "sol4",
+      "si4"
+     ],
+     "sigla": "G+/D♯",
+     "inversione": 2,
+     "fondamentale": "sol",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "G:sus4": {
+   "nomi": [
+    "sol",
+    "do",
+    "re"
+   ],
+   "pc": [
+    7,
+    0,
+    2
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      67,
+      72,
+      74
+     ],
+     "nomi": [
+      "sol4",
+      "do5",
+      "re5"
+     ],
+     "sigla": "Gsus4"
+    },
+    {
+     "midi": [
+      60,
+      62,
+      67
+     ],
+     "nomi": [
+      "do4",
+      "re4",
+      "sol4"
+     ],
+     "sigla": "Gsus4/C"
+    },
+    {
+     "midi": [
+      62,
+      67,
+      72
+     ],
+     "nomi": [
+      "re4",
+      "sol4",
+      "do5"
+     ],
+     "sigla": "Gsus4/D"
+    }
+   ]
+  },
+  "G:sus2": {
+   "nomi": [
+    "sol",
+    "la",
+    "re"
+   ],
+   "pc": [
+    7,
+    9,
+    2
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      67,
+      69,
+      74
+     ],
+     "nomi": [
+      "sol4",
+      "la4",
+      "re5"
+     ],
+     "sigla": "Gsus2"
+    },
+    {
+     "midi": [
+      69,
+      74,
+      79
+     ],
+     "nomi": [
+      "la4",
+      "re5",
+      "sol5"
+     ],
+     "sigla": "Gsus2/A"
+    },
+    {
+     "midi": [
+      62,
+      67,
+      69
+     ],
+     "nomi": [
+      "re4",
+      "sol4",
+      "la4"
+     ],
+     "sigla": "Gsus2/D"
+    }
+   ]
+  },
+  "A-:magg": {
+   "nomi": [
+    "la♭",
+    "do",
+    "mi♭"
+   ],
+   "pc": [
+    8,
+    0,
+    3
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      68,
+      72,
+      75
+     ],
+     "nomi": [
+      "la♭4",
+      "do5",
+      "mi♭5"
+     ],
+     "sigla": "A♭",
+     "inversione": 0,
+     "fondamentale": "la♭",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      60,
+      63,
+      68
+     ],
+     "nomi": [
+      "do4",
+      "mi♭4",
+      "la♭4"
+     ],
+     "sigla": "A♭/C",
+     "inversione": 1,
+     "fondamentale": "la♭",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      63,
+      68,
+      72
+     ],
+     "nomi": [
+      "mi♭4",
+      "la♭4",
+      "do5"
+     ],
+     "sigla": "A♭/E♭",
+     "inversione": 2,
+     "fondamentale": "la♭",
+     "qualita": "major"
+    }
+   ]
+  },
+  "A-:min": {
+   "nomi": [
+    "la♭",
+    "do♭",
+    "mi♭"
+   ],
+   "pc": [
+    8,
+    11,
+    3
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      68,
+      71,
+      75
+     ],
+     "nomi": [
+      "la♭4",
+      "do♭5",
+      "mi♭5"
+     ],
+     "sigla": "A♭m",
+     "inversione": 0,
+     "fondamentale": "la♭",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      71,
+      75,
+      80
+     ],
+     "nomi": [
+      "do♭5",
+      "mi♭5",
+      "la♭5"
+     ],
+     "sigla": "A♭m/C♭",
+     "inversione": 1,
+     "fondamentale": "la♭",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      63,
+      68,
+      71
+     ],
+     "nomi": [
+      "mi♭4",
+      "la♭4",
+      "do♭5"
+     ],
+     "sigla": "A♭m/E♭",
+     "inversione": 2,
+     "fondamentale": "la♭",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "A-:dim": {
+   "nomi": [
+    "la♭",
+    "do♭",
+    "mi♭♭"
+   ],
+   "pc": [
+    8,
+    11,
+    2
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      68,
+      71,
+      74
+     ],
+     "nomi": [
+      "la♭4",
+      "do♭5",
+      "mi♭♭5"
+     ],
+     "sigla": "A♭°",
+     "inversione": 0,
+     "fondamentale": "la♭",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      71,
+      74,
+      80
+     ],
+     "nomi": [
+      "do♭5",
+      "mi♭♭5",
+      "la♭5"
+     ],
+     "sigla": "A♭°/C♭",
+     "inversione": 1,
+     "fondamentale": "la♭",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      62,
+      68,
+      71
+     ],
+     "nomi": [
+      "mi♭♭4",
+      "la♭4",
+      "do♭5"
+     ],
+     "sigla": "A♭°/E♭♭",
+     "inversione": 2,
+     "fondamentale": "la♭",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "A-:aum": {
+   "nomi": [
+    "la♭",
+    "do",
+    "mi"
+   ],
+   "pc": [
+    8,
+    0,
+    4
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      68,
+      72,
+      76
+     ],
+     "nomi": [
+      "la♭4",
+      "do5",
+      "mi5"
+     ],
+     "sigla": "A♭+",
+     "inversione": 0,
+     "fondamentale": "la♭",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      60,
+      64,
+      68
+     ],
+     "nomi": [
+      "do4",
+      "mi4",
+      "la♭4"
+     ],
+     "sigla": "A♭+/C",
+     "inversione": 1,
+     "fondamentale": "la♭",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      64,
+      68,
+      72
+     ],
+     "nomi": [
+      "mi4",
+      "la♭4",
+      "do5"
+     ],
+     "sigla": "A♭+/E",
+     "inversione": 2,
+     "fondamentale": "la♭",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "A-:sus4": {
+   "nomi": [
+    "la♭",
+    "re♭",
+    "mi♭"
+   ],
+   "pc": [
+    8,
+    1,
+    3
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      68,
+      73,
+      75
+     ],
+     "nomi": [
+      "la♭4",
+      "re♭5",
+      "mi♭5"
+     ],
+     "sigla": "A♭sus4"
+    },
+    {
+     "midi": [
+      61,
+      63,
+      68
+     ],
+     "nomi": [
+      "re♭4",
+      "mi♭4",
+      "la♭4"
+     ],
+     "sigla": "A♭sus4/D♭"
+    },
+    {
+     "midi": [
+      63,
+      68,
+      73
+     ],
+     "nomi": [
+      "mi♭4",
+      "la♭4",
+      "re♭5"
+     ],
+     "sigla": "A♭sus4/E♭"
+    }
+   ]
+  },
+  "A-:sus2": {
+   "nomi": [
+    "la♭",
+    "si♭",
+    "mi♭"
+   ],
+   "pc": [
+    8,
+    10,
+    3
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      68,
+      70,
+      75
+     ],
+     "nomi": [
+      "la♭4",
+      "si♭4",
+      "mi♭5"
+     ],
+     "sigla": "A♭sus2"
+    },
+    {
+     "midi": [
+      70,
+      75,
+      80
+     ],
+     "nomi": [
+      "si♭4",
+      "mi♭5",
+      "la♭5"
+     ],
+     "sigla": "A♭sus2/B♭"
+    },
+    {
+     "midi": [
+      63,
+      68,
+      70
+     ],
+     "nomi": [
+      "mi♭4",
+      "la♭4",
+      "si♭4"
+     ],
+     "sigla": "A♭sus2/E♭"
+    }
+   ]
+  },
+  "A:magg": {
+   "nomi": [
+    "la",
+    "do♯",
+    "mi"
+   ],
+   "pc": [
+    9,
+    1,
+    4
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      69,
+      73,
+      76
+     ],
+     "nomi": [
+      "la4",
+      "do♯5",
+      "mi5"
+     ],
+     "sigla": "A",
+     "inversione": 0,
+     "fondamentale": "la",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      61,
+      64,
+      69
+     ],
+     "nomi": [
+      "do♯4",
+      "mi4",
+      "la4"
+     ],
+     "sigla": "A/C♯",
+     "inversione": 1,
+     "fondamentale": "la",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      64,
+      69,
+      73
+     ],
+     "nomi": [
+      "mi4",
+      "la4",
+      "do♯5"
+     ],
+     "sigla": "A/E",
+     "inversione": 2,
+     "fondamentale": "la",
+     "qualita": "major"
+    }
+   ]
+  },
+  "A:min": {
+   "nomi": [
+    "la",
+    "do",
+    "mi"
+   ],
+   "pc": [
+    9,
+    0,
+    4
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      69,
+      72,
+      76
+     ],
+     "nomi": [
+      "la4",
+      "do5",
+      "mi5"
+     ],
+     "sigla": "Am",
+     "inversione": 0,
+     "fondamentale": "la",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      60,
+      64,
+      69
+     ],
+     "nomi": [
+      "do4",
+      "mi4",
+      "la4"
+     ],
+     "sigla": "Am/C",
+     "inversione": 1,
+     "fondamentale": "la",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      64,
+      69,
+      72
+     ],
+     "nomi": [
+      "mi4",
+      "la4",
+      "do5"
+     ],
+     "sigla": "Am/E",
+     "inversione": 2,
+     "fondamentale": "la",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "A:dim": {
+   "nomi": [
+    "la",
+    "do",
+    "mi♭"
+   ],
+   "pc": [
+    9,
+    0,
+    3
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      69,
+      72,
+      75
+     ],
+     "nomi": [
+      "la4",
+      "do5",
+      "mi♭5"
+     ],
+     "sigla": "A°",
+     "inversione": 0,
+     "fondamentale": "la",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      60,
+      63,
+      69
+     ],
+     "nomi": [
+      "do4",
+      "mi♭4",
+      "la4"
+     ],
+     "sigla": "A°/C",
+     "inversione": 1,
+     "fondamentale": "la",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      63,
+      69,
+      72
+     ],
+     "nomi": [
+      "mi♭4",
+      "la4",
+      "do5"
+     ],
+     "sigla": "A°/E♭",
+     "inversione": 2,
+     "fondamentale": "la",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "A:aum": {
+   "nomi": [
+    "la",
+    "do♯",
+    "mi♯"
+   ],
+   "pc": [
+    9,
+    1,
+    5
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      69,
+      73,
+      77
+     ],
+     "nomi": [
+      "la4",
+      "do♯5",
+      "mi♯5"
+     ],
+     "sigla": "A+",
+     "inversione": 0,
+     "fondamentale": "la",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      61,
+      65,
+      69
+     ],
+     "nomi": [
+      "do♯4",
+      "mi♯4",
+      "la4"
+     ],
+     "sigla": "A+/C♯",
+     "inversione": 1,
+     "fondamentale": "la",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      65,
+      69,
+      73
+     ],
+     "nomi": [
+      "mi♯4",
+      "la4",
+      "do♯5"
+     ],
+     "sigla": "A+/E♯",
+     "inversione": 2,
+     "fondamentale": "la",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "A:sus4": {
+   "nomi": [
+    "la",
+    "re",
+    "mi"
+   ],
+   "pc": [
+    9,
+    2,
+    4
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      69,
+      74,
+      76
+     ],
+     "nomi": [
+      "la4",
+      "re5",
+      "mi5"
+     ],
+     "sigla": "Asus4"
+    },
+    {
+     "midi": [
+      62,
+      64,
+      69
+     ],
+     "nomi": [
+      "re4",
+      "mi4",
+      "la4"
+     ],
+     "sigla": "Asus4/D"
+    },
+    {
+     "midi": [
+      64,
+      69,
+      74
+     ],
+     "nomi": [
+      "mi4",
+      "la4",
+      "re5"
+     ],
+     "sigla": "Asus4/E"
+    }
+   ]
+  },
+  "A:sus2": {
+   "nomi": [
+    "la",
+    "si",
+    "mi"
+   ],
+   "pc": [
+    9,
+    11,
+    4
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      69,
+      71,
+      76
+     ],
+     "nomi": [
+      "la4",
+      "si4",
+      "mi5"
+     ],
+     "sigla": "Asus2"
+    },
+    {
+     "midi": [
+      71,
+      76,
+      81
+     ],
+     "nomi": [
+      "si4",
+      "mi5",
+      "la5"
+     ],
+     "sigla": "Asus2/B"
+    },
+    {
+     "midi": [
+      64,
+      69,
+      71
+     ],
+     "nomi": [
+      "mi4",
+      "la4",
+      "si4"
+     ],
+     "sigla": "Asus2/E"
+    }
+   ]
+  },
+  "B-:magg": {
+   "nomi": [
+    "si♭",
+    "re",
+    "fa"
+   ],
+   "pc": [
+    10,
+    2,
+    5
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      70,
+      74,
+      77
+     ],
+     "nomi": [
+      "si♭4",
+      "re5",
+      "fa5"
+     ],
+     "sigla": "B♭",
+     "inversione": 0,
+     "fondamentale": "si♭",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      62,
+      65,
+      70
+     ],
+     "nomi": [
+      "re4",
+      "fa4",
+      "si♭4"
+     ],
+     "sigla": "B♭/D",
+     "inversione": 1,
+     "fondamentale": "si♭",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      65,
+      70,
+      74
+     ],
+     "nomi": [
+      "fa4",
+      "si♭4",
+      "re5"
+     ],
+     "sigla": "B♭/F",
+     "inversione": 2,
+     "fondamentale": "si♭",
+     "qualita": "major"
+    }
+   ]
+  },
+  "B-:min": {
+   "nomi": [
+    "si♭",
+    "re♭",
+    "fa"
+   ],
+   "pc": [
+    10,
+    1,
+    5
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      70,
+      73,
+      77
+     ],
+     "nomi": [
+      "si♭4",
+      "re♭5",
+      "fa5"
+     ],
+     "sigla": "B♭m",
+     "inversione": 0,
+     "fondamentale": "si♭",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      61,
+      65,
+      70
+     ],
+     "nomi": [
+      "re♭4",
+      "fa4",
+      "si♭4"
+     ],
+     "sigla": "B♭m/D♭",
+     "inversione": 1,
+     "fondamentale": "si♭",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      65,
+      70,
+      73
+     ],
+     "nomi": [
+      "fa4",
+      "si♭4",
+      "re♭5"
+     ],
+     "sigla": "B♭m/F",
+     "inversione": 2,
+     "fondamentale": "si♭",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "B-:dim": {
+   "nomi": [
+    "si♭",
+    "re♭",
+    "fa♭"
+   ],
+   "pc": [
+    10,
+    1,
+    4
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      70,
+      73,
+      76
+     ],
+     "nomi": [
+      "si♭4",
+      "re♭5",
+      "fa♭5"
+     ],
+     "sigla": "B♭°",
+     "inversione": 0,
+     "fondamentale": "si♭",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      61,
+      64,
+      70
+     ],
+     "nomi": [
+      "re♭4",
+      "fa♭4",
+      "si♭4"
+     ],
+     "sigla": "B♭°/D♭",
+     "inversione": 1,
+     "fondamentale": "si♭",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      64,
+      70,
+      73
+     ],
+     "nomi": [
+      "fa♭4",
+      "si♭4",
+      "re♭5"
+     ],
+     "sigla": "B♭°/F♭",
+     "inversione": 2,
+     "fondamentale": "si♭",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "B-:aum": {
+   "nomi": [
+    "si♭",
+    "re",
+    "fa♯"
+   ],
+   "pc": [
+    10,
+    2,
+    6
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      70,
+      74,
+      78
+     ],
+     "nomi": [
+      "si♭4",
+      "re5",
+      "fa♯5"
+     ],
+     "sigla": "B♭+",
+     "inversione": 0,
+     "fondamentale": "si♭",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      62,
+      66,
+      70
+     ],
+     "nomi": [
+      "re4",
+      "fa♯4",
+      "si♭4"
+     ],
+     "sigla": "B♭+/D",
+     "inversione": 1,
+     "fondamentale": "si♭",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      66,
+      70,
+      74
+     ],
+     "nomi": [
+      "fa♯4",
+      "si♭4",
+      "re5"
+     ],
+     "sigla": "B♭+/F♯",
+     "inversione": 2,
+     "fondamentale": "si♭",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "B-:sus4": {
+   "nomi": [
+    "si♭",
+    "mi♭",
+    "fa"
+   ],
+   "pc": [
+    10,
+    3,
+    5
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      70,
+      75,
+      77
+     ],
+     "nomi": [
+      "si♭4",
+      "mi♭5",
+      "fa5"
+     ],
+     "sigla": "B♭sus4"
+    },
+    {
+     "midi": [
+      63,
+      65,
+      70
+     ],
+     "nomi": [
+      "mi♭4",
+      "fa4",
+      "si♭4"
+     ],
+     "sigla": "B♭sus4/E♭"
+    },
+    {
+     "midi": [
+      65,
+      70,
+      75
+     ],
+     "nomi": [
+      "fa4",
+      "si♭4",
+      "mi♭5"
+     ],
+     "sigla": "B♭sus4/F"
+    }
+   ]
+  },
+  "B-:sus2": {
+   "nomi": [
+    "si♭",
+    "do",
+    "fa"
+   ],
+   "pc": [
+    10,
+    0,
+    5
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      70,
+      72,
+      77
+     ],
+     "nomi": [
+      "si♭4",
+      "do5",
+      "fa5"
+     ],
+     "sigla": "B♭sus2"
+    },
+    {
+     "midi": [
+      60,
+      65,
+      70
+     ],
+     "nomi": [
+      "do4",
+      "fa4",
+      "si♭4"
+     ],
+     "sigla": "B♭sus2/C"
+    },
+    {
+     "midi": [
+      65,
+      70,
+      72
+     ],
+     "nomi": [
+      "fa4",
+      "si♭4",
+      "do5"
+     ],
+     "sigla": "B♭sus2/F"
+    }
+   ]
+  },
+  "B:magg": {
+   "nomi": [
+    "si",
+    "re♯",
+    "fa♯"
+   ],
+   "pc": [
+    11,
+    3,
+    6
+   ],
+   "lati": [
+    4,
+    3,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      71,
+      75,
+      78
+     ],
+     "nomi": [
+      "si4",
+      "re♯5",
+      "fa♯5"
+     ],
+     "sigla": "B",
+     "inversione": 0,
+     "fondamentale": "si",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      63,
+      66,
+      71
+     ],
+     "nomi": [
+      "re♯4",
+      "fa♯4",
+      "si4"
+     ],
+     "sigla": "B/D♯",
+     "inversione": 1,
+     "fondamentale": "si",
+     "qualita": "major"
+    },
+    {
+     "midi": [
+      66,
+      71,
+      75
+     ],
+     "nomi": [
+      "fa♯4",
+      "si4",
+      "re♯5"
+     ],
+     "sigla": "B/F♯",
+     "inversione": 2,
+     "fondamentale": "si",
+     "qualita": "major"
+    }
+   ]
+  },
+  "B:min": {
+   "nomi": [
+    "si",
+    "re",
+    "fa♯"
+   ],
+   "pc": [
+    11,
+    2,
+    6
+   ],
+   "lati": [
+    3,
+    4,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      71,
+      74,
+      78
+     ],
+     "nomi": [
+      "si4",
+      "re5",
+      "fa♯5"
+     ],
+     "sigla": "Bm",
+     "inversione": 0,
+     "fondamentale": "si",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      62,
+      66,
+      71
+     ],
+     "nomi": [
+      "re4",
+      "fa♯4",
+      "si4"
+     ],
+     "sigla": "Bm/D",
+     "inversione": 1,
+     "fondamentale": "si",
+     "qualita": "minor"
+    },
+    {
+     "midi": [
+      66,
+      71,
+      74
+     ],
+     "nomi": [
+      "fa♯4",
+      "si4",
+      "re5"
+     ],
+     "sigla": "Bm/F♯",
+     "inversione": 2,
+     "fondamentale": "si",
+     "qualita": "minor"
+    }
+   ]
+  },
+  "B:dim": {
+   "nomi": [
+    "si",
+    "re",
+    "fa"
+   ],
+   "pc": [
+    11,
+    2,
+    5
+   ],
+   "lati": [
+    3,
+    3,
+    6
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      71,
+      74,
+      77
+     ],
+     "nomi": [
+      "si4",
+      "re5",
+      "fa5"
+     ],
+     "sigla": "B°",
+     "inversione": 0,
+     "fondamentale": "si",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      62,
+      65,
+      71
+     ],
+     "nomi": [
+      "re4",
+      "fa4",
+      "si4"
+     ],
+     "sigla": "B°/D",
+     "inversione": 1,
+     "fondamentale": "si",
+     "qualita": "diminished"
+    },
+    {
+     "midi": [
+      65,
+      71,
+      74
+     ],
+     "nomi": [
+      "fa4",
+      "si4",
+      "re5"
+     ],
+     "sigla": "B°/F",
+     "inversione": 2,
+     "fondamentale": "si",
+     "qualita": "diminished"
+    }
+   ]
+  },
+  "B:aum": {
+   "nomi": [
+    "si",
+    "re♯",
+    "fa♯♯"
+   ],
+   "pc": [
+    11,
+    3,
+    7
+   ],
+   "lati": [
+    4,
+    4,
+    4
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      71,
+      75,
+      79
+     ],
+     "nomi": [
+      "si4",
+      "re♯5",
+      "fa♯♯5"
+     ],
+     "sigla": "B+",
+     "inversione": 0,
+     "fondamentale": "si",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      63,
+      67,
+      71
+     ],
+     "nomi": [
+      "re♯4",
+      "fa♯♯4",
+      "si4"
+     ],
+     "sigla": "B+/D♯",
+     "inversione": 1,
+     "fondamentale": "si",
+     "qualita": "augmented"
+    },
+    {
+     "midi": [
+      67,
+      71,
+      75
+     ],
+     "nomi": [
+      "fa♯♯4",
+      "si4",
+      "re♯5"
+     ],
+     "sigla": "B+/F♯♯",
+     "inversione": 2,
+     "fondamentale": "si",
+     "qualita": "augmented"
+    }
+   ]
+  },
+  "B:sus4": {
+   "nomi": [
+    "si",
+    "mi",
+    "fa♯"
+   ],
+   "pc": [
+    11,
+    4,
+    6
+   ],
+   "lati": [
+    5,
+    2,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      71,
+      76,
+      78
+     ],
+     "nomi": [
+      "si4",
+      "mi5",
+      "fa♯5"
+     ],
+     "sigla": "Bsus4"
+    },
+    {
+     "midi": [
+      64,
+      66,
+      71
+     ],
+     "nomi": [
+      "mi4",
+      "fa♯4",
+      "si4"
+     ],
+     "sigla": "Bsus4/E"
+    },
+    {
+     "midi": [
+      66,
+      71,
+      76
+     ],
+     "nomi": [
+      "fa♯4",
+      "si4",
+      "mi5"
+     ],
+     "sigla": "Bsus4/F♯"
+    }
+   ]
+  },
+  "B:sus2": {
+   "nomi": [
+    "si",
+    "do♯",
+    "fa♯"
+   ],
+   "pc": [
+    11,
+    1,
+    6
+   ],
+   "lati": [
+    2,
+    5,
+    5
+   ],
+   "rivolti": [
+    {
+     "midi": [
+      71,
+      73,
+      78
+     ],
+     "nomi": [
+      "si4",
+      "do♯5",
+      "fa♯5"
+     ],
+     "sigla": "Bsus2"
+    },
+    {
+     "midi": [
+      61,
+      66,
+      71
+     ],
+     "nomi": [
+      "do♯4",
+      "fa♯4",
+      "si4"
+     ],
+     "sigla": "Bsus2/C♯"
+    },
+    {
+     "midi": [
+      66,
+      71,
+      73
+     ],
+     "nomi": [
+      "fa♯4",
+      "si4",
+      "do♯5"
+     ],
+     "sigla": "Bsus2/F♯"
+    }
+   ]
+  }
+ },
+ "sus4_uguale_sus2_sulla_quarta": {
+  "C": true,
+  "D-": true,
+  "D": true,
+  "E-": true,
+  "E": true,
+  "F": true,
+  "F#": true,
+  "G": true,
+  "A-": true,
+  "A": true,
+  "B-": true,
+  "B": true
+ }
+}

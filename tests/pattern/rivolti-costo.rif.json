@@ -1,0 +1,2246 @@
+{
+ "triadi": [
+  [
+   0,
+   4,
+   7
+  ],
+  [
+   2,
+   5,
+   9
+  ],
+  [
+   4,
+   7,
+   11
+  ],
+  [
+   5,
+   9,
+   0
+  ],
+  [
+   7,
+   11,
+   2
+  ],
+  [
+   9,
+   0,
+   4
+  ],
+  [
+   11,
+   2,
+   5
+  ]
+ ],
+ "casi": {
+  "0,0,0": {
+   "partenza": [
+    60,
+    64,
+    67
+   ],
+   "rivolti": [
+    0,
+    12,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "0,0,1": {
+   "partenza": [
+    60,
+    64,
+    67
+   ],
+   "rivolti": [
+    5,
+    17,
+    7
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "0,0,2": {
+   "partenza": [
+    60,
+    64,
+    67
+   ],
+   "rivolti": [
+    11,
+    13,
+    1
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "0,0,3": {
+   "partenza": [
+    60,
+    64,
+    67
+   ],
+   "rivolti": [
+    15,
+    9,
+    3
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "0,0,4": {
+   "partenza": [
+    60,
+    64,
+    67
+   ],
+   "rivolti": [
+    15,
+    3,
+    9
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "0,0,5": {
+   "partenza": [
+    60,
+    64,
+    67
+   ],
+   "rivolti": [
+    10,
+    2,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "0,0,6": {
+   "partenza": [
+    60,
+    64,
+    67
+   ],
+   "rivolti": [
+    5,
+    7,
+    17
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "0,1,0": {
+   "partenza": [
+    64,
+    67,
+    72
+   ],
+   "rivolti": [
+    12,
+    0,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "0,1,1": {
+   "partenza": [
+    64,
+    67,
+    72
+   ],
+   "rivolti": [
+    7,
+    5,
+    17
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "0,1,2": {
+   "partenza": [
+    64,
+    67,
+    72
+   ],
+   "rivolti": [
+    1,
+    11,
+    13
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "0,1,3": {
+   "partenza": [
+    64,
+    67,
+    72
+   ],
+   "rivolti": [
+    3,
+    15,
+    9
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "0,1,4": {
+   "partenza": [
+    64,
+    67,
+    72
+   ],
+   "rivolti": [
+    9,
+    15,
+    3
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "0,1,5": {
+   "partenza": [
+    64,
+    67,
+    72
+   ],
+   "rivolti": [
+    14,
+    10,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "0,1,6": {
+   "partenza": [
+    64,
+    67,
+    72
+   ],
+   "rivolti": [
+    17,
+    5,
+    7
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "0,2,0": {
+   "partenza": [
+    67,
+    72,
+    76
+   ],
+   "rivolti": [
+    12,
+    12,
+    0
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "0,2,1": {
+   "partenza": [
+    67,
+    72,
+    76
+   ],
+   "rivolti": [
+    17,
+    7,
+    5
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "0,2,2": {
+   "partenza": [
+    67,
+    72,
+    76
+   ],
+   "rivolti": [
+    13,
+    1,
+    11
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "0,2,3": {
+   "partenza": [
+    67,
+    72,
+    76
+   ],
+   "rivolti": [
+    9,
+    3,
+    15
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "0,2,4": {
+   "partenza": [
+    67,
+    72,
+    76
+   ],
+   "rivolti": [
+    3,
+    9,
+    15
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "0,2,5": {
+   "partenza": [
+    67,
+    72,
+    76
+   ],
+   "rivolti": [
+    2,
+    14,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "0,2,6": {
+   "partenza": [
+    67,
+    72,
+    76
+   ],
+   "rivolti": [
+    7,
+    17,
+    5
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "1,0,0": {
+   "partenza": [
+    62,
+    65,
+    69
+   ],
+   "rivolti": [
+    5,
+    7,
+    17
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "1,0,1": {
+   "partenza": [
+    62,
+    65,
+    69
+   ],
+   "rivolti": [
+    0,
+    12,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "1,0,2": {
+   "partenza": [
+    62,
+    65,
+    69
+   ],
+   "rivolti": [
+    6,
+    18,
+    6
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "1,0,3": {
+   "partenza": [
+    62,
+    65,
+    69
+   ],
+   "rivolti": [
+    10,
+    14,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "1,0,4": {
+   "partenza": [
+    62,
+    65,
+    69
+   ],
+   "rivolti": [
+    16,
+    8,
+    4
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "1,0,5": {
+   "partenza": [
+    62,
+    65,
+    69
+   ],
+   "rivolti": [
+    15,
+    3,
+    9
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "1,0,6": {
+   "partenza": [
+    62,
+    65,
+    69
+   ],
+   "rivolti": [
+    10,
+    2,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "1,1,0": {
+   "partenza": [
+    65,
+    69,
+    74
+   ],
+   "rivolti": [
+    17,
+    5,
+    7
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "1,1,1": {
+   "partenza": [
+    65,
+    69,
+    74
+   ],
+   "rivolti": [
+    12,
+    0,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "1,1,2": {
+   "partenza": [
+    65,
+    69,
+    74
+   ],
+   "rivolti": [
+    6,
+    6,
+    18
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "1,1,3": {
+   "partenza": [
+    65,
+    69,
+    74
+   ],
+   "rivolti": [
+    2,
+    10,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "1,1,4": {
+   "partenza": [
+    65,
+    69,
+    74
+   ],
+   "rivolti": [
+    4,
+    16,
+    8
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "1,1,5": {
+   "partenza": [
+    65,
+    69,
+    74
+   ],
+   "rivolti": [
+    9,
+    15,
+    3
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "1,1,6": {
+   "partenza": [
+    65,
+    69,
+    74
+   ],
+   "rivolti": [
+    14,
+    10,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "1,2,0": {
+   "partenza": [
+    69,
+    74,
+    77
+   ],
+   "rivolti": [
+    7,
+    17,
+    5
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "1,2,1": {
+   "partenza": [
+    69,
+    74,
+    77
+   ],
+   "rivolti": [
+    12,
+    12,
+    0
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "1,2,2": {
+   "partenza": [
+    69,
+    74,
+    77
+   ],
+   "rivolti": [
+    18,
+    6,
+    6
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "1,2,3": {
+   "partenza": [
+    69,
+    74,
+    77
+   ],
+   "rivolti": [
+    14,
+    2,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "1,2,4": {
+   "partenza": [
+    69,
+    74,
+    77
+   ],
+   "rivolti": [
+    8,
+    4,
+    16
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "1,2,5": {
+   "partenza": [
+    69,
+    74,
+    77
+   ],
+   "rivolti": [
+    3,
+    9,
+    15
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "1,2,6": {
+   "partenza": [
+    69,
+    74,
+    77
+   ],
+   "rivolti": [
+    2,
+    14,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "2,0,0": {
+   "partenza": [
+    64,
+    67,
+    71
+   ],
+   "rivolti": [
+    11,
+    1,
+    13
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "2,0,1": {
+   "partenza": [
+    64,
+    67,
+    71
+   ],
+   "rivolti": [
+    6,
+    6,
+    18
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "2,0,2": {
+   "partenza": [
+    64,
+    67,
+    71
+   ],
+   "rivolti": [
+    0,
+    12,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "2,0,3": {
+   "partenza": [
+    64,
+    67,
+    71
+   ],
+   "rivolti": [
+    4,
+    16,
+    8
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 0
+  },
+  "2,0,4": {
+   "partenza": [
+    64,
+    67,
+    71
+   ],
+   "rivolti": [
+    10,
+    14,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "2,0,5": {
+   "partenza": [
+    64,
+    67,
+    71
+   ],
+   "rivolti": [
+    15,
+    9,
+    3
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "2,0,6": {
+   "partenza": [
+    64,
+    67,
+    71
+   ],
+   "rivolti": [
+    16,
+    4,
+    8
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "2,1,0": {
+   "partenza": [
+    67,
+    71,
+    76
+   ],
+   "rivolti": [
+    13,
+    11,
+    1
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "2,1,1": {
+   "partenza": [
+    67,
+    71,
+    76
+   ],
+   "rivolti": [
+    18,
+    6,
+    6
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "2,1,2": {
+   "partenza": [
+    67,
+    71,
+    76
+   ],
+   "rivolti": [
+    12,
+    0,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "2,1,3": {
+   "partenza": [
+    67,
+    71,
+    76
+   ],
+   "rivolti": [
+    8,
+    4,
+    16
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 0
+  },
+  "2,1,4": {
+   "partenza": [
+    67,
+    71,
+    76
+   ],
+   "rivolti": [
+    2,
+    10,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "2,1,5": {
+   "partenza": [
+    67,
+    71,
+    76
+   ],
+   "rivolti": [
+    3,
+    15,
+    9
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "2,1,6": {
+   "partenza": [
+    67,
+    71,
+    76
+   ],
+   "rivolti": [
+    8,
+    16,
+    4
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "2,2,0": {
+   "partenza": [
+    71,
+    76,
+    79
+   ],
+   "rivolti": [
+    1,
+    13,
+    11
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "2,2,1": {
+   "partenza": [
+    71,
+    76,
+    79
+   ],
+   "rivolti": [
+    6,
+    18,
+    6
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "2,2,2": {
+   "partenza": [
+    71,
+    76,
+    79
+   ],
+   "rivolti": [
+    12,
+    12,
+    0
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "2,2,3": {
+   "partenza": [
+    71,
+    76,
+    79
+   ],
+   "rivolti": [
+    16,
+    8,
+    4
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 0
+  },
+  "2,2,4": {
+   "partenza": [
+    71,
+    76,
+    79
+   ],
+   "rivolti": [
+    14,
+    2,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "2,2,5": {
+   "partenza": [
+    71,
+    76,
+    79
+   ],
+   "rivolti": [
+    9,
+    3,
+    15
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "2,2,6": {
+   "partenza": [
+    71,
+    76,
+    79
+   ],
+   "rivolti": [
+    4,
+    8,
+    16
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "3,0,0": {
+   "partenza": [
+    65,
+    69,
+    72
+   ],
+   "rivolti": [
+    15,
+    3,
+    9
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "3,0,1": {
+   "partenza": [
+    65,
+    69,
+    72
+   ],
+   "rivolti": [
+    10,
+    2,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "3,0,2": {
+   "partenza": [
+    65,
+    69,
+    72
+   ],
+   "rivolti": [
+    4,
+    8,
+    16
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 0
+  },
+  "3,0,3": {
+   "partenza": [
+    65,
+    69,
+    72
+   ],
+   "rivolti": [
+    0,
+    12,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "3,0,4": {
+   "partenza": [
+    65,
+    69,
+    72
+   ],
+   "rivolti": [
+    6,
+    18,
+    6
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "3,0,5": {
+   "partenza": [
+    65,
+    69,
+    72
+   ],
+   "rivolti": [
+    11,
+    13,
+    1
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "3,0,6": {
+   "partenza": [
+    65,
+    69,
+    72
+   ],
+   "rivolti": [
+    16,
+    8,
+    4
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "3,1,0": {
+   "partenza": [
+    69,
+    72,
+    77
+   ],
+   "rivolti": [
+    9,
+    15,
+    3
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "3,1,1": {
+   "partenza": [
+    69,
+    72,
+    77
+   ],
+   "rivolti": [
+    14,
+    10,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "3,1,2": {
+   "partenza": [
+    69,
+    72,
+    77
+   ],
+   "rivolti": [
+    16,
+    4,
+    8
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 0
+  },
+  "3,1,3": {
+   "partenza": [
+    69,
+    72,
+    77
+   ],
+   "rivolti": [
+    12,
+    0,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "3,1,4": {
+   "partenza": [
+    69,
+    72,
+    77
+   ],
+   "rivolti": [
+    6,
+    6,
+    18
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "3,1,5": {
+   "partenza": [
+    69,
+    72,
+    77
+   ],
+   "rivolti": [
+    1,
+    11,
+    13
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "3,1,6": {
+   "partenza": [
+    69,
+    72,
+    77
+   ],
+   "rivolti": [
+    4,
+    16,
+    8
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "3,2,0": {
+   "partenza": [
+    60,
+    65,
+    69
+   ],
+   "rivolti": [
+    3,
+    9,
+    15
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "3,2,1": {
+   "partenza": [
+    60,
+    65,
+    69
+   ],
+   "rivolti": [
+    2,
+    14,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "3,2,2": {
+   "partenza": [
+    60,
+    65,
+    69
+   ],
+   "rivolti": [
+    8,
+    16,
+    4
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 0
+  },
+  "3,2,3": {
+   "partenza": [
+    60,
+    65,
+    69
+   ],
+   "rivolti": [
+    12,
+    12,
+    0
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "3,2,4": {
+   "partenza": [
+    60,
+    65,
+    69
+   ],
+   "rivolti": [
+    18,
+    6,
+    6
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "3,2,5": {
+   "partenza": [
+    60,
+    65,
+    69
+   ],
+   "rivolti": [
+    13,
+    1,
+    11
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "3,2,6": {
+   "partenza": [
+    60,
+    65,
+    69
+   ],
+   "rivolti": [
+    8,
+    4,
+    16
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "4,0,0": {
+   "partenza": [
+    67,
+    71,
+    74
+   ],
+   "rivolti": [
+    15,
+    9,
+    3
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "4,0,1": {
+   "partenza": [
+    67,
+    71,
+    74
+   ],
+   "rivolti": [
+    16,
+    4,
+    8
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "4,0,2": {
+   "partenza": [
+    67,
+    71,
+    74
+   ],
+   "rivolti": [
+    10,
+    2,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "4,0,3": {
+   "partenza": [
+    67,
+    71,
+    74
+   ],
+   "rivolti": [
+    6,
+    6,
+    18
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "4,0,4": {
+   "partenza": [
+    67,
+    71,
+    74
+   ],
+   "rivolti": [
+    0,
+    12,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "4,0,5": {
+   "partenza": [
+    67,
+    71,
+    74
+   ],
+   "rivolti": [
+    5,
+    17,
+    7
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "4,0,6": {
+   "partenza": [
+    67,
+    71,
+    74
+   ],
+   "rivolti": [
+    10,
+    14,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "4,1,0": {
+   "partenza": [
+    71,
+    74,
+    79
+   ],
+   "rivolti": [
+    3,
+    15,
+    9
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "4,1,1": {
+   "partenza": [
+    71,
+    74,
+    79
+   ],
+   "rivolti": [
+    8,
+    16,
+    4
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "4,1,2": {
+   "partenza": [
+    71,
+    74,
+    79
+   ],
+   "rivolti": [
+    14,
+    10,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "4,1,3": {
+   "partenza": [
+    71,
+    74,
+    79
+   ],
+   "rivolti": [
+    18,
+    6,
+    6
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "4,1,4": {
+   "partenza": [
+    71,
+    74,
+    79
+   ],
+   "rivolti": [
+    12,
+    0,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "4,1,5": {
+   "partenza": [
+    71,
+    74,
+    79
+   ],
+   "rivolti": [
+    7,
+    5,
+    17
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "4,1,6": {
+   "partenza": [
+    71,
+    74,
+    79
+   ],
+   "rivolti": [
+    2,
+    10,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "4,2,0": {
+   "partenza": [
+    62,
+    67,
+    71
+   ],
+   "rivolti": [
+    9,
+    3,
+    15
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "4,2,1": {
+   "partenza": [
+    62,
+    67,
+    71
+   ],
+   "rivolti": [
+    4,
+    8,
+    16
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "4,2,2": {
+   "partenza": [
+    62,
+    67,
+    71
+   ],
+   "rivolti": [
+    2,
+    14,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "4,2,3": {
+   "partenza": [
+    62,
+    67,
+    71
+   ],
+   "rivolti": [
+    6,
+    18,
+    6
+   ],
+   "min_stretta": 6,
+   "min_libera": 6,
+   "comuni": 0
+  },
+  "4,2,4": {
+   "partenza": [
+    62,
+    67,
+    71
+   ],
+   "rivolti": [
+    12,
+    12,
+    0
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "4,2,5": {
+   "partenza": [
+    62,
+    67,
+    71
+   ],
+   "rivolti": [
+    17,
+    7,
+    5
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "4,2,6": {
+   "partenza": [
+    62,
+    67,
+    71
+   ],
+   "rivolti": [
+    14,
+    2,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "5,0,0": {
+   "partenza": [
+    69,
+    72,
+    76
+   ],
+   "rivolti": [
+    10,
+    14,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "5,0,1": {
+   "partenza": [
+    69,
+    72,
+    76
+   ],
+   "rivolti": [
+    15,
+    9,
+    3
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "5,0,2": {
+   "partenza": [
+    69,
+    72,
+    76
+   ],
+   "rivolti": [
+    15,
+    3,
+    9
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "5,0,3": {
+   "partenza": [
+    69,
+    72,
+    76
+   ],
+   "rivolti": [
+    11,
+    1,
+    13
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "5,0,4": {
+   "partenza": [
+    69,
+    72,
+    76
+   ],
+   "rivolti": [
+    5,
+    7,
+    17
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "5,0,5": {
+   "partenza": [
+    69,
+    72,
+    76
+   ],
+   "rivolti": [
+    0,
+    12,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "5,0,6": {
+   "partenza": [
+    69,
+    72,
+    76
+   ],
+   "rivolti": [
+    5,
+    17,
+    7
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "5,1,0": {
+   "partenza": [
+    60,
+    64,
+    69
+   ],
+   "rivolti": [
+    2,
+    10,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "5,1,1": {
+   "partenza": [
+    60,
+    64,
+    69
+   ],
+   "rivolti": [
+    3,
+    15,
+    9
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "5,1,2": {
+   "partenza": [
+    60,
+    64,
+    69
+   ],
+   "rivolti": [
+    9,
+    15,
+    3
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "5,1,3": {
+   "partenza": [
+    60,
+    64,
+    69
+   ],
+   "rivolti": [
+    13,
+    11,
+    1
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "5,1,4": {
+   "partenza": [
+    60,
+    64,
+    69
+   ],
+   "rivolti": [
+    17,
+    5,
+    7
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "5,1,5": {
+   "partenza": [
+    60,
+    64,
+    69
+   ],
+   "rivolti": [
+    12,
+    0,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "5,1,6": {
+   "partenza": [
+    60,
+    64,
+    69
+   ],
+   "rivolti": [
+    7,
+    5,
+    17
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "5,2,0": {
+   "partenza": [
+    64,
+    69,
+    72
+   ],
+   "rivolti": [
+    14,
+    2,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "5,2,1": {
+   "partenza": [
+    64,
+    69,
+    72
+   ],
+   "rivolti": [
+    9,
+    3,
+    15
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "5,2,2": {
+   "partenza": [
+    64,
+    69,
+    72
+   ],
+   "rivolti": [
+    3,
+    9,
+    15
+   ],
+   "min_stretta": 3,
+   "min_libera": 3,
+   "comuni": 1
+  },
+  "5,2,3": {
+   "partenza": [
+    64,
+    69,
+    72
+   ],
+   "rivolti": [
+    1,
+    13,
+    11
+   ],
+   "min_stretta": 1,
+   "min_libera": 1,
+   "comuni": 2
+  },
+  "5,2,4": {
+   "partenza": [
+    64,
+    69,
+    72
+   ],
+   "rivolti": [
+    7,
+    17,
+    5
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "5,2,5": {
+   "partenza": [
+    64,
+    69,
+    72
+   ],
+   "rivolti": [
+    12,
+    12,
+    0
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "5,2,6": {
+   "partenza": [
+    64,
+    69,
+    72
+   ],
+   "rivolti": [
+    17,
+    7,
+    5
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "6,0,0": {
+   "partenza": [
+    71,
+    74,
+    77
+   ],
+   "rivolti": [
+    5,
+    17,
+    7
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "6,0,1": {
+   "partenza": [
+    71,
+    74,
+    77
+   ],
+   "rivolti": [
+    10,
+    14,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "6,0,2": {
+   "partenza": [
+    71,
+    74,
+    77
+   ],
+   "rivolti": [
+    16,
+    8,
+    4
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "6,0,3": {
+   "partenza": [
+    71,
+    74,
+    77
+   ],
+   "rivolti": [
+    16,
+    4,
+    8
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "6,0,4": {
+   "partenza": [
+    71,
+    74,
+    77
+   ],
+   "rivolti": [
+    10,
+    2,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "6,0,5": {
+   "partenza": [
+    71,
+    74,
+    77
+   ],
+   "rivolti": [
+    5,
+    7,
+    17
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "6,0,6": {
+   "partenza": [
+    71,
+    74,
+    77
+   ],
+   "rivolti": [
+    0,
+    12,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "6,1,0": {
+   "partenza": [
+    62,
+    65,
+    71
+   ],
+   "rivolti": [
+    7,
+    5,
+    17
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "6,1,1": {
+   "partenza": [
+    62,
+    65,
+    71
+   ],
+   "rivolti": [
+    2,
+    10,
+    14
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "6,1,2": {
+   "partenza": [
+    62,
+    65,
+    71
+   ],
+   "rivolti": [
+    4,
+    16,
+    8
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "6,1,3": {
+   "partenza": [
+    62,
+    65,
+    71
+   ],
+   "rivolti": [
+    8,
+    16,
+    4
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "6,1,4": {
+   "partenza": [
+    62,
+    65,
+    71
+   ],
+   "rivolti": [
+    14,
+    10,
+    2
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "6,1,5": {
+   "partenza": [
+    62,
+    65,
+    71
+   ],
+   "rivolti": [
+    17,
+    5,
+    7
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "6,1,6": {
+   "partenza": [
+    62,
+    65,
+    71
+   ],
+   "rivolti": [
+    12,
+    0,
+    12
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  },
+  "6,2,0": {
+   "partenza": [
+    65,
+    71,
+    74
+   ],
+   "rivolti": [
+    17,
+    7,
+    5
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "6,2,1": {
+   "partenza": [
+    65,
+    71,
+    74
+   ],
+   "rivolti": [
+    14,
+    2,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "6,2,2": {
+   "partenza": [
+    65,
+    71,
+    74
+   ],
+   "rivolti": [
+    8,
+    4,
+    16
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "6,2,3": {
+   "partenza": [
+    65,
+    71,
+    74
+   ],
+   "rivolti": [
+    4,
+    8,
+    16
+   ],
+   "min_stretta": 4,
+   "min_libera": 4,
+   "comuni": 1
+  },
+  "6,2,4": {
+   "partenza": [
+    65,
+    71,
+    74
+   ],
+   "rivolti": [
+    2,
+    14,
+    10
+   ],
+   "min_stretta": 2,
+   "min_libera": 2,
+   "comuni": 2
+  },
+  "6,2,5": {
+   "partenza": [
+    65,
+    71,
+    74
+   ],
+   "rivolti": [
+    7,
+    17,
+    5
+   ],
+   "min_stretta": 5,
+   "min_libera": 5,
+   "comuni": 0
+  },
+  "6,2,6": {
+   "partenza": [
+    65,
+    71,
+    74
+   ],
+   "rivolti": [
+    12,
+    12,
+    0
+   ],
+   "min_stretta": 0,
+   "min_libera": 0,
+   "comuni": 3
+  }
+ }
+}

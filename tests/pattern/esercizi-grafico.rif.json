@@ -1,0 +1,2940 @@
+{
+ "casi": {
+  "cinque/parallelo": {
+   "note": {
+    "r": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 4
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 5
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 4
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 8,
+      "gruppo": 1,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     }
+    ],
+    "l": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 5
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 4
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 3
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 2
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 1
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 2
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 3
+     },
+     {
+      "i": 8,
+      "gruppo": 1,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 4
+     }
+    ]
+   },
+   "relazione": {
+    "tipo": "parallelo",
+    "c": 7
+   },
+   "rampa": {
+    "r": [
+     [
+      1,
+      35
+     ]
+    ],
+    "l": [
+     [
+      1,
+      28
+     ]
+    ]
+   },
+   "pendenza": null,
+   "L": 8,
+   "G": 1
+  },
+  "cinque/contrario": {
+   "note": {
+    "r": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 4
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 5
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 4
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 8,
+      "gruppo": 1,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     }
+    ],
+    "l": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 1
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 2
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 3
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 4
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 5
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 4
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 3
+     },
+     {
+      "i": 8,
+      "gruppo": 1,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 2
+     }
+    ]
+   },
+   "relazione": {
+    "tipo": "specchio",
+    "c": 67
+   },
+   "rampa": {
+    "r": [
+     [
+      1,
+      35
+     ]
+    ],
+    "l": [
+     [
+      1,
+      32
+     ]
+    ]
+   },
+   "pendenza": null,
+   "L": 8,
+   "G": 1
+  },
+  "hanon": {
+   "note": {
+    "r": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 2
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 3
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 4
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 5
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 4
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 3
+     },
+     {
+      "i": 8,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 2
+     },
+     {
+      "i": 9,
+      "gruppo": 2,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 1
+     },
+     {
+      "i": 10,
+      "gruppo": 2,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 2
+     },
+     {
+      "i": 11,
+      "gruppo": 2,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 3
+     },
+     {
+      "i": 12,
+      "gruppo": 2,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 4
+     },
+     {
+      "i": 13,
+      "gruppo": 2,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 5
+     },
+     {
+      "i": 14,
+      "gruppo": 2,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 4
+     },
+     {
+      "i": 15,
+      "gruppo": 2,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 3
+     },
+     {
+      "i": 16,
+      "gruppo": 2,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 2
+     },
+     {
+      "i": 17,
+      "gruppo": 3,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 1
+     },
+     {
+      "i": 18,
+      "gruppo": 3,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 2
+     },
+     {
+      "i": 19,
+      "gruppo": 3,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 3
+     },
+     {
+      "i": 20,
+      "gruppo": 3,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 4
+     },
+     {
+      "i": 21,
+      "gruppo": 3,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 22,
+      "gruppo": 3,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 4
+     },
+     {
+      "i": 23,
+      "gruppo": 3,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 3
+     },
+     {
+      "i": 24,
+      "gruppo": 3,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 2
+     },
+     {
+      "i": 25,
+      "gruppo": 4,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 1
+     },
+     {
+      "i": 26,
+      "gruppo": 4,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 2
+     },
+     {
+      "i": 27,
+      "gruppo": 4,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 3
+     },
+     {
+      "i": 28,
+      "gruppo": 4,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 4
+     },
+     {
+      "i": 29,
+      "gruppo": 4,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 5
+     },
+     {
+      "i": 30,
+      "gruppo": 4,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 4
+     },
+     {
+      "i": 31,
+      "gruppo": 4,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 3
+     },
+     {
+      "i": 32,
+      "gruppo": 4,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 2
+     },
+     {
+      "i": 33,
+      "gruppo": 5,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 1
+     },
+     {
+      "i": 34,
+      "gruppo": 5,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 2
+     },
+     {
+      "i": 35,
+      "gruppo": 5,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 3
+     },
+     {
+      "i": 36,
+      "gruppo": 5,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 4
+     },
+     {
+      "i": 37,
+      "gruppo": 5,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 5
+     },
+     {
+      "i": 38,
+      "gruppo": 5,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 4
+     },
+     {
+      "i": 39,
+      "gruppo": 5,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 3
+     },
+     {
+      "i": 40,
+      "gruppo": 5,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 2
+     },
+     {
+      "i": 41,
+      "gruppo": 6,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 1
+     },
+     {
+      "i": 42,
+      "gruppo": 6,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 2
+     },
+     {
+      "i": 43,
+      "gruppo": 6,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 3
+     },
+     {
+      "i": 44,
+      "gruppo": 6,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 4
+     },
+     {
+      "i": 45,
+      "gruppo": 6,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 5
+     },
+     {
+      "i": 46,
+      "gruppo": 6,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 4
+     },
+     {
+      "i": 47,
+      "gruppo": 6,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 3
+     },
+     {
+      "i": 48,
+      "gruppo": 6,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 2
+     },
+     {
+      "i": 49,
+      "gruppo": 7,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 1
+     },
+     {
+      "i": 50,
+      "gruppo": 7,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 2
+     },
+     {
+      "i": 51,
+      "gruppo": 7,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 3
+     },
+     {
+      "i": 52,
+      "gruppo": 7,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 4
+     },
+     {
+      "i": 53,
+      "gruppo": 7,
+      "bianco": 46,
+      "nome": "sol5",
+      "dito": 5
+     },
+     {
+      "i": 54,
+      "gruppo": 7,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 4
+     },
+     {
+      "i": 55,
+      "gruppo": 7,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 3
+     },
+     {
+      "i": 56,
+      "gruppo": 7,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 2
+     },
+     {
+      "i": 57,
+      "gruppo": 8,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 1
+     },
+     {
+      "i": 58,
+      "gruppo": 8,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 2
+     },
+     {
+      "i": 59,
+      "gruppo": 8,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 3
+     },
+     {
+      "i": 60,
+      "gruppo": 8,
+      "bianco": 46,
+      "nome": "sol5",
+      "dito": 4
+     },
+     {
+      "i": 61,
+      "gruppo": 8,
+      "bianco": 47,
+      "nome": "la5",
+      "dito": 5
+     },
+     {
+      "i": 62,
+      "gruppo": 8,
+      "bianco": 46,
+      "nome": "sol5",
+      "dito": 4
+     },
+     {
+      "i": 63,
+      "gruppo": 8,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 3
+     },
+     {
+      "i": 64,
+      "gruppo": 8,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 2
+     }
+    ],
+    "l": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 5
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 4
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 3
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 2
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 1
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 2
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 3
+     },
+     {
+      "i": 8,
+      "gruppo": 1,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 4
+     },
+     {
+      "i": 9,
+      "gruppo": 2,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 5
+     },
+     {
+      "i": 10,
+      "gruppo": 2,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 4
+     },
+     {
+      "i": 11,
+      "gruppo": 2,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 3
+     },
+     {
+      "i": 12,
+      "gruppo": 2,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 2
+     },
+     {
+      "i": 13,
+      "gruppo": 2,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 1
+     },
+     {
+      "i": 14,
+      "gruppo": 2,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 2
+     },
+     {
+      "i": 15,
+      "gruppo": 2,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 3
+     },
+     {
+      "i": 16,
+      "gruppo": 2,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 4
+     },
+     {
+      "i": 17,
+      "gruppo": 3,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 5
+     },
+     {
+      "i": 18,
+      "gruppo": 3,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 4
+     },
+     {
+      "i": 19,
+      "gruppo": 3,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 3
+     },
+     {
+      "i": 20,
+      "gruppo": 3,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 2
+     },
+     {
+      "i": 21,
+      "gruppo": 3,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 22,
+      "gruppo": 3,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 2
+     },
+     {
+      "i": 23,
+      "gruppo": 3,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 3
+     },
+     {
+      "i": 24,
+      "gruppo": 3,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 4
+     },
+     {
+      "i": 25,
+      "gruppo": 4,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 5
+     },
+     {
+      "i": 26,
+      "gruppo": 4,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 4
+     },
+     {
+      "i": 27,
+      "gruppo": 4,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 3
+     },
+     {
+      "i": 28,
+      "gruppo": 4,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 2
+     },
+     {
+      "i": 29,
+      "gruppo": 4,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 1
+     },
+     {
+      "i": 30,
+      "gruppo": 4,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 2
+     },
+     {
+      "i": 31,
+      "gruppo": 4,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 3
+     },
+     {
+      "i": 32,
+      "gruppo": 4,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 4
+     },
+     {
+      "i": 33,
+      "gruppo": 5,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 5
+     },
+     {
+      "i": 34,
+      "gruppo": 5,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 4
+     },
+     {
+      "i": 35,
+      "gruppo": 5,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 3
+     },
+     {
+      "i": 36,
+      "gruppo": 5,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     },
+     {
+      "i": 37,
+      "gruppo": 5,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 1
+     },
+     {
+      "i": 38,
+      "gruppo": 5,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     },
+     {
+      "i": 39,
+      "gruppo": 5,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 3
+     },
+     {
+      "i": 40,
+      "gruppo": 5,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 4
+     },
+     {
+      "i": 41,
+      "gruppo": 6,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 5
+     },
+     {
+      "i": 42,
+      "gruppo": 6,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 4
+     },
+     {
+      "i": 43,
+      "gruppo": 6,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 3
+     },
+     {
+      "i": 44,
+      "gruppo": 6,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 2
+     },
+     {
+      "i": 45,
+      "gruppo": 6,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 1
+     },
+     {
+      "i": 46,
+      "gruppo": 6,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 2
+     },
+     {
+      "i": 47,
+      "gruppo": 6,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 3
+     },
+     {
+      "i": 48,
+      "gruppo": 6,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 4
+     },
+     {
+      "i": 49,
+      "gruppo": 7,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 5
+     },
+     {
+      "i": 50,
+      "gruppo": 7,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 4
+     },
+     {
+      "i": 51,
+      "gruppo": 7,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 52,
+      "gruppo": 7,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 2
+     },
+     {
+      "i": 53,
+      "gruppo": 7,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 1
+     },
+     {
+      "i": 54,
+      "gruppo": 7,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 2
+     },
+     {
+      "i": 55,
+      "gruppo": 7,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 56,
+      "gruppo": 7,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 4
+     },
+     {
+      "i": 57,
+      "gruppo": 8,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 5
+     },
+     {
+      "i": 58,
+      "gruppo": 8,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 4
+     },
+     {
+      "i": 59,
+      "gruppo": 8,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 3
+     },
+     {
+      "i": 60,
+      "gruppo": 8,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 2
+     },
+     {
+      "i": 61,
+      "gruppo": 8,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 1
+     },
+     {
+      "i": 62,
+      "gruppo": 8,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 2
+     },
+     {
+      "i": 63,
+      "gruppo": 8,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 3
+     },
+     {
+      "i": 64,
+      "gruppo": 8,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 4
+     }
+    ]
+   },
+   "relazione": {
+    "tipo": "parallelo",
+    "c": 7
+   },
+   "rampa": {
+    "r": [
+     [
+      1,
+      35
+     ],
+     [
+      9,
+      36
+     ],
+     [
+      17,
+      37
+     ],
+     [
+      25,
+      38
+     ],
+     [
+      33,
+      39
+     ],
+     [
+      41,
+      40
+     ],
+     [
+      49,
+      41
+     ],
+     [
+      57,
+      42
+     ]
+    ],
+    "l": [
+     [
+      1,
+      28
+     ],
+     [
+      9,
+      29
+     ],
+     [
+      17,
+      30
+     ],
+     [
+      25,
+      31
+     ],
+     [
+      33,
+      32
+     ],
+     [
+      41,
+      33
+     ],
+     [
+      49,
+      34
+     ],
+     [
+      57,
+      35
+     ]
+    ]
+   },
+   "pendenza": 0.125,
+   "L": 8,
+   "G": 8
+  },
+  "medio/dritto": {
+   "note": {
+    "r": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 3
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 4
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 5
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 4
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 3
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 1
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 2
+     },
+     {
+      "i": 8,
+      "gruppo": 2,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 3
+     },
+     {
+      "i": 9,
+      "gruppo": 2,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 4
+     },
+     {
+      "i": 10,
+      "gruppo": 2,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 5
+     },
+     {
+      "i": 11,
+      "gruppo": 2,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 4
+     },
+     {
+      "i": 12,
+      "gruppo": 2,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 3
+     },
+     {
+      "i": 13,
+      "gruppo": 2,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 1
+     },
+     {
+      "i": 14,
+      "gruppo": 2,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 2
+     },
+     {
+      "i": 15,
+      "gruppo": 3,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 3
+     },
+     {
+      "i": 16,
+      "gruppo": 3,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 4
+     },
+     {
+      "i": 17,
+      "gruppo": 3,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 18,
+      "gruppo": 3,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 4
+     },
+     {
+      "i": 19,
+      "gruppo": 3,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 3
+     },
+     {
+      "i": 20,
+      "gruppo": 3,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 1
+     },
+     {
+      "i": 21,
+      "gruppo": 3,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 2
+     },
+     {
+      "i": 22,
+      "gruppo": 4,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 3
+     },
+     {
+      "i": 23,
+      "gruppo": 4,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 4
+     },
+     {
+      "i": 24,
+      "gruppo": 4,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 5
+     },
+     {
+      "i": 25,
+      "gruppo": 4,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 4
+     },
+     {
+      "i": 26,
+      "gruppo": 4,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 3
+     },
+     {
+      "i": 27,
+      "gruppo": 4,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 1
+     },
+     {
+      "i": 28,
+      "gruppo": 4,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 2
+     },
+     {
+      "i": 29,
+      "gruppo": 5,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 3
+     },
+     {
+      "i": 30,
+      "gruppo": 5,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 4
+     },
+     {
+      "i": 31,
+      "gruppo": 5,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 5
+     },
+     {
+      "i": 32,
+      "gruppo": 5,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 4
+     },
+     {
+      "i": 33,
+      "gruppo": 5,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 3
+     },
+     {
+      "i": 34,
+      "gruppo": 5,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 1
+     },
+     {
+      "i": 35,
+      "gruppo": 5,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 2
+     },
+     {
+      "i": 36,
+      "gruppo": 6,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 3
+     },
+     {
+      "i": 37,
+      "gruppo": 6,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 4
+     },
+     {
+      "i": 38,
+      "gruppo": 6,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 5
+     },
+     {
+      "i": 39,
+      "gruppo": 6,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 4
+     },
+     {
+      "i": 40,
+      "gruppo": 6,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 3
+     },
+     {
+      "i": 41,
+      "gruppo": 6,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 1
+     },
+     {
+      "i": 42,
+      "gruppo": 6,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 2
+     },
+     {
+      "i": 43,
+      "gruppo": 7,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 3
+     },
+     {
+      "i": 44,
+      "gruppo": 7,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 4
+     },
+     {
+      "i": 45,
+      "gruppo": 7,
+      "bianco": 46,
+      "nome": "sol5",
+      "dito": 5
+     },
+     {
+      "i": 46,
+      "gruppo": 7,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 4
+     },
+     {
+      "i": 47,
+      "gruppo": 7,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 3
+     },
+     {
+      "i": 48,
+      "gruppo": 7,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 1
+     },
+     {
+      "i": 49,
+      "gruppo": 7,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 2
+     },
+     {
+      "i": 50,
+      "gruppo": 8,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 3
+     },
+     {
+      "i": 51,
+      "gruppo": 8,
+      "bianco": 46,
+      "nome": "sol5",
+      "dito": 4
+     },
+     {
+      "i": 52,
+      "gruppo": 8,
+      "bianco": 47,
+      "nome": "la5",
+      "dito": 5
+     },
+     {
+      "i": 53,
+      "gruppo": 8,
+      "bianco": 46,
+      "nome": "sol5",
+      "dito": 4
+     },
+     {
+      "i": 54,
+      "gruppo": 8,
+      "bianco": 45,
+      "nome": "fa5",
+      "dito": 3
+     },
+     {
+      "i": 55,
+      "gruppo": 8,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 1
+     },
+     {
+      "i": 56,
+      "gruppo": 8,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 2
+     }
+    ]
+   },
+   "relazione": {
+    "tipo": "una mano"
+   },
+   "rampa": {
+    "r": [
+     [
+      1,
+      38
+     ],
+     [
+      8,
+      39
+     ],
+     [
+      15,
+      40
+     ],
+     [
+      22,
+      41
+     ],
+     [
+      29,
+      42
+     ],
+     [
+      36,
+      43
+     ],
+     [
+      43,
+      44
+     ],
+     [
+      50,
+      45
+     ]
+    ]
+   },
+   "pendenza": 0.14285714285714285,
+   "L": 7,
+   "G": 8
+  },
+  "medio/contrario": {
+   "note": {
+    "r": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 3
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 2
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 1
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 2
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 3
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 44,
+      "nome": "mi5",
+      "dito": 5
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 4
+     },
+     {
+      "i": 8,
+      "gruppo": 2,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 3
+     },
+     {
+      "i": 9,
+      "gruppo": 2,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 2
+     },
+     {
+      "i": 10,
+      "gruppo": 2,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 1
+     },
+     {
+      "i": 11,
+      "gruppo": 2,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 2
+     },
+     {
+      "i": 12,
+      "gruppo": 2,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 3
+     },
+     {
+      "i": 13,
+      "gruppo": 2,
+      "bianco": 43,
+      "nome": "re5",
+      "dito": 5
+     },
+     {
+      "i": 14,
+      "gruppo": 2,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 4
+     },
+     {
+      "i": 15,
+      "gruppo": 3,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 3
+     },
+     {
+      "i": 16,
+      "gruppo": 3,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 2
+     },
+     {
+      "i": 17,
+      "gruppo": 3,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 1
+     },
+     {
+      "i": 18,
+      "gruppo": 3,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 2
+     },
+     {
+      "i": 19,
+      "gruppo": 3,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 3
+     },
+     {
+      "i": 20,
+      "gruppo": 3,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 21,
+      "gruppo": 3,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 4
+     },
+     {
+      "i": 22,
+      "gruppo": 4,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 3
+     },
+     {
+      "i": 23,
+      "gruppo": 4,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 2
+     },
+     {
+      "i": 24,
+      "gruppo": 4,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 1
+     },
+     {
+      "i": 25,
+      "gruppo": 4,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 2
+     },
+     {
+      "i": 26,
+      "gruppo": 4,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 3
+     },
+     {
+      "i": 27,
+      "gruppo": 4,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 5
+     },
+     {
+      "i": 28,
+      "gruppo": 4,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 4
+     },
+     {
+      "i": 29,
+      "gruppo": 5,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 3
+     },
+     {
+      "i": 30,
+      "gruppo": 5,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 2
+     },
+     {
+      "i": 31,
+      "gruppo": 5,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 1
+     },
+     {
+      "i": 32,
+      "gruppo": 5,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 2
+     },
+     {
+      "i": 33,
+      "gruppo": 5,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 3
+     },
+     {
+      "i": 34,
+      "gruppo": 5,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 5
+     },
+     {
+      "i": 35,
+      "gruppo": 5,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 4
+     },
+     {
+      "i": 36,
+      "gruppo": 6,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 37,
+      "gruppo": 6,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     },
+     {
+      "i": 38,
+      "gruppo": 6,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 39,
+      "gruppo": 6,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     },
+     {
+      "i": 40,
+      "gruppo": 6,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 41,
+      "gruppo": 6,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 5
+     },
+     {
+      "i": 42,
+      "gruppo": 6,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 4
+     },
+     {
+      "i": 43,
+      "gruppo": 7,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 3
+     },
+     {
+      "i": 44,
+      "gruppo": 7,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 2
+     },
+     {
+      "i": 45,
+      "gruppo": 7,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 1
+     },
+     {
+      "i": 46,
+      "gruppo": 7,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 2
+     },
+     {
+      "i": 47,
+      "gruppo": 7,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 3
+     },
+     {
+      "i": 48,
+      "gruppo": 7,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 5
+     },
+     {
+      "i": 49,
+      "gruppo": 7,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 4
+     },
+     {
+      "i": 50,
+      "gruppo": 8,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 3
+     },
+     {
+      "i": 51,
+      "gruppo": 8,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 2
+     },
+     {
+      "i": 52,
+      "gruppo": 8,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 1
+     },
+     {
+      "i": 53,
+      "gruppo": 8,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 2
+     },
+     {
+      "i": 54,
+      "gruppo": 8,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 3
+     },
+     {
+      "i": 55,
+      "gruppo": 8,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 5
+     },
+     {
+      "i": 56,
+      "gruppo": 8,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 4
+     }
+    ],
+    "l": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 3
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 4
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 5
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 4
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 3
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 1
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     },
+     {
+      "i": 8,
+      "gruppo": 2,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 3
+     },
+     {
+      "i": 9,
+      "gruppo": 2,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 4
+     },
+     {
+      "i": 10,
+      "gruppo": 2,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 5
+     },
+     {
+      "i": 11,
+      "gruppo": 2,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 4
+     },
+     {
+      "i": 12,
+      "gruppo": 2,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 3
+     },
+     {
+      "i": 13,
+      "gruppo": 2,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 1
+     },
+     {
+      "i": 14,
+      "gruppo": 2,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 2
+     },
+     {
+      "i": 15,
+      "gruppo": 3,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 3
+     },
+     {
+      "i": 16,
+      "gruppo": 3,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 4
+     },
+     {
+      "i": 17,
+      "gruppo": 3,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 5
+     },
+     {
+      "i": 18,
+      "gruppo": 3,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 4
+     },
+     {
+      "i": 19,
+      "gruppo": 3,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 3
+     },
+     {
+      "i": 20,
+      "gruppo": 3,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 21,
+      "gruppo": 3,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 2
+     },
+     {
+      "i": 22,
+      "gruppo": 4,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 3
+     },
+     {
+      "i": 23,
+      "gruppo": 4,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 4
+     },
+     {
+      "i": 24,
+      "gruppo": 4,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 5
+     },
+     {
+      "i": 25,
+      "gruppo": 4,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 4
+     },
+     {
+      "i": 26,
+      "gruppo": 4,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 3
+     },
+     {
+      "i": 27,
+      "gruppo": 4,
+      "bianco": 34,
+      "nome": "si3",
+      "dito": 1
+     },
+     {
+      "i": 28,
+      "gruppo": 4,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 2
+     },
+     {
+      "i": 29,
+      "gruppo": 5,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 3
+     },
+     {
+      "i": 30,
+      "gruppo": 5,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 4
+     },
+     {
+      "i": 31,
+      "gruppo": 5,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 5
+     },
+     {
+      "i": 32,
+      "gruppo": 5,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 4
+     },
+     {
+      "i": 33,
+      "gruppo": 5,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 3
+     },
+     {
+      "i": 34,
+      "gruppo": 5,
+      "bianco": 33,
+      "nome": "la3",
+      "dito": 1
+     },
+     {
+      "i": 35,
+      "gruppo": 5,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 2
+     },
+     {
+      "i": 36,
+      "gruppo": 6,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 3
+     },
+     {
+      "i": 37,
+      "gruppo": 6,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 4
+     },
+     {
+      "i": 38,
+      "gruppo": 6,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 5
+     },
+     {
+      "i": 39,
+      "gruppo": 6,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 4
+     },
+     {
+      "i": 40,
+      "gruppo": 6,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 3
+     },
+     {
+      "i": 41,
+      "gruppo": 6,
+      "bianco": 32,
+      "nome": "sol3",
+      "dito": 1
+     },
+     {
+      "i": 42,
+      "gruppo": 6,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 2
+     },
+     {
+      "i": 43,
+      "gruppo": 7,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 3
+     },
+     {
+      "i": 44,
+      "gruppo": 7,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 4
+     },
+     {
+      "i": 45,
+      "gruppo": 7,
+      "bianco": 27,
+      "nome": "si2",
+      "dito": 5
+     },
+     {
+      "i": 46,
+      "gruppo": 7,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 4
+     },
+     {
+      "i": 47,
+      "gruppo": 7,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 3
+     },
+     {
+      "i": 48,
+      "gruppo": 7,
+      "bianco": 31,
+      "nome": "fa3",
+      "dito": 1
+     },
+     {
+      "i": 49,
+      "gruppo": 7,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 2
+     },
+     {
+      "i": 50,
+      "gruppo": 8,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 3
+     },
+     {
+      "i": 51,
+      "gruppo": 8,
+      "bianco": 27,
+      "nome": "si2",
+      "dito": 4
+     },
+     {
+      "i": 52,
+      "gruppo": 8,
+      "bianco": 26,
+      "nome": "la2",
+      "dito": 5
+     },
+     {
+      "i": 53,
+      "gruppo": 8,
+      "bianco": 27,
+      "nome": "si2",
+      "dito": 4
+     },
+     {
+      "i": 54,
+      "gruppo": 8,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 3
+     },
+     {
+      "i": 55,
+      "gruppo": 8,
+      "bianco": 30,
+      "nome": "mi3",
+      "dito": 1
+     },
+     {
+      "i": 56,
+      "gruppo": 8,
+      "bianco": 29,
+      "nome": "re3",
+      "dito": 2
+     }
+    ]
+   },
+   "relazione": {
+    "tipo": "parallelo",
+    "c": 7
+   },
+   "rampa": {
+    "r": [
+     [
+      1,
+      42
+     ],
+     [
+      8,
+      41
+     ],
+     [
+      15,
+      40
+     ],
+     [
+      22,
+      39
+     ],
+     [
+      29,
+      38
+     ],
+     [
+      36,
+      37
+     ],
+     [
+      43,
+      36
+     ],
+     [
+      50,
+      35
+     ]
+    ],
+    "l": [
+     [
+      1,
+      35
+     ],
+     [
+      8,
+      34
+     ],
+     [
+      15,
+      33
+     ],
+     [
+      22,
+      32
+     ],
+     [
+      29,
+      31
+     ],
+     [
+      36,
+      30
+     ],
+     [
+      43,
+      29
+     ],
+     [
+      50,
+      28
+     ]
+    ]
+   },
+   "pendenza": -0.14285714285714285,
+   "L": 7,
+   "G": 8
+  },
+  "perno/pollice": {
+   "note": {
+    "r": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 4
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 8,
+      "gruppo": 1,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 5
+     },
+     {
+      "i": 9,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 10,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 4
+     },
+     {
+      "i": 11,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 12,
+      "gruppo": 1,
+      "bianco": 37,
+      "nome": "mi4",
+      "dito": 3
+     },
+     {
+      "i": 13,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     },
+     {
+      "i": 14,
+      "gruppo": 1,
+      "bianco": 36,
+      "nome": "re4",
+      "dito": 2
+     },
+     {
+      "i": 15,
+      "gruppo": 1,
+      "bianco": 35,
+      "nome": "do4",
+      "dito": 1
+     }
+    ],
+    "l": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 1
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 27,
+      "nome": "si2",
+      "dito": 2
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 1
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 26,
+      "nome": "la2",
+      "dito": 3
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 1
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 25,
+      "nome": "sol2",
+      "dito": 4
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 1
+     },
+     {
+      "i": 8,
+      "gruppo": 1,
+      "bianco": 24,
+      "nome": "fa2",
+      "dito": 5
+     },
+     {
+      "i": 9,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 1
+     },
+     {
+      "i": 10,
+      "gruppo": 1,
+      "bianco": 25,
+      "nome": "sol2",
+      "dito": 4
+     },
+     {
+      "i": 11,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 1
+     },
+     {
+      "i": 12,
+      "gruppo": 1,
+      "bianco": 26,
+      "nome": "la2",
+      "dito": 3
+     },
+     {
+      "i": 13,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 1
+     },
+     {
+      "i": 14,
+      "gruppo": 1,
+      "bianco": 27,
+      "nome": "si2",
+      "dito": 2
+     },
+     {
+      "i": 15,
+      "gruppo": 1,
+      "bianco": 28,
+      "nome": "do3",
+      "dito": 1
+     }
+    ]
+   },
+   "relazione": {
+    "tipo": "specchio",
+    "c": 63
+   },
+   "rampa": {
+    "r": [
+     [
+      1,
+      35
+     ]
+    ],
+    "l": [
+     [
+      1,
+      28
+     ]
+    ]
+   },
+   "pendenza": null,
+   "L": 15,
+   "G": 1
+  },
+  "perno/mignolo": {
+   "note": {
+    "r": [
+     {
+      "i": 1,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 2,
+      "gruppo": 1,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 4
+     },
+     {
+      "i": 3,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 4,
+      "gruppo": 1,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 3
+     },
+     {
+      "i": 5,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 6,
+      "gruppo": 1,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 2
+     },
+     {
+      "i": 7,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 8,
+      "gruppo": 1,
+      "bianco": 38,
+      "nome": "fa4",
+      "dito": 1
+     },
+     {
+      "i": 9,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 10,
+      "gruppo": 1,
+      "bianco": 39,
+      "nome": "sol4",
+      "dito": 2
+     },
+     {
+      "i": 11,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 12,
+      "gruppo": 1,
+      "bianco": 40,
+      "nome": "la4",
+      "dito": 3
+     },
+     {
+      "i": 13,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     },
+     {
+      "i": 14,
+      "gruppo": 1,
+      "bianco": 41,
+      "nome": "si4",
+      "dito": 4
+     },
+     {
+      "i": 15,
+      "gruppo": 1,
+      "bianco": 42,
+      "nome": "do5",
+      "dito": 5
+     }
+    ]
+   },
+   "relazione": {
+    "tipo": "una mano"
+   },
+   "rampa": {
+    "r": [
+     [
+      1,
+      42
+     ]
+    ]
+   },
+   "pendenza": null,
+   "L": 15,
+   "G": 1
+  }
+ }
+}

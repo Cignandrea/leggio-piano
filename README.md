@@ -1,10 +1,11 @@
 # Leggio del piano
 
-App per allenarsi al piano, in tre sezioni:
+App per allenarsi al piano, in quattro sezioni:
 
 - **Oggi**: la sessione di esercizi preparata dopo l'ultima lezione, con tastiera disegnata, metronomo, giri di accordi e diario.
 - **Esercizi**: lo storico di tutti gli esercizi creati, raggruppati per area; ognuno si può ripetere da solo, senza toccare la sessione di oggi.
 - **Quaderno**: il quaderno delle lezioni, scritto come un manuale. Si legge in due ordini, con l'interruttore in alto: **per lezione** (i capitoli) o **per argomento** (gli stessi paragrafi in sequenza logica). Ogni paragrafo ha le sue «Fonti e verifiche». È cifrato: si apre solo con la chiave.
+- **Pattern**: i concetti del quaderno visti come grafici interattivi, una tavola per idea, in ordine **per capitolo** o **per idea matematica** (rette, modulo 12, esponenziali, onde, successioni, processi). Ogni numero è calcolato dal codice e ricontrollato da prove contro valori indipendenti.
 
 Si installa sul telefono da Chrome (⋮ → «Installa app») e si apre senza barra degli indirizzi. Funziona anche senza rete, con l'ultima versione scaricata.
 
@@ -18,8 +19,9 @@ Si installa sul telefono da Chrome (⋮ → «Installa app») e si apre senza ba
   Il testo in chiaro e la chiave non entrano mai nel repository.
   - Dallo schema 3 il quaderno si cifra solo se supera i controlli di costruzione (`problemi_schema3`): voce da manuale nel testo, almeno una verifica per paragrafo, ogni paragrafo con un posto nell'ordine per argomento. Se un controllo non passa, resta pubblicato il quaderno di prima.
   - Un capitolo nuovo si scrive con `tools/capitolo.py` (`salva(lezione, dopo={"5.1": "4.7"}, …)`: ogni paragrafo va dopo quello a cui segue nell'ordine per argomento), da uno script tenuto fuori dal repository.
+- **Le tavole di Pattern** stanno in `pattern.json` (titolo, paragrafi del quaderno, motore, parametri, testi); i grafici sono i «motori» in `pattern/motori/`, uno per file, sopra `pattern/nucleo.js` (la matematica) e `pattern/grafico.js` (il disegno). Una tavola che riusa un motore è solo dati. Come si aggiunge una tavola o un motore: `pattern/LEGGIMI.md`. Prove dei calcoli: `node --test tests/pattern/*.test.js`.
 - **Le fonti** dei paragrafi sono nei dossier di ricerca in `fonti/` (una voce per affermazione: esito, fonti lette, limiti).
-- **L'app** è `index.html` + `quaderno.html`. Ogni modifica si collauda prima di pubblicarla: `LEGGIO_CHIAVE=... python3 tests/collaudo.py` (Chrome a 390 px, tema chiaro e scuro, sessione simulata, libreria, diario, quaderno con chiave giusta e sbagliata, uso senza rete).
+- **L'app** è `index.html` + `quaderno.html` + `pattern.html`. Ogni modifica si collauda prima di pubblicarla: `LEGGIO_CHIAVE=... python3 tests/collaudo.py` (Chrome a 390 px, tema chiaro e scuro, sessione simulata, libreria, diario, quaderno con chiave giusta e sbagliata, tutte le tavole di Pattern con i loro comandi, uso senza rete).
 - Ogni volta che cambia l'app si alza la versione in due punti uguali: `APP_VERSION` in `index.html` e `VERSION` in `sw.js`.
 - Il service worker chiede prima alla rete pagine e file `.json`, così sessione, libreria e quaderno nuovi arrivano alla riapertura.
 
